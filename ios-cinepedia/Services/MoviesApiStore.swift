@@ -22,36 +22,42 @@ class MoviesApiStore: MoviesStoreProtocol {
     }
     
     func fetchNowPlaying(completionHandler: @escaping ([Movie], MovieStoreError?) -> Void) {
-        provider.request(.fetchNowPlaying) { result in
-            switch result {
-                case let .success(response):
-                    do {
-                        let movies: [Movie] = try response.map([Movie].self, atKeyPath: "results", using: JSONDecoder(), failsOnEmptyData: false)
-                        completionHandler(movies, nil)
-                    } catch {
-                        completionHandler([], MovieStoreError.CannotEncode(error.localizedDescription))
-                    }
-                case let .failure(error):
-                    completionHandler([], MovieStoreError.CannotFetch(error.errorDescription!))
-            }
+        fetchMovies(.fetchNowPlaying) { movies, error in
+            completionHandler(movies, error)
         }
     }
     
     func fetchPopular(completionHandler: @escaping ([Movie], MovieStoreError?) -> Void) {
-        provider.request(.fetchPopular) { result in
-            
+        fetchMovies(.fetchPopular) { movies, error in
+            completionHandler(movies, error)
         }
     }
     
     func fetchUpcoming(completionHandler: @escaping ([Movie], MovieStoreError?) -> Void) {
-        provider.request(.fetchUpcoming) { result in
-            
+        fetchMovies(.fetchUpcoming) { movies, error in
+            completionHandler(movies, error)
         }
     }
     
     func fetchMovie(movieId: Int, completionHandler: @escaping ([Movie], MovieStoreError?) -> Void) {
         provider.request(.fetchMovie(movieId: movieId)) { result in
             
+        }
+    }
+    
+    private func fetchMovies(_ endpoint: MovieService, completionHandler: @escaping([Movie], MovieStoreError?) -> Void) {
+        provider.request(endpoint) { result in
+            switch result {
+            case let .success(response):
+                do {
+                    let movies: [Movie] = try response.map([Movie].self, atKeyPath: "results", using: JSONDecoder(), failsOnEmptyData: false)
+                    completionHandler(movies, nil)
+                } catch {
+                    completionHandler([], MovieStoreError.CannotEncode(error.localizedDescription))
+                }
+            case let .failure(error):
+                completionHandler([], MovieStoreError.CannotFetch(error.errorDescription!))
+            }
         }
     }
 }
