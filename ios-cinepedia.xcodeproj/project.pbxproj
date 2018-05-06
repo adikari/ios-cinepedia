@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43CF6F5F57F4B7883FEFBAC6 /* Pods_ios_cinepedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77930096DAC1A5F7AA6EA0B6 /* Pods_ios_cinepedia.framework */; };
 		BBD57AF8209E7C370016ED96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD57AF7209E7C370016ED96 /* AppDelegate.swift */; };
 		BBD57AFA209E7C370016ED96 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD57AF9209E7C370016ED96 /* ViewController.swift */; };
 		BBD57AFD209E7C370016ED96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBD57AFB209E7C370016ED96 /* Main.storyboard */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		320EEEA9F444D7457BCA8B39 /* Pods-ios-cinepedia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-cinepedia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-cinepedia/Pods-ios-cinepedia.debug.xcconfig"; sourceTree = "<group>"; };
+		49475C62A989D4DFA55DDB5D /* Pods-ios-cinepedia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-cinepedia.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-cinepedia/Pods-ios-cinepedia.release.xcconfig"; sourceTree = "<group>"; };
+		77930096DAC1A5F7AA6EA0B6 /* Pods_ios_cinepedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_cinepedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBD57AF4209E7C370016ED96 /* ios-cinepedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-cinepedia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBD57AF7209E7C370016ED96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBD57AF9209E7C370016ED96 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,17 +35,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43CF6F5F57F4B7883FEFBAC6 /* Pods_ios_cinepedia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		187E34DFC409E4628B301E16 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				320EEEA9F444D7457BCA8B39 /* Pods-ios-cinepedia.debug.xcconfig */,
+				49475C62A989D4DFA55DDB5D /* Pods-ios-cinepedia.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BBD57AEB209E7C370016ED96 = {
 			isa = PBXGroup;
 			children = (
 				BBD57AF6209E7C370016ED96 /* ios-cinepedia */,
 				BBD57AF5209E7C370016ED96 /* Products */,
+				187E34DFC409E4628B301E16 /* Pods */,
+				C64EEEE2D035AAACF3125649 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +83,14 @@
 			path = "ios-cinepedia";
 			sourceTree = "<group>";
 		};
+		C64EEEE2D035AAACF3125649 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				77930096DAC1A5F7AA6EA0B6 /* Pods_ios_cinepedia.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +98,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BBD57B09209E7C380016ED96 /* Build configuration list for PBXNativeTarget "ios-cinepedia" */;
 			buildPhases = (
+				9A20724D7F0CD6647E8E46D2 /* [CP] Check Pods Manifest.lock */,
 				BBD57AF0209E7C370016ED96 /* Sources */,
 				BBD57AF1209E7C370016ED96 /* Frameworks */,
 				BBD57AF2209E7C370016ED96 /* Resources */,
@@ -132,6 +157,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9A20724D7F0CD6647E8E46D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ios-cinepedia-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BBD57AF0209E7C370016ED96 /* Sources */ = {
@@ -282,15 +328,13 @@
 		};
 		BBD57B0A209E7C380016ED96 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 320EEEA9F444D7457BCA8B39 /* Pods-ios-cinepedia.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8796DFU5N7;
 				INFOPLIST_FILE = "ios-cinepedia/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "au.com.subash.ios-cinepedia";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -300,15 +344,13 @@
 		};
 		BBD57B0B209E7C380016ED96 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49475C62A989D4DFA55DDB5D /* Pods-ios-cinepedia.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8796DFU5N7;
 				INFOPLIST_FILE = "ios-cinepedia/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "au.com.subash.ios-cinepedia";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
