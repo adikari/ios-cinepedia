@@ -8,17 +8,17 @@
 
 import Foundation
 
-protocol ListMoviesBusinessLogic {
-    func fetchFeaturedMovie(request: ListMovies.Featured.Request)
+protocol PopularMoviesBusinessLogic {
+    func fetchFeaturedMovie(request: PopularMovies.Request)
 }
 
-class ListMoviesInteractor: ListMoviesBusinessLogic {
-    var presenter: ListMoviesPresentationLogic?
+class PopularMoviesInteractor: PopularMoviesBusinessLogic {
+    var presenter: PopularMoviesPresentationLogic?
     var moviesWorker = MoviesWorker(moviesStore: MoviesApiStore())
     
-    func fetchFeaturedMovie(request: ListMovies.Featured.Request) {
+    func fetchFeaturedMovie(request: PopularMovies.Request) {
         moviesWorker.fetchPopularMovies() { movies in
-            let response = ListMovies.Featured.Response(movies: movies)
+            let response = PopularMovies.Response(movies: movies)
             
             self.presenter?.displayFeaturedMovie(response: response)
         }
