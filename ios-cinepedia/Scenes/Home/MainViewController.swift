@@ -16,7 +16,9 @@ protocol MainViewDisplayLogic: class
 class MainViewController: UIViewController, MainViewDisplayLogic {
     
     var interactor: ListMoviesBusinessLogic?
-
+    
+    @IBOutlet weak var featuredMovieView: FeaturedMovieView!
+    
     // MARK: Object lifecycle
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -58,6 +60,6 @@ class MainViewController: UIViewController, MainViewDisplayLogic {
     // MARK: Display logic
     
     func displayFeaturedMovie(viewModel: ListMovies.Featured.ViewModel) {
-        
+        featuredMovieView.initialize(imageUrl: viewModel.featuredMovie.imageUrl, title: viewModel.featuredMovie.title)
     }
 }

@@ -17,7 +17,7 @@ struct Movie: Codable {
     var imageUrl: String?
     var releaseDate: String
     
-    func image(width: Int = 1000, height: Int = 563) -> String? {
+    func image(width: Int = 500, height: Int = 282) -> String? {
         if imageUrl != nil {
             return "https://image.tmdb.org/t/p/w\(width)_and_h\(height)_face" + imageUrl!
         }

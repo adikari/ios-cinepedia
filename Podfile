@@ -6,6 +6,7 @@ target 'ios-cinepedia' do
   use_frameworks!
 
   pod 'Moya', '~> 11.0'
+  pod 'Kingfisher', '~> 4.0'
 
   target 'ios-cinepediaTests' do
       inherit! :search_paths
