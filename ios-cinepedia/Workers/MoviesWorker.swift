@@ -16,5 +16,28 @@ class MoviesWorker {
         self.moviesStore = moviesStore
     }
     
+    func fetchNowPlayingMovies(completionHandler: @escaping ([Movie]) -> Void) {
+        moviesStore.fetchNowPlaying { movies, error in
+            DispatchQueue.main.async {
+                completionHandler(movies)
+            }
+        }
+    }
+    
+    func fetchPopularMovies(completionHandler: @escaping([Movie]) -> Void) {
+        moviesStore.fetchPopular { movies, error in
+            DispatchQueue.main.async {
+                completionHandler(movies)
+            }
+        }
+    }
+    
+    func fetchUpcomingMovies(completionHandler: @escaping([Movie]) -> Void) {
+        moviesStore.fetchUpcoming { movies, error in
+            DispatchQueue.main.async {
+                completionHandler(movies)
+            }
+        }
+    }
 }
 
