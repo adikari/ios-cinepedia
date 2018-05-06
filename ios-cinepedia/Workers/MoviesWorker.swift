@@ -41,10 +41,9 @@ class MoviesWorker {
     }
     
     func fetchFeaturedMovie(completionHandler: @escaping(Movie?) -> Void) {
-        // TODO: get featured movie
-        moviesStore.fetchMovie(movieId: 12) { movie, error in
+        moviesStore.fetchPopular() { movies, error in
             DispatchQueue.main.async {
-                completionHandler(movie)
+                completionHandler(movies[0])
             }
         }
     }
