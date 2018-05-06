@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Nimble
 
 class ios_cinepediaTests: XCTestCase {
     

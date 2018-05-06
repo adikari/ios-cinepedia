@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		43CF6F5F57F4B7883FEFBAC6 /* Pods_ios_cinepedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77930096DAC1A5F7AA6EA0B6 /* Pods_ios_cinepedia.framework */; };
+		13267E3309CD4E6003802FEC /* Pods_ios_cinepediaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D7825941F19EDECF1DC7407 /* Pods_ios_cinepediaTests.framework */; };
 		BBD57AF8209E7C370016ED96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD57AF7209E7C370016ED96 /* AppDelegate.swift */; };
 		BBD57AFD209E7C370016ED96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBD57AFB209E7C370016ED96 /* Main.storyboard */; };
 		BBD57B00209E7C370016ED96 /* ios_cinepedia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BBD57AFE209E7C370016ED96 /* ios_cinepedia.xcdatamodeld */; };
@@ -19,6 +19,7 @@
 		BBD57B2A209E86F60016ED96 /* MoviesStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD57B29209E86F60016ED96 /* MoviesStoreProtocol.swift */; };
 		BBD57B2D209E89620016ED96 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD57B2C209E89620016ED96 /* Movie.swift */; };
 		BBD57B30209E8C320016ED96 /* MoviesApiStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD57B2F209E8C320016ED96 /* MoviesApiStore.swift */; };
+		E8C2135DF68ACE1E7A1819C4 /* Pods_ios_cinepedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B098DF6C9F390B4C02277B01 /* Pods_ios_cinepedia.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,9 +33,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0476F87234FD239883436727 /* Pods-ios-cinepediaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-cinepediaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-cinepediaTests/Pods-ios-cinepediaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		320EEEA9F444D7457BCA8B39 /* Pods-ios-cinepedia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-cinepedia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-cinepedia/Pods-ios-cinepedia.debug.xcconfig"; sourceTree = "<group>"; };
+		33F9308B2B268A1B3E9E70C0 /* Pods-ios-cinepediaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-cinepediaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-cinepediaTests/Pods-ios-cinepediaTests.release.xcconfig"; sourceTree = "<group>"; };
 		49475C62A989D4DFA55DDB5D /* Pods-ios-cinepedia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-cinepedia.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-cinepedia/Pods-ios-cinepedia.release.xcconfig"; sourceTree = "<group>"; };
-		77930096DAC1A5F7AA6EA0B6 /* Pods_ios_cinepedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_cinepedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D7825941F19EDECF1DC7407 /* Pods_ios_cinepediaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_cinepediaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B098DF6C9F390B4C02277B01 /* Pods_ios_cinepedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_cinepedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBD57AF4209E7C370016ED96 /* ios-cinepedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-cinepedia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBD57AF7209E7C370016ED96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBD57AFC209E7C370016ED96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -57,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43CF6F5F57F4B7883FEFBAC6 /* Pods_ios_cinepedia.framework in Frameworks */,
+				E8C2135DF68ACE1E7A1819C4 /* Pods_ios_cinepedia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13267E3309CD4E6003802FEC /* Pods_ios_cinepediaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +81,8 @@
 			children = (
 				320EEEA9F444D7457BCA8B39 /* Pods-ios-cinepedia.debug.xcconfig */,
 				49475C62A989D4DFA55DDB5D /* Pods-ios-cinepedia.release.xcconfig */,
+				0476F87234FD239883436727 /* Pods-ios-cinepediaTests.debug.xcconfig */,
+				33F9308B2B268A1B3E9E70C0 /* Pods-ios-cinepediaTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -186,7 +193,8 @@
 		C64EEEE2D035AAACF3125649 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				77930096DAC1A5F7AA6EA0B6 /* Pods_ios_cinepedia.framework */,
+				B098DF6C9F390B4C02277B01 /* Pods_ios_cinepedia.framework */,
+				9D7825941F19EDECF1DC7407 /* Pods_ios_cinepediaTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -217,9 +225,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BBD57B23209E86000016ED96 /* Build configuration list for PBXNativeTarget "ios-cinepediaTests" */;
 			buildPhases = (
+				98BF32C29340EB888A57ED47 /* [CP] Check Pods Manifest.lock */,
 				BBD57B18209E86000016ED96 /* Sources */,
 				BBD57B19209E86000016ED96 /* Frameworks */,
 				BBD57B1A209E86000016ED96 /* Resources */,
+				32CF7768F55ABEB56DDF4587 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -290,6 +300,42 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		32CF7768F55ABEB56DDF4587 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ios-cinepediaTests/Pods-ios-cinepediaTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ios-cinepediaTests/Pods-ios-cinepediaTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98BF32C29340EB888A57ED47 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ios-cinepediaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9A20724D7F0CD6647E8E46D2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -533,6 +579,7 @@
 		};
 		BBD57B24209E86000016ED96 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0476F87234FD239883436727 /* Pods-ios-cinepediaTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -549,6 +596,7 @@
 		};
 		BBD57B25209E86000016ED96 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33F9308B2B268A1B3E9E70C0 /* Pods-ios-cinepediaTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
