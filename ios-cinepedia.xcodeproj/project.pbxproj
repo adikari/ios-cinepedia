@@ -9,12 +9,27 @@
 /* Begin PBXBuildFile section */
 		43CF6F5F57F4B7883FEFBAC6 /* Pods_ios_cinepedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77930096DAC1A5F7AA6EA0B6 /* Pods_ios_cinepedia.framework */; };
 		BBD57AF8209E7C370016ED96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD57AF7209E7C370016ED96 /* AppDelegate.swift */; };
-		BBD57AFA209E7C370016ED96 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD57AF9209E7C370016ED96 /* ViewController.swift */; };
 		BBD57AFD209E7C370016ED96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBD57AFB209E7C370016ED96 /* Main.storyboard */; };
 		BBD57B00209E7C370016ED96 /* ios_cinepedia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BBD57AFE209E7C370016ED96 /* ios_cinepedia.xcdatamodeld */; };
 		BBD57B02209E7C380016ED96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBD57B01209E7C380016ED96 /* Assets.xcassets */; };
 		BBD57B05209E7C380016ED96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBD57B03209E7C380016ED96 /* LaunchScreen.storyboard */; };
+		BBD57B17209E81DE0016ED96 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD57B16209E81DE0016ED96 /* MainViewController.swift */; };
+		BBD57B1F209E86000016ED96 /* ios_cinepediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD57B1E209E86000016ED96 /* ios_cinepediaTests.swift */; };
+		BBD57B28209E86A70016ED96 /* MoviesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD57B27209E86A70016ED96 /* MoviesWorker.swift */; };
+		BBD57B2A209E86F60016ED96 /* MoviesStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD57B29209E86F60016ED96 /* MoviesStoreProtocol.swift */; };
+		BBD57B2D209E89620016ED96 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD57B2C209E89620016ED96 /* Movie.swift */; };
+		BBD57B30209E8C320016ED96 /* MoviesApiStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD57B2F209E8C320016ED96 /* MoviesApiStore.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BBD57B21209E86000016ED96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BBD57AEC209E7C370016ED96 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BBD57AF3209E7C370016ED96;
+			remoteInfo = "ios-cinepedia";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		320EEEA9F444D7457BCA8B39 /* Pods-ios-cinepedia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-cinepedia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-cinepedia/Pods-ios-cinepedia.debug.xcconfig"; sourceTree = "<group>"; };
@@ -22,12 +37,19 @@
 		77930096DAC1A5F7AA6EA0B6 /* Pods_ios_cinepedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_cinepedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBD57AF4209E7C370016ED96 /* ios-cinepedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-cinepedia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBD57AF7209E7C370016ED96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BBD57AF9209E7C370016ED96 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BBD57AFC209E7C370016ED96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BBD57AFF209E7C370016ED96 /* ios_cinepedia.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ios_cinepedia.xcdatamodel; sourceTree = "<group>"; };
 		BBD57B01209E7C380016ED96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBD57B04209E7C380016ED96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BBD57B06209E7C380016ED96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBD57B16209E81DE0016ED96 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		BBD57B1C209E86000016ED96 /* ios-cinepediaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-cinepediaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBD57B1E209E86000016ED96 /* ios_cinepediaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_cinepediaTests.swift; sourceTree = "<group>"; };
+		BBD57B20209E86000016ED96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBD57B27209E86A70016ED96 /* MoviesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesWorker.swift; sourceTree = "<group>"; };
+		BBD57B29209E86F60016ED96 /* MoviesStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesStoreProtocol.swift; sourceTree = "<group>"; };
+		BBD57B2C209E89620016ED96 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		BBD57B2F209E8C320016ED96 /* MoviesApiStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesApiStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +58,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				43CF6F5F57F4B7883FEFBAC6 /* Pods_ios_cinepedia.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBD57B19209E86000016ED96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				BBD57AF6209E7C370016ED96 /* ios-cinepedia */,
+				BBD57B1D209E86000016ED96 /* ios-cinepediaTests */,
 				BBD57AF5209E7C370016ED96 /* Products */,
 				187E34DFC409E4628B301E16 /* Pods */,
 				C64EEEE2D035AAACF3125649 /* Frameworks */,
@@ -65,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				BBD57AF4209E7C370016ED96 /* ios-cinepedia.app */,
+				BBD57B1C209E86000016ED96 /* ios-cinepediaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -72,15 +103,84 @@
 		BBD57AF6209E7C370016ED96 /* ios-cinepedia */ = {
 			isa = PBXGroup;
 			children = (
+				BBD57B2E209E8BA50016ED96 /* Services */,
+				BBD57B2B209E89540016ED96 /* Models */,
+				BBD57B26209E86950016ED96 /* Workers */,
+				BBD57B14209E81680016ED96 /* Scenes */,
+				BBD57B10209E7DFD0016ED96 /* Resources */,
+				BBD57B0F209E7DDD0016ED96 /* Supporting files */,
 				BBD57AF7209E7C370016ED96 /* AppDelegate.swift */,
-				BBD57AF9209E7C370016ED96 /* ViewController.swift */,
 				BBD57AFB209E7C370016ED96 /* Main.storyboard */,
-				BBD57B01209E7C380016ED96 /* Assets.xcassets */,
-				BBD57B03209E7C380016ED96 /* LaunchScreen.storyboard */,
-				BBD57B06209E7C380016ED96 /* Info.plist */,
-				BBD57AFE209E7C370016ED96 /* ios_cinepedia.xcdatamodeld */,
 			);
 			path = "ios-cinepedia";
+			sourceTree = "<group>";
+		};
+		BBD57B0F209E7DDD0016ED96 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				BBD57B03209E7C380016ED96 /* LaunchScreen.storyboard */,
+				BBD57B06209E7C380016ED96 /* Info.plist */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		BBD57B10209E7DFD0016ED96 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BBD57AFE209E7C370016ED96 /* ios_cinepedia.xcdatamodeld */,
+				BBD57B01209E7C380016ED96 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BBD57B14209E81680016ED96 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				BBD57B15209E81810016ED96 /* Home */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		BBD57B15209E81810016ED96 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BBD57B16209E81DE0016ED96 /* MainViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BBD57B1D209E86000016ED96 /* ios-cinepediaTests */ = {
+			isa = PBXGroup;
+			children = (
+				BBD57B1E209E86000016ED96 /* ios_cinepediaTests.swift */,
+				BBD57B20209E86000016ED96 /* Info.plist */,
+			);
+			path = "ios-cinepediaTests";
+			sourceTree = "<group>";
+		};
+		BBD57B26209E86950016ED96 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				BBD57B27209E86A70016ED96 /* MoviesWorker.swift */,
+				BBD57B29209E86F60016ED96 /* MoviesStoreProtocol.swift */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		BBD57B2B209E89540016ED96 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BBD57B2C209E89620016ED96 /* Movie.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BBD57B2E209E8BA50016ED96 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BBD57B2F209E8C320016ED96 /* MoviesApiStore.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		C64EEEE2D035AAACF3125649 /* Frameworks */ = {
@@ -102,6 +202,7 @@
 				BBD57AF0209E7C370016ED96 /* Sources */,
 				BBD57AF1209E7C370016ED96 /* Frameworks */,
 				BBD57AF2209E7C370016ED96 /* Resources */,
+				C57BB5665B810B9EB0440D01 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -111,6 +212,24 @@
 			productName = "ios-cinepedia";
 			productReference = BBD57AF4209E7C370016ED96 /* ios-cinepedia.app */;
 			productType = "com.apple.product-type.application";
+		};
+		BBD57B1B209E86000016ED96 /* ios-cinepediaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBD57B23209E86000016ED96 /* Build configuration list for PBXNativeTarget "ios-cinepediaTests" */;
+			buildPhases = (
+				BBD57B18209E86000016ED96 /* Sources */,
+				BBD57B19209E86000016ED96 /* Frameworks */,
+				BBD57B1A209E86000016ED96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BBD57B22209E86000016ED96 /* PBXTargetDependency */,
+			);
+			name = "ios-cinepediaTests";
+			productName = "ios-cinepediaTests";
+			productReference = BBD57B1C209E86000016ED96 /* ios-cinepediaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -124,6 +243,10 @@
 				TargetAttributes = {
 					BBD57AF3209E7C370016ED96 = {
 						CreatedOnToolsVersion = 9.3;
+					};
+					BBD57B1B209E86000016ED96 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = BBD57AF3209E7C370016ED96;
 					};
 				};
 			};
@@ -141,6 +264,7 @@
 			projectRoot = "";
 			targets = (
 				BBD57AF3209E7C370016ED96 /* ios-cinepedia */,
+				BBD57B1B209E86000016ED96 /* ios-cinepediaTests */,
 			);
 		};
 /* End PBXProject section */
@@ -153,6 +277,13 @@
 				BBD57B05209E7C380016ED96 /* LaunchScreen.storyboard in Resources */,
 				BBD57B02209E7C380016ED96 /* Assets.xcassets in Resources */,
 				BBD57AFD209E7C370016ED96 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBD57B1A209E86000016ED96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +308,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C57BB5665B810B9EB0440D01 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ios-cinepedia/Pods-ios-cinepedia-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ios-cinepedia/Pods-ios-cinepedia-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -184,13 +337,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBD57AFA209E7C370016ED96 /* ViewController.swift in Sources */,
+				BBD57B17209E81DE0016ED96 /* MainViewController.swift in Sources */,
+				BBD57B2A209E86F60016ED96 /* MoviesStoreProtocol.swift in Sources */,
+				BBD57B2D209E89620016ED96 /* Movie.swift in Sources */,
 				BBD57B00209E7C370016ED96 /* ios_cinepedia.xcdatamodeld in Sources */,
+				BBD57B28209E86A70016ED96 /* MoviesWorker.swift in Sources */,
+				BBD57B30209E8C320016ED96 /* MoviesApiStore.swift in Sources */,
 				BBD57AF8209E7C370016ED96 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BBD57B18209E86000016ED96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBD57B1F209E86000016ED96 /* ios_cinepediaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BBD57B22209E86000016ED96 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BBD57AF3209E7C370016ED96 /* ios-cinepedia */;
+			targetProxy = BBD57B21209E86000016ED96 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BBD57AFB209E7C370016ED96 /* Main.storyboard */ = {
@@ -333,7 +506,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8796DFU5N7;
-				INFOPLIST_FILE = "ios-cinepedia/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ios-cinepedia/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "au.com.subash.ios-cinepedia";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -349,12 +522,44 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8796DFU5N7;
-				INFOPLIST_FILE = "ios-cinepedia/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ios-cinepedia/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "au.com.subash.ios-cinepedia";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BBD57B24209E86000016ED96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8796DFU5N7;
+				INFOPLIST_FILE = "ios-cinepediaTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "au.com.subash.ios-cinepediaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ios-cinepedia.app/ios-cinepedia";
+			};
+			name = Debug;
+		};
+		BBD57B25209E86000016ED96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8796DFU5N7;
+				INFOPLIST_FILE = "ios-cinepediaTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "au.com.subash.ios-cinepediaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ios-cinepedia.app/ios-cinepedia";
 			};
 			name = Release;
 		};
@@ -375,6 +580,15 @@
 			buildConfigurations = (
 				BBD57B0A209E7C380016ED96 /* Debug */,
 				BBD57B0B209E7C380016ED96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BBD57B23209E86000016ED96 /* Build configuration list for PBXNativeTarget "ios-cinepediaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBD57B24209E86000016ED96 /* Debug */,
+				BBD57B25209E86000016ED96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
