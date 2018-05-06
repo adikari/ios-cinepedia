@@ -39,9 +39,19 @@ class MoviesApiStore: MoviesStoreProtocol {
         }
     }
     
-    func fetchMovie(movieId: Int, completionHandler: @escaping ([Movie], MovieStoreError?) -> Void) {
+    func fetchMovie(movieId: Int, completionHandler: @escaping (Movie?, MovieStoreError?) -> Void) {
         provider.request(.fetchMovie(movieId: movieId)) { result in
-            
+            switch result {
+            case let .success(response):
+                do {
+                    let movie: Movie = try response.map(Movie.self)
+                    completionHandler(movie, nil)
+                } catch {
+                    completionHandler(nil, MovieStoreError.CannotEncode(error.localizedDescription))
+                }
+            case let .failure(error):
+                completionHandler(nil, MovieStoreError.CannotFetch(error.errorDescription!))
+            }
         }
     }
     
@@ -73,10 +83,14 @@ extension MovieService: TargetType {
 
     var sampleData: Data {
         switch self {
-            case .fetchNowPlaying:
-                return sampleMovieResult.utf8Encoded
-            default:
-                return "default".utf8Encoded
+        case .fetchNowPlaying:
+            return mockMovies.utf8Encoded
+        case .fetchPopular:
+            return mockMovies.utf8Encoded
+        case .fetchUpcoming:
+            return mockMovies.utf8Encoded
+        case .fetchMovie(_):
+            return mockMovie.utf8Encoded
         }
     }
 
@@ -130,7 +144,68 @@ private extension String {
     }
 }
 
-private let sampleMovieResult = """
+private let mockMovie = """
+{
+"adult": false,
+"backdrop_path": "/n2vIGWw4ezslXjlP0VNxkp9wqwU.jpg",
+"belongs_to_collection": {
+"id": 137697,
+"name": "Finding Nemo Collection",
+"poster_path": "/xwggrEugjcJDuabIWvK2CpmK91z.jpg",
+"backdrop_path": "/2hC8HHRUvwRljYKIcQDMyMbLlxz.jpg"
+},
+"budget": 94000000,
+"genres": [
+{
+"id": 16,
+"name": "Animation"
+},
+{
+"id": 10751,
+"name": "Family"
+}
+],
+"homepage": "http://movies.disney.com/finding-nemo",
+"id": 12,
+"imdb_id": "tt0266543",
+"original_language": "en",
+"original_title": "Finding Nemo",
+"overview": "Nemo, an adventurous young clownfish",
+"popularity": 25.78404,
+"poster_path": "/syPWyeeqzTQIxjIUaIFI7d0TyEY.jpg",
+"production_companies": [
+{
+"id": 3,
+"logo_path": "/1TjvGVDMYsj6JBxOAkUHpPEwLf7.png",
+"name": "Pixar",
+"origin_country": "US"
+}
+],
+"production_countries": [
+{
+"iso_3166_1": "US",
+"name": "United States of America"
+}
+],
+"release_date": "2003-05-30",
+"revenue": 940335536,
+"runtime": 100,
+"spoken_languages": [
+{
+"iso_639_1": "en",
+"name": "English"
+}
+],
+"status": "Released",
+"tagline": "There are 3.7 trillion fish in the ocean. They're looking for one.",
+"title": "Finding Nemo",
+"video": false,
+"vote_average": 7.7,
+"vote_count": 8311
+}
+"""
+
+private let mockMovies = """
 {
     "results": [
     {

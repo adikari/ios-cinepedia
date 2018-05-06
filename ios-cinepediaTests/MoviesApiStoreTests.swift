@@ -23,22 +23,19 @@ class MovieApiStoreTests: QuickSpec {
         }
         
         it("returns stubbed data for movies request") {
-            // var message: String?
-            
             store.fetchNowPlaying { movies, error in
-               print(movies)
+                expect(movies[0].title).to(equal("Avengers: Infinity War"));
             }
 
-//            let target: GitHub = .zen
-//            provider.request(target) { result in
-//                if case let .success(response) = result {
-//                    message = String(data: response.data, encoding: .utf8)
-//                }
-//            }
-//
-//            let sampleData = target.sampleData
-//            expect(message).to(equal(String(data: sampleData, encoding: .utf8)))
+        }
+        
+        it("should return movie by id") {
+            store.fetchMovie(movieId: 1) { movie, error in
+                if title = movie?.title {
+                    expect(title).to(equal("Finding Nemo"));
+                }
+            }
         }
     }
-    
+   
 }
