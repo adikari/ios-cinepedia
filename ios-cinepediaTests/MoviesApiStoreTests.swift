@@ -25,13 +25,15 @@ class MovieApiStoreTests: QuickSpec {
         it("returns stubbed data for movies request") {
             store.fetchNowPlaying { movies, error in
                 expect(movies[0].title).to(equal("Avengers: Infinity War"));
+                expect(movies[0].image(width: 200, height: 100)).to(equal("https://image.tmdb.org/t/p/w200_and_h100_face/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg"));
+                expect(movies[0].image()).to(equal("https://image.tmdb.org/t/p/w1000_and_h563_face/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg"));
             }
 
         }
         
         it("should return movie by id") {
             store.fetchMovie(movieId: 1) { movie, error in
-                if title = movie?.title {
+                if let title = movie?.title {
                     expect(title).to(equal("Finding Nemo"));
                 }
             }
