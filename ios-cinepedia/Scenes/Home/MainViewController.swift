@@ -7,17 +7,24 @@
 //
 
 import UIKit
+import FSPagerView
+import Kingfisher
 
 protocol MainViewDisplayLogic: class
 {
     func displayFeaturedMovie(viewModel: ListMovies.Featured.ViewModel)
 }
 
-class MainViewController: UIViewController, MainViewDisplayLogic {
+class MainViewController: UIViewController, MainViewDisplayLogic, FSPagerViewDelegate, FSPagerViewDataSource {
     
     var interactor: ListMoviesBusinessLogic?
+    var featuredMovies: [ListMovies.Featured.ViewModel.FeaturedMovie] = []
     
-    @IBOutlet weak var featuredMovieView: FeaturedMovieView!
+    @IBOutlet weak var featuredMovieView: FSPagerView! {
+        didSet {
+            featuredMovieView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "featuredMovieCell")
+        }
+    }
     
     // MARK: Object lifecycle
     
@@ -48,7 +55,9 @@ class MainViewController: UIViewController, MainViewDisplayLogic {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        featuredMovieView.dataSource = self
+        featuredMovieView.delegate = self
         fetchFeaturedMovie()
     }
     
@@ -56,10 +65,24 @@ class MainViewController: UIViewController, MainViewDisplayLogic {
         interactor?.fetchFeaturedMovie(request: ListMovies.Featured.Request())
     }
 
-
     // MARK: Display logic
     
     func displayFeaturedMovie(viewModel: ListMovies.Featured.ViewModel) {
-        featuredMovieView.initialize(imageUrl: viewModel.featuredMovie.imageUrl, title: viewModel.featuredMovie.title)
+        featuredMovies = viewModel.featuredMovies
+        featuredMovieView.reloadData()
+    }
+    
+    public func numberOfItems(in pagerView: FSPagerView) -> Int {
+        return featuredMovies.count
+    }
+    
+    public func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
+        let movie = featuredMovies[index]
+        let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "featuredMovieCell", at: index)
+        
+        cell.imageView?.kf.setImage(with: URL(string: movie.imageUrl))
+        cell.textLabel?.text = movie.title
+        
+        return cell
     }
 }

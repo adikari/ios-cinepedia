@@ -18,7 +18,7 @@ enum ListMovies
         
         struct Response
         {
-            var movie: Movie?
+            var movies: [Movie]
         }
         
         struct ViewModel
@@ -29,7 +29,7 @@ enum ListMovies
                 var title: String
             }
             
-            var featuredMovie: FeaturedMovie
+            var featuredMovies: [FeaturedMovie]
         }
     }
 }

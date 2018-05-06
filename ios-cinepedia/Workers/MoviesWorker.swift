@@ -39,13 +39,5 @@ class MoviesWorker {
             }
         }
     }
-    
-    func fetchFeaturedMovie(completionHandler: @escaping(Movie?) -> Void) {
-        moviesStore.fetchPopular() { movies, error in
-            DispatchQueue.main.async {
-                completionHandler(movies[0])
-            }
-        }
-    }
 }
 

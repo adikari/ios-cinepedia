@@ -17,8 +17,8 @@ class ListMoviesInteractor: ListMoviesBusinessLogic {
     var moviesWorker = MoviesWorker(moviesStore: MoviesApiStore())
     
     func fetchFeaturedMovie(request: ListMovies.Featured.Request) {
-        moviesWorker.fetchFeaturedMovie() { movie in
-            let response = ListMovies.Featured.Response(movie: movie)
+        moviesWorker.fetchPopularMovies() { movies in
+            let response = ListMovies.Featured.Response(movies: movies)
             
             self.presenter?.displayFeaturedMovie(response: response)
         }

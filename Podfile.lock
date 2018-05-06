@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.7.2)
+  - FSPagerView (0.7.1)
   - Kingfisher (4.7.0)
   - Moya (11.0.2):
     - Moya/Core (= 11.0.2)
@@ -24,6 +25,7 @@ PODS:
   - Result (3.2.4)
 
 DEPENDENCIES:
+  - FSPagerView
   - Kingfisher (~> 4.0)
   - Moya (~> 11.0)
   - Nimble
@@ -33,6 +35,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - FSPagerView
     - Kingfisher
     - Moya
     - Nimble
@@ -42,6 +45,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  FSPagerView: 958aba39684e1573755ddcfcc29f7eebb8413cee
   Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
   Moya: a725035953bc1c0eb1be505ab903984501d82440
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
@@ -49,6 +53,6 @@ SPEC CHECKSUMS:
   Quick: 03278013f71aa05fe9ecabc94fbcc6835f1ee76f
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
 
-PODFILE CHECKSUM: ae0944e308dae159d12721fb5e4ed8e364c068a7
+PODFILE CHECKSUM: 80bb94138cb0f0671fbe30369fbeee317a5d4c83
 
 COCOAPODS: 1.5.0
