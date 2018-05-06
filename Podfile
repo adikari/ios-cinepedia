@@ -10,7 +10,9 @@ target 'ios-cinepedia' do
   target 'ios-cinepediaTests' do
       inherit! :search_paths
 
-      pod 'Nimble', '~> 7.0.0'
+      pod 'Quick'
+      pod 'Nimble'
+      pod 'OHHTTPStubs/Swift'
   end
  end
 

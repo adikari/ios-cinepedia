@@ -17,13 +17,17 @@ class MoviesApiStore: MoviesStoreProtocol {
         provider = MoyaProvider<MovieService>()
     }
     
+    init(provider: MoyaProvider<MovieService>) {
+        self.provider = provider
+    }
+    
     func fetchNowPlaying(completionHandler: @escaping ([Movie], MovieStoreError?) -> Void) {
         provider.request(.fetchNowPlaying) { result in
             switch result {
                 case let .success(response):
                     do {
-                        let movies: Movie = try response.map(Movie.self)
-                        completionHandler([movies], nil)
+                        let movies: [Movie] = try response.map([Movie].self, atKeyPath: "results", using: JSONDecoder(), failsOnEmptyData: false)
+                        completionHandler(movies, nil)
                     } catch {
                         completionHandler([], MovieStoreError.CannotEncode(error.localizedDescription))
                     }
@@ -62,7 +66,12 @@ enum MovieService {
 extension MovieService: TargetType {
 
     var sampleData: Data {
-        return "".utf8Encoded
+        switch self {
+            case .fetchNowPlaying:
+                return sampleMovieResult.utf8Encoded
+            default:
+                return "default".utf8Encoded
+        }
     }
 
     var baseURL: URL {
@@ -114,3 +123,58 @@ private extension String {
         return data(using: .utf8)!
     }
 }
+
+private let sampleMovieResult = """
+{
+    "results": [
+    {
+    "vote_count": 2418,
+    "id": 299536,
+    "video": false,
+    "vote_average": 8.7,
+    "title": "Avengers: Infinity War",
+    "popularity": 700.87566,
+    "poster_path": "/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg",
+    "original_language": "en",
+    "original_title": "Avengers: Infinity War",
+    "genre_ids": [
+    12,
+    878,
+    14,
+    28
+    ],
+    "backdrop_path": "/bOGkgRGdhrBYJSLpXaxhXVstddV.jpg",
+    "adult": false,
+    "overview": "overview",
+    "release_date": "2018-04-25"
+    },
+    {
+    "vote_count": 409,
+    "id": 427641,
+    "video": false,
+    "vote_average": 5.9,
+    "title": "Rampage",
+    "popularity": 181.959502,
+    "poster_path": "/30oXQKwibh0uANGMs0Sytw3uN22.jpg",
+    "original_language": "en",
+    "original_title": "Rampage",
+    "genre_ids": [
+    28,
+    12,
+    878
+    ],
+    "backdrop_path": "/wrqUiMXttHE4UBFMhLHlN601MZh.jpg",
+    "adult": false,
+    "overview": "overview",
+    "release_date": "2018-04-12"
+    }
+    ],
+    "page": 1,
+    "total_results": 933,
+    "dates": {
+        "maximum": "2018-05-11",
+        "minimum": "2018-03-23"
+    },
+    "total_pages": 47
+}
+"""
