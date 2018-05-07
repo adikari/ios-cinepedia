@@ -12,7 +12,6 @@ enum PopularMovies
     
     struct Request
     {
-        var numberOfMovies: Int
     }
 
     struct Response

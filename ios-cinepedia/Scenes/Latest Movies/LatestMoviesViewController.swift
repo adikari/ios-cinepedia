@@ -49,8 +49,7 @@ class LatestMoviesViewController: UIViewController, LatestMoviesViewDisplayLogic
     }
     
     private func fetchLatestMovies() {
-        let request = LatestMovies.Request(numberOfMovies: 15)
-        interactor?.fetchLatestMovies(request: request)
+        interactor?.fetchLatestMovies(request: LatestMovies.Request())
     }
     
     // MARK: Display Logic

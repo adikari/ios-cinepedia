@@ -14,7 +14,6 @@ enum LatestMovies
     
     struct Request
     {
-        var numberOfMovies: Int
     }
     
     struct Response

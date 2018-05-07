@@ -16,16 +16,18 @@ class PopularMoviesPresenter: PopularMoviesPresentationLogic {
     var viewController: PopularMoviesViewController?
     
     func displayFeaturedMovie(response: PopularMovies.Response) {
-        var movies: [PopularMovies.ViewModel.Movie] = []
+        var popularMovies: [PopularMovies.ViewModel.Movie] = []
         
-        for movie in response.movies {
+        let movies = Array(response.movies.prefix(5))
+        
+        for movie in movies {
             if let imageUrl = movie.image() {
                 let featuredMovie = PopularMovies.ViewModel.Movie(imageUrl: imageUrl, title: movie.title)
-                movies.append(featuredMovie)
+                popularMovies.append(featuredMovie)
             }
         }
         
-        let viewModel = PopularMovies.ViewModel(movies: movies)
+        let viewModel = PopularMovies.ViewModel(movies: popularMovies)
 
         viewController?.displayPopularMovies(viewModel: viewModel)
 

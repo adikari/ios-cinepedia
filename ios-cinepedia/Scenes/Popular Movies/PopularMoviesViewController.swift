@@ -61,8 +61,7 @@ class PopularMoviesViewController: UIViewController, PopularMoviesViewDisplayLog
     }
     
     func fetchPopularMovies() {
-        let request = PopularMovies.Request(numberOfMovies: 5)
-        interactor?.fetchFeaturedMovie(request: request)
+        interactor?.fetchFeaturedMovie(request: PopularMovies.Request())
     }
     
     // MARK: Display logic

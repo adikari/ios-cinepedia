@@ -17,10 +17,11 @@ class LatestMoviesPresenter: LatestMoviesPresentationLogic {
     var viewController: LatestMoviesViewController?
     
     func displayLatestMovies(response: LatestMovies.Response) {
-        
         var fetchedMovies: [LatestMovies.ViewModel.Movie] = []
         
-        for movie in response.movies {
+        let movies = Array(response.movies.prefix(15))
+        
+        for movie in movies {
             if let imageUrl = movie.image() {
                 let latestMovie = LatestMovies.ViewModel.Movie(
                     imageUrl: imageUrl,
