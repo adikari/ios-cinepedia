@@ -10,8 +10,7 @@ import UIKit
 import FSPagerView
 import Kingfisher
 
-protocol PopularMoviesViewDisplayLogic: class
-{
+protocol PopularMoviesViewDisplayLogic: class {
     func displayPopularMovies(viewModel: PopularMovies.ViewModel)
 }
 
@@ -62,7 +61,8 @@ class PopularMoviesViewController: UIViewController, PopularMoviesViewDisplayLog
     }
     
     func fetchPopularMovies() {
-        interactor?.fetchFeaturedMovie(request: PopularMovies.Request())
+        let request = PopularMovies.Request(numberOfMovies: 5)
+        interactor?.fetchFeaturedMovie(request: request)
     }
     
     // MARK: Display logic

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		13267E3309CD4E6003802FEC /* Pods_ios_cinepediaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D7825941F19EDECF1DC7407 /* Pods_ios_cinepediaTests.framework */; };
+		BB3EB7CC20A06325002614C5 /* LatestMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3EB7CB20A06325002614C5 /* LatestMoviesViewController.swift */; };
+		BB3EB7CE20A06547002614C5 /* LatestMoviesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3EB7CD20A06547002614C5 /* LatestMoviesModel.swift */; };
+		BB3EB7D020A066D7002614C5 /* LatestMoviesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3EB7CF20A066D7002614C5 /* LatestMoviesInteractor.swift */; };
+		BB3EB7D220A066E3002614C5 /* LatestMoviesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3EB7D120A066E3002614C5 /* LatestMoviesPresenter.swift */; };
 		BBD57AF8209E7C370016ED96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD57AF7209E7C370016ED96 /* AppDelegate.swift */; };
 		BBD57AFD209E7C370016ED96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBD57AFB209E7C370016ED96 /* Main.storyboard */; };
 		BBD57B00209E7C370016ED96 /* ios_cinepedia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BBD57AFE209E7C370016ED96 /* ios_cinepedia.xcdatamodeld */; };
@@ -43,6 +47,10 @@
 		49475C62A989D4DFA55DDB5D /* Pods-ios-cinepedia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-cinepedia.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-cinepedia/Pods-ios-cinepedia.release.xcconfig"; sourceTree = "<group>"; };
 		9D7825941F19EDECF1DC7407 /* Pods_ios_cinepediaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_cinepediaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B098DF6C9F390B4C02277B01 /* Pods_ios_cinepedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_cinepedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB3EB7CB20A06325002614C5 /* LatestMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestMoviesViewController.swift; sourceTree = "<group>"; };
+		BB3EB7CD20A06547002614C5 /* LatestMoviesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestMoviesModel.swift; sourceTree = "<group>"; };
+		BB3EB7CF20A066D7002614C5 /* LatestMoviesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestMoviesInteractor.swift; sourceTree = "<group>"; };
+		BB3EB7D120A066E3002614C5 /* LatestMoviesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestMoviesPresenter.swift; sourceTree = "<group>"; };
 		BBD57AF4209E7C370016ED96 /* ios-cinepedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-cinepedia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBD57AF7209E7C370016ED96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBD57AFC209E7C370016ED96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -93,6 +101,17 @@
 				33F9308B2B268A1B3E9E70C0 /* Pods-ios-cinepediaTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		BB3EB7CA20A0630C002614C5 /* Latest Movies */ = {
+			isa = PBXGroup;
+			children = (
+				BB3EB7CB20A06325002614C5 /* LatestMoviesViewController.swift */,
+				BB3EB7CD20A06547002614C5 /* LatestMoviesModel.swift */,
+				BB3EB7CF20A066D7002614C5 /* LatestMoviesInteractor.swift */,
+				BB3EB7D120A066E3002614C5 /* LatestMoviesPresenter.swift */,
+			);
+			path = "Latest Movies";
 			sourceTree = "<group>";
 		};
 		BBD57AEB209E7C370016ED96 = {
@@ -151,6 +170,7 @@
 		BBD57B14209E81680016ED96 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				BB3EB7CA20A0630C002614C5 /* Latest Movies */,
 				BBD57B43209F2EDF0016ED96 /* Popular Movies */,
 				BBD57B15209E81810016ED96 /* Home */,
 			);
@@ -411,6 +431,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB3EB7CC20A06325002614C5 /* LatestMoviesViewController.swift in Sources */,
 				BBD57B17209E81DE0016ED96 /* MainViewController.swift in Sources */,
 				BBD57B45209F2F110016ED96 /* PopularMoviesViewController.swift in Sources */,
 				BBD57B2A209E86F60016ED96 /* MoviesStoreProtocol.swift in Sources */,
@@ -418,8 +439,11 @@
 				BBD57B00209E7C370016ED96 /* ios_cinepedia.xcdatamodeld in Sources */,
 				BBD57B38209EF9C10016ED96 /* PopularMoviesInteractor.swift in Sources */,
 				BBD57B36209EF71D0016ED96 /* PopularMoviesModel.swift in Sources */,
+				BB3EB7D020A066D7002614C5 /* LatestMoviesInteractor.swift in Sources */,
 				BBD57B28209E86A70016ED96 /* MoviesWorker.swift in Sources */,
 				BBD57B30209E8C320016ED96 /* MoviesApiStore.swift in Sources */,
+				BB3EB7CE20A06547002614C5 /* LatestMoviesModel.swift in Sources */,
+				BB3EB7D220A066E3002614C5 /* LatestMoviesPresenter.swift in Sources */,
 				BBD57AF8209E7C370016ED96 /* AppDelegate.swift in Sources */,
 				BBD57B3A209EFA1C0016ED96 /* PopularMoviesPresenter.swift in Sources */,
 			);

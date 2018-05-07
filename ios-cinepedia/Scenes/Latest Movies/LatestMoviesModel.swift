@@ -1,12 +1,14 @@
 //
-//  FeaturedMovieModel.swift
+//  LatestMoviesModel.swift
 //  ios-cinepedia
 //
-//  Created by subash adhikari on 6/5/18.
+//  Created by subash adhikari on 7/5/18.
 //  Copyright © 2018 subash adhikari. All rights reserved.
 //
 
-enum PopularMovies
+import Foundation
+
+enum LatestMovies
 {
     // MARK: Use cases
     
@@ -14,20 +16,21 @@ enum PopularMovies
     {
         var numberOfMovies: Int
     }
-
+    
     struct Response
     {
         var movies: [Movie]
     }
-
+    
     struct ViewModel
     {
         struct Movie
         {
             var imageUrl: String
             var title: String
+            var rating: String
         }
-
+        
         var movies: [Movie]
     }
 }

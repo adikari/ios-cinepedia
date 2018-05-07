@@ -27,11 +27,23 @@
                                     <segue destination="RkD-Vm-fHS" kind="embed" identifier="" id="wo8-uG-zrg"/>
                                 </connections>
                             </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Zy-6c-LcL">
+                                <rect key="frame" x="0.0" y="270" width="375" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Hae-uM-hm0"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="J7C-2l-py4" kind="embed" id="NBx-72-lbA"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KVs-hJ-81h" secondAttribute="trailing" id="3Pl-Yv-6qm"/>
+                            <constraint firstItem="9Zy-6c-LcL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4EA-Ga-jG6"/>
                             <constraint firstItem="KVs-hJ-81h" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fyf-jX-aAb"/>
+                            <constraint firstItem="9Zy-6c-LcL" firstAttribute="top" secondItem="KVs-hJ-81h" secondAttribute="bottom" id="p7x-bw-Efj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9Zy-6c-LcL" secondAttribute="trailing" id="wWP-yN-6Bd"/>
                             <constraint firstItem="KVs-hJ-81h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xbD-c8-aSn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -51,7 +63,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7sr-GZ-TXV" customClass="FSPagerView" customModule="FSPagerView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVa-0Y-OKu">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVa-0Y-OKu">
                                         <rect key="frame" x="12" y="227" width="351" height="0.0"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
@@ -80,6 +92,7 @@
                             <constraint firstAttribute="trailing" secondItem="7sr-GZ-TXV" secondAttribute="trailing" id="TeL-js-XKZ"/>
                             <constraint firstItem="7sr-GZ-TXV" firstAttribute="top" secondItem="g61-u2-G0B" secondAttribute="top" id="cd9-k6-kOU"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="eFL-Vl-BOR"/>
                     </view>
                     <connections>
                         <outlet property="pagerView" destination="7sr-GZ-TXV" id="Vzt-tK-1qv"/>
@@ -87,7 +100,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dHd-Hg-C1A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1418" y="34"/>
+            <point key="canvasLocation" x="1545" y="-123"/>
+        </scene>
+        <!--Latest Movies View Controller-->
+        <scene sceneID="DbC-0n-H54">
+            <objects>
+                <viewController storyboardIdentifier="LatestMoviesViewController" id="J7C-2l-py4" customClass="LatestMoviesViewController" customModule="ios_cinepedia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YF6-3b-9Kh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Pew-qn-ege"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DuW-JG-oA5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1545" y="345"/>
         </scene>
     </scenes>
 </document>
