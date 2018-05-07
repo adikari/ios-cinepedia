@@ -18,11 +18,12 @@ class LatestMoviesViewController: UIViewController, LatestMoviesViewDisplayLogic
     var interactor: LatestMoviesBusinessLogic?
     var movies: [LatestMovies.ViewModel.Movie] = []
     
+
     @IBOutlet weak var pagerView: FSPagerView! {
         didSet {
-//            pagerView.register(UINib(nibName: "LatestMovieCell", bundle: nil), forCellWithReuseIdentifier: "cell")
              pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
             pagerView.transformer = FSPagerViewTransformer(type: .linear)
+            pagerView.itemSize = CGSize(width: 300, height: 180)
         }
     }
     

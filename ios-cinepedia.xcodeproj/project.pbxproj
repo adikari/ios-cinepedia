@@ -170,19 +170,11 @@
 		BBD57B14209E81680016ED96 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				BBD57B16209E81DE0016ED96 /* MainViewController.swift */,
 				BB3EB7CA20A0630C002614C5 /* Latest Movies */,
 				BBD57B43209F2EDF0016ED96 /* Popular Movies */,
-				BBD57B15209E81810016ED96 /* Home */,
 			);
 			path = Scenes;
-			sourceTree = "<group>";
-		};
-		BBD57B15209E81810016ED96 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				BBD57B16209E81DE0016ED96 /* MainViewController.swift */,
-			);
-			path = Home;
 			sourceTree = "<group>";
 		};
 		BBD57B1D209E86000016ED96 /* ios-cinepediaTests */ = {

@@ -28,9 +28,9 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Zy-6c-LcL">
-                                <rect key="frame" x="0.0" y="270" width="375" height="200"/>
+                                <rect key="frame" x="0.0" y="270" width="375" height="250"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="Hae-uM-hm0"/>
+                                    <constraint firstAttribute="height" constant="250" id="Hae-uM-hm0"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="J7C-2l-py4" kind="embed" id="NBx-72-lbA"/>
@@ -106,7 +106,7 @@
         <scene sceneID="DbC-0n-H54">
             <objects>
                 <viewController storyboardIdentifier="LatestMoviesViewController" id="J7C-2l-py4" customClass="LatestMoviesViewController" customModule="ios_cinepedia" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="YF6-3b-9Kh" customClass="FSPagerView" customModule="FSPagerView">
+                    <view key="view" contentMode="scaleToFill" id="YF6-3b-9Kh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -116,45 +116,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="q3c-lA-Xgy">
-                                <rect key="frame" x="80" y="45" width="215" height="155"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A8B-Jr-S7Z" customClass="FSPagerView" customModule="FSPagerView">
+                                <rect key="frame" x="0.0" y="53" width="375" height="147"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="P23-Qu-UsZ">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <imageView key="backgroundView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Plj-mh-R4B">
-                                    <rect key="frame" x="0.0" y="0.0" width="215" height="155"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </imageView>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LatestMovieCell" id="JQ5-dB-cOC">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="q3c-lA-Xgy" firstAttribute="top" secondItem="Vba-va-ZEX" secondAttribute="bottom" constant="12" id="5qT-5r-dJH"/>
                             <constraint firstItem="Vba-va-ZEX" firstAttribute="top" secondItem="Pew-qn-ege" secondAttribute="top" constant="12" id="GuJ-CN-Nlm"/>
                             <constraint firstItem="Vba-va-ZEX" firstAttribute="leading" secondItem="Pew-qn-ege" secondAttribute="leading" constant="12" id="U7c-Sh-1Ry"/>
-                            <constraint firstItem="Pew-qn-ege" firstAttribute="bottom" secondItem="q3c-lA-Xgy" secondAttribute="bottom" id="V8D-IH-tJe"/>
-                            <constraint firstItem="Pew-qn-ege" firstAttribute="trailing" secondItem="q3c-lA-Xgy" secondAttribute="trailing" constant="80" id="axa-7F-jaD"/>
-                            <constraint firstItem="q3c-lA-Xgy" firstAttribute="leading" secondItem="Pew-qn-ege" secondAttribute="leading" constant="80" id="eXj-jz-FiG"/>
+                            <constraint firstItem="Pew-qn-ege" firstAttribute="trailing" secondItem="A8B-Jr-S7Z" secondAttribute="trailing" id="bUh-YJ-wW0"/>
+                            <constraint firstItem="A8B-Jr-S7Z" firstAttribute="top" secondItem="Vba-va-ZEX" secondAttribute="bottom" constant="20" id="bcF-Cx-5rp"/>
+                            <constraint firstItem="Pew-qn-ege" firstAttribute="bottom" secondItem="A8B-Jr-S7Z" secondAttribute="bottom" constant="20" id="d9r-vG-gs4"/>
                             <constraint firstItem="Pew-qn-ege" firstAttribute="trailing" secondItem="Vba-va-ZEX" secondAttribute="trailing" constant="12" id="jrx-bq-Gt5"/>
+                            <constraint firstItem="A8B-Jr-S7Z" firstAttribute="leading" secondItem="Pew-qn-ege" secondAttribute="leading" id="xbb-a4-sqb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pew-qn-ege"/>
                     </view>
                     <connections>
-                        <outlet property="pagerView" destination="YF6-3b-9Kh" id="0Pk-rX-qBX"/>
+                        <outlet property="pagerView" destination="A8B-Jr-S7Z" id="bHl-1k-Qct"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DuW-JG-oA5" userLabel="First Responder" sceneMemberID="firstResponder"/>
