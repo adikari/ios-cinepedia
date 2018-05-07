@@ -13,6 +13,7 @@ protocol MoviesStoreProtocol {
     func fetchPopular(completionHandler: @escaping ([Movie], MovieStoreError?) -> Void)
     func fetchUpcoming(completionHandler: @escaping ([Movie], MovieStoreError?) -> Void)
     func fetchMovie(movieId: Int, completionHandler: @escaping (Movie?, MovieStoreError?) -> Void)
+    func fetchToprated(completionHandler: @escaping ([Movie], MovieStoreError?) -> Void)
 }
 
 enum MovieStoreError: Equatable, Error

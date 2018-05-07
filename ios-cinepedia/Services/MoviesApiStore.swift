@@ -39,6 +39,12 @@ class MoviesApiStore: MoviesStoreProtocol {
         }
     }
     
+    func fetchToprated(completionHandler: @escaping ([Movie], MovieStoreError?) -> Void) {
+        fetchMovies(.fetchToprated) { movies, error in
+            completionHandler(movies, error)
+        }
+    }
+    
     func fetchMovie(movieId: Int, completionHandler: @escaping (Movie?, MovieStoreError?) -> Void) {
         provider.request(.fetchMovie(movieId: movieId)) { result in
             switch result {
@@ -77,6 +83,7 @@ enum MovieService {
     case fetchPopular
     case fetchUpcoming
     case fetchMovie(movieId: Int)
+    case fetchToprated
 }
 
 extension MovieService: TargetType {
@@ -89,6 +96,8 @@ extension MovieService: TargetType {
             return mockMovies.utf8Encoded
         case .fetchUpcoming:
             return mockMovies.utf8Encoded
+        case .fetchToprated:
+            return mockMovies.utf8Encoded
         case .fetchMovie(_):
             return mockMovie.utf8Encoded
         }
@@ -100,20 +109,23 @@ extension MovieService: TargetType {
     
     var path: String {
         switch self {
-            case .fetchNowPlaying:
-                return "/now_playing"
-            case .fetchPopular:
-                return "/popular"
-            case .fetchUpcoming:
-                return "/upcoming"
-            case .fetchMovie(let movieId):
-                return "/\(movieId)"
+        case .fetchNowPlaying:
+            return "/now_playing"
+        case .fetchPopular:
+            return "/popular"
+        case .fetchUpcoming:
+            return "/upcoming"
+        case .fetchToprated:
+            return "/top_rated"
+        case .fetchMovie(let movieId):
+            return "/\(movieId)"
         }
     }
     
     var method: Moya.Method {
         switch self {
-            case .fetchUpcoming, .fetchPopular, .fetchNowPlaying, .fetchMovie:
+        case .fetchToprated, .fetchUpcoming, .fetchPopular,
+             .fetchNowPlaying, .fetchMovie:
                 return .get
         }
     }
@@ -122,7 +134,7 @@ extension MovieService: TargetType {
         let apiKey: String = "78af8f82a9b6b6f6dbf3a39e60f38983"
         
         switch self {
-            case .fetchUpcoming, .fetchPopular, .fetchNowPlaying:
+            case .fetchToprated, .fetchUpcoming, .fetchPopular, .fetchNowPlaying:
                 return .requestParameters(parameters: ["api_key": apiKey], encoding: URLEncoding.queryString)
         case let .fetchMovie(movieId):
             return .requestParameters(parameters: ["movie_id": movieId, "api_key": apiKey], encoding: URLEncoding.queryString)

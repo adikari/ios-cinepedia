@@ -18,7 +18,7 @@ class LatestMoviesInteractor : LatestMoviesBusinessLogic {
     var moviesWorker = MoviesWorker(moviesStore: MoviesApiStore())
     
     func fetchLatestMovies(request: LatestMovies.Request) {
-        moviesWorker.fetchPopularMovies() { movies in
+        moviesWorker.fetchUpcomingMovies() { movies in
             let response = LatestMovies.Response(movies: movies)
             
             self.presenter?.displayLatestMovies(response: response)

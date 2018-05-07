@@ -23,6 +23,7 @@ class PopularMoviesViewController: UIViewController, PopularMoviesViewDisplayLog
         didSet {
             pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
             pagerView.automaticSlidingInterval = 10.0
+            pagerView.isInfinite = true
         }
     }
 
@@ -70,6 +71,9 @@ class PopularMoviesViewController: UIViewController, PopularMoviesViewDisplayLog
         movies = viewModel.movies
         pagerView.reloadData()
     }
+}
+
+extension PopularMoviesViewController {
     
     public func numberOfItems(in pagerView: FSPagerView) -> Int {
         return movies.count

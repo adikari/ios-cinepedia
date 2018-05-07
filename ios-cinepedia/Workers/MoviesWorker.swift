@@ -39,5 +39,13 @@ class MoviesWorker {
             }
         }
     }
+    
+    func fetchTopratedMovies(completionHandler: @escaping([Movie]) -> Void) {
+        moviesStore.fetchToprated { movies, error in
+            DispatchQueue.main.async {
+                completionHandler(movies)
+            }
+        }
+    }
 }
 
