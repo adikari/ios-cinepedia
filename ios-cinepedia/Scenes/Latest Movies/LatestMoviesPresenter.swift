@@ -24,6 +24,7 @@ class LatestMoviesPresenter: LatestMoviesPresentationLogic {
         for movie in movies {
             if let imageUrl = movie.image() {
                 let latestMovie = LatestMovies.ViewModel.Movie(
+                    id: movie.id,
                     imageUrl: imageUrl,
                     title: movie.title,
                     rating: movie.rating.description

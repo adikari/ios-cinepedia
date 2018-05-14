@@ -12,15 +12,20 @@ protocol LatestMoviesBusinessLogic {
     func fetchLatestMovies(request: LatestMovies.Request)
 }
 
-class LatestMoviesInteractor : LatestMoviesBusinessLogic {
-    
+protocol LatestMoviesDataStore {
+    var movies: [Movie]? { get }
+}
+
+class LatestMoviesInteractor : LatestMoviesBusinessLogic, LatestMoviesDataStore {
     var presenter: LatestMoviesPresentationLogic?
     var moviesWorker = MoviesWorker(moviesStore: MoviesApiStore())
+    var movies: [Movie]?
     
     func fetchLatestMovies(request: LatestMovies.Request) {
         moviesWorker.fetchUpcomingMovies() { movies in
+            self.movies = movies
             let response = LatestMovies.Response(movies: movies)
-            
+
             self.presenter?.displayLatestMovies(response: response)
         }
     }

@@ -25,6 +25,7 @@ enum LatestMovies
     {
         struct Movie
         {
+            var id: Int
             var imageUrl: String
             var title: String
             var rating: String

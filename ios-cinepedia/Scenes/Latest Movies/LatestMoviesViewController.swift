@@ -11,12 +11,14 @@ import FSPagerView
 
 protocol LatestMoviesViewDisplayLogic: class {
     func displayLatestMovies(viewModel: LatestMovies.ViewModel)
+    func displayMovieDetail(movie: LatestMovies.ViewModel.Movie)
 }
 
 class LatestMoviesViewController: UIViewController, LatestMoviesViewDisplayLogic, FSPagerViewDataSource, FSPagerViewDelegate {
 
     var interactor: LatestMoviesBusinessLogic?
     var movies: [LatestMovies.ViewModel.Movie] = []
+    var router: (LatestMoviesDataPassing & LatestMoviesRouterLogic)?
     
 
     @IBOutlet weak var pagerView: FSPagerView! {
@@ -49,16 +51,20 @@ class LatestMoviesViewController: UIViewController, LatestMoviesViewDisplayLogic
         super.init(coder: aDecoder)
         setup()
     }
-    
+
     // MARK: Setup
     
     private func setup() {
         let interactor = LatestMoviesInteractor()
         let presenter = LatestMoviesPresenter()
+        let router = LatestMoviesRouter()
         
         self.interactor = interactor
+        self.router = router
         interactor.presenter = presenter
         presenter.viewController = self
+        router.viewController = self
+        router.dataStore = interactor
     }
     
     private func fetchLatestMovies() {
@@ -70,6 +76,10 @@ class LatestMoviesViewController: UIViewController, LatestMoviesViewDisplayLogic
     func displayLatestMovies(viewModel: LatestMovies.ViewModel) {
         movies = viewModel.movies
         pagerView.reloadData()
+    }
+    
+    func displayMovieDetail(movie: LatestMovies.ViewModel.Movie) {
+        router?.routeToMovieDetail(movie: movie)
     }
 }
 
@@ -87,5 +97,9 @@ extension LatestMoviesViewController {
         cell.textLabel?.text = movie.title
 
         return cell
+    }
+    
+    func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
+        displayMovieDetail(movie: movies[index])
     }
 }

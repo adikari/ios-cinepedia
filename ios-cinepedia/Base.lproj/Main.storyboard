@@ -37,7 +37,7 @@
                                 </connections>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KVs-hJ-81h" secondAttribute="trailing" id="3Pl-Yv-6qm"/>
                             <constraint firstItem="9Zy-6c-LcL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4EA-Ga-jG6"/>
@@ -51,6 +51,30 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Movie Detail View Controller-->
+        <scene sceneID="zLG-4r-uhc">
+            <objects>
+                <viewController storyboardIdentifier="MovieDetailViewController" id="rcZ-lb-yJM" customClass="MovieDetailViewController" customModule="ios_cinepedia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vHz-id-48a">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Movie detail view" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vni-yU-0hu">
+                                <rect key="frame" x="136" y="115" width="132" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="8Ae-hJ-iuh"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LKz-ps-7dA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2350" y="87"/>
         </scene>
         <!--Popular Movies View Controller-->
         <scene sceneID="y2k-5P-g5C">
@@ -96,18 +120,19 @@
                     </view>
                     <connections>
                         <outlet property="pagerView" destination="7sr-GZ-TXV" id="Vzt-tK-1qv"/>
+                        <segue destination="rcZ-lb-yJM" kind="show" identifier="ShowMovieDetailViewController" id="BpR-wj-NEg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dHd-Hg-C1A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1545" y="-123"/>
+            <point key="canvasLocation" x="1545" y="-512"/>
         </scene>
         <!--Latest Movies View Controller-->
         <scene sceneID="DbC-0n-H54">
             <objects>
                 <viewController storyboardIdentifier="LatestMoviesViewController" id="J7C-2l-py4" customClass="LatestMoviesViewController" customModule="ios_cinepedia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YF6-3b-9Kh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latest Movies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vba-va-ZEX">
@@ -117,7 +142,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A8B-Jr-S7Z" customClass="FSPagerView" customModule="FSPagerView">
-                                <rect key="frame" x="0.0" y="53" width="375" height="147"/>
+                                <rect key="frame" x="0.0" y="53" width="375" height="177"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -135,6 +160,7 @@
                     </view>
                     <connections>
                         <outlet property="pagerView" destination="A8B-Jr-S7Z" id="bHl-1k-Qct"/>
+                        <segue destination="rcZ-lb-yJM" kind="show" identifier="ShowMovieDetailViewController" id="Ict-JP-ydt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DuW-JG-oA5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -142,4 +168,7 @@
             <point key="canvasLocation" x="1545" y="345"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ict-JP-ydt"/>
+    </inferredMetricsTieBreakers>
 </document>
