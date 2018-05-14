@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jgH-BP-Hpg">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KVs-hJ-81h">
-                                <rect key="frame" x="0.0" y="20" width="375" height="250"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="n8B-c0-fct"/>
                                 </constraints>
@@ -28,7 +28,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Zy-6c-LcL">
-                                <rect key="frame" x="0.0" y="270" width="375" height="250"/>
+                                <rect key="frame" x="0.0" y="314" width="375" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="Hae-uM-hm0"/>
                                 </constraints>
@@ -48,16 +48,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="zRo-f8-rqm"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="972" y="33.733133433283363"/>
         </scene>
         <!--Movie Detail View Controller-->
         <scene sceneID="zLG-4r-uhc">
             <objects>
                 <viewController storyboardIdentifier="MovieDetailViewController" id="rcZ-lb-yJM" customClass="MovieDetailViewController" customModule="ios_cinepedia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vHz-id-48a">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Movie detail view" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vni-yU-0hu">
@@ -74,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LKz-ps-7dA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2350" y="87"/>
+            <point key="canvasLocation" x="33" y="830"/>
         </scene>
         <!--Popular Movies View Controller-->
         <scene sceneID="y2k-5P-g5C">
@@ -120,12 +122,11 @@
                     </view>
                     <connections>
                         <outlet property="pagerView" destination="7sr-GZ-TXV" id="Vzt-tK-1qv"/>
-                        <segue destination="rcZ-lb-yJM" kind="show" identifier="ShowMovieDetailViewController" id="BpR-wj-NEg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dHd-Hg-C1A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1545" y="-512"/>
+            <point key="canvasLocation" x="1932" y="-323"/>
         </scene>
         <!--Latest Movies View Controller-->
         <scene sceneID="DbC-0n-H54">
@@ -160,15 +161,30 @@
                     </view>
                     <connections>
                         <outlet property="pagerView" destination="A8B-Jr-S7Z" id="bHl-1k-Qct"/>
-                        <segue destination="rcZ-lb-yJM" kind="show" identifier="ShowMovieDetailViewController" id="Ict-JP-ydt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DuW-JG-oA5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1545" y="345"/>
+            <point key="canvasLocation" x="1932" y="372"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FIX-RI-9nI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jgH-BP-Hpg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jd7-JF-pYd">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="WY0-Kj-cJV"/>
+                        <segue destination="rcZ-lb-yJM" kind="show" identifier="ShowMovieDetailViewController" id="85N-5U-SYe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="baA-AN-I4G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="33" y="34"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="Ict-JP-ydt"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -18,7 +18,7 @@ class LatestMoviesViewController: UIViewController, LatestMoviesViewDisplayLogic
 
     var interactor: LatestMoviesBusinessLogic?
     var movies: [LatestMovies.ViewModel.Movie] = []
-    var router: (LatestMoviesDataPassing & LatestMoviesRouterLogic)?
+    var router: (NSObjectProtocol & LatestMoviesDataPassing & LatestMoviesRouterLogic)?
     
 
     @IBOutlet weak var pagerView: FSPagerView! {
@@ -70,7 +70,7 @@ class LatestMoviesViewController: UIViewController, LatestMoviesViewDisplayLogic
     private func fetchLatestMovies() {
         interactor?.fetchLatestMovies(request: LatestMovies.Request())
     }
-    
+
     // MARK: Display Logic
     
     func displayLatestMovies(viewModel: LatestMovies.ViewModel) {
