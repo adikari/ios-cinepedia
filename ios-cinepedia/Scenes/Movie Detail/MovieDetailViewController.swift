@@ -14,12 +14,16 @@ protocol MovieDetailDisplayLogic {
 
 class MovieDetailViewController: UIViewController, MovieDetailDisplayLogic {
    
+    @IBOutlet weak var movieDetailView: MovieDetailView!
+    
     var presenter: MovieDetailPresentationLogic?
     var router: (NSObjectProtocol & MovieDetailRouterLogic & MovieDetailDataPassing)?
     var interactor: MovieDetailBusinessLogic?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fetchMovie()
     }
     
     // MARK: Object lifecycle
@@ -49,9 +53,17 @@ class MovieDetailViewController: UIViewController, MovieDetailDisplayLogic {
         router.dataStore = interactor
     }
     
+    private func fetchMovie() {
+        if let movieId = router?.dataStore?.movieId {
+            let request = MovieDetailModel.FetchMovieDetail.Request(movieId: movieId)
+            
+            interactor?.fetchMovieDetail(request: request)
+        }
+    }
+    
     // MARK: Display logic
     
     func displayMovie(viewModel: MovieDetailModel.FetchMovieDetail.ViewModel) {
-        
+        // movieId = viewModel.movie.id
     }
 }

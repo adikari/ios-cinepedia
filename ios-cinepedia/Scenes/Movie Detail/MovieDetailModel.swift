@@ -11,7 +11,7 @@ import Foundation
 enum MovieDetailModel {
     enum FetchMovieDetail {
         struct Request {
-            
+            var movieId: Int
         }
         
         struct Response {

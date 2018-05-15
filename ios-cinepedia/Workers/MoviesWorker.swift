@@ -8,6 +8,19 @@
 
 import Foundation
 
+protocol MoviesStoreProtocol {
+    func fetchNowPlaying(completionHandler: @escaping ([Movie], MovieStoreError?) -> Void)
+    func fetchPopular(completionHandler: @escaping ([Movie], MovieStoreError?) -> Void)
+    func fetchUpcoming(completionHandler: @escaping ([Movie], MovieStoreError?) -> Void)
+    func fetchMovie(movieId: Int, completionHandler: @escaping (Movie?, MovieStoreError?) -> Void)
+    func fetchToprated(completionHandler: @escaping ([Movie], MovieStoreError?) -> Void)
+}
+
+enum MovieStoreError: Equatable, Error {
+    case CannotFetch(String)
+    case CannotEncode(String)
+}
+
 class MoviesWorker {
     
     var moviesStore: MoviesStoreProtocol
@@ -47,5 +60,9 @@ class MoviesWorker {
             }
         }
     }
+    
+    // TODO: Move to MovieDetailWorker
+    func fetchMovieDetail(movieId: Int, completionHandler: @escaping(MovieDetail) -> Void) {
+        
+    }
 }
-

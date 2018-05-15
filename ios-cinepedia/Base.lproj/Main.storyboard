@@ -58,7 +58,7 @@
         <scene sceneID="zLG-4r-uhc">
             <objects>
                 <viewController storyboardIdentifier="MovieDetailViewController" id="rcZ-lb-yJM" customClass="MovieDetailViewController" customModule="ios_cinepedia" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vHz-id-48a">
+                    <view key="view" contentMode="scaleToFill" id="vHz-id-48a" customClass="MovieDetailView" customModule="ios_cinepedia" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -72,7 +72,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="8Ae-hJ-iuh"/>
+                        <connections>
+                            <outlet property="movieTitle" destination="vni-yU-0hu" id="Nsw-Cw-V7S"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="movieDetailView" destination="vHz-id-48a" id="Qb2-DE-Lqo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LKz-ps-7dA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
