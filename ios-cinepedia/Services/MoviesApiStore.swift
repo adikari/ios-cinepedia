@@ -10,7 +10,7 @@ import Foundation
 import Moya
 
 class MoviesApiStore: MoviesStoreProtocol {
-    
+
     let provider: MoyaProvider<MovieService>
     
     init() {
@@ -19,6 +19,9 @@ class MoviesApiStore: MoviesStoreProtocol {
     
     init(provider: MoyaProvider<MovieService>) {
         self.provider = provider
+    }
+    
+    func fetchMovieDetail(movieId: Int, completionHandler: @escaping (Movie, MovieStoreError) -> Void) {
     }
     
     func fetchNowPlaying(completionHandler: @escaping ([Movie], MovieStoreError?) -> Void) {
@@ -131,28 +134,16 @@ extension MovieService: TargetType {
     }
 
     var task: Task {
-        let apiKey: String = "78af8f82a9b6b6f6dbf3a39e60f38983"
-        
         switch self {
             case .fetchToprated, .fetchUpcoming, .fetchPopular, .fetchNowPlaying:
-                return .requestParameters(parameters: ["api_key": apiKey], encoding: URLEncoding.queryString)
+                return .requestParameters(parameters: ["api_key": Constants.API_KEY], encoding: URLEncoding.queryString)
         case let .fetchMovie(movieId):
-            return .requestParameters(parameters: ["movie_id": movieId, "api_key": apiKey], encoding: URLEncoding.queryString)
+            return .requestParameters(parameters: ["movie_id": movieId, "api_key": Constants.API_KEY], encoding: URLEncoding.queryString)
         }
     }
     
     var headers: [String : String]? {
         return [ "Content-type": "application/json" ]
-    }
-}
-
-private extension String {
-    var urlEscaped: String {
-        return addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
-    }
-    
-    var utf8Encoded: Data {
-        return data(using: .utf8)!
     }
 }
 

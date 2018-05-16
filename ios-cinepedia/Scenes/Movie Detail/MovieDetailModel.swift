@@ -15,7 +15,7 @@ enum MovieDetailModel {
         }
         
         struct Response {
-            
+            var movie: Movie?
         }
         
         struct ViewModel {

@@ -9,13 +9,23 @@
 import Foundation
 
 protocol MovieDetailPresentationLogic {
-    func fetchMovieDetail(response: MovieDetailModel.FetchMovieDetail.Response)
+    func displayMovie(response: MovieDetailModel.FetchMovieDetail.Response)
 }
 
 class MovieDetailPresenter: MovieDetailPresentationLogic {
     var viewController: MovieDetailViewController?
     
-    func fetchMovieDetail(response: MovieDetailModel.FetchMovieDetail.Response) {
-        
+    func displayMovie(response: MovieDetailModel.FetchMovieDetail.Response) {
+        if let fetchedMovie = response.movie {
+            let movie = MovieDetailModel.FetchMovieDetail.ViewModel.Movie(
+                id: fetchedMovie.id,
+                title: fetchedMovie.title,
+                description: fetchedMovie.description
+            )
+            
+            let viewModel = MovieDetailModel.FetchMovieDetail.ViewModel.init(movie: movie)
+            
+            viewController?.displayMovie(viewModel: viewModel)
+        }
     }
 }

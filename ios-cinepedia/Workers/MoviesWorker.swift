@@ -16,6 +16,7 @@ protocol MoviesStoreProtocol {
     func fetchToprated(completionHandler: @escaping ([Movie], MovieStoreError?) -> Void)
 }
 
+
 enum MovieStoreError: Equatable, Error {
     case CannotFetch(String)
     case CannotEncode(String)
@@ -61,8 +62,15 @@ class MoviesWorker {
         }
     }
     
-    // TODO: Move to MovieDetailWorker
-    func fetchMovieDetail(movieId: Int, completionHandler: @escaping(MovieDetail) -> Void) {
-        
+    func fetchMovie(movieId: Int, completionHandler: @escaping(Movie?) -> Void) {
+        moviesStore.fetchMovie(movieId: movieId) { movie, error in
+            DispatchQueue.main.async {
+                if let movie = movie {
+                    completionHandler(movie)
+                } else {
+                    completionHandler(nil)
+                }
+            }
+        }
     }
 }

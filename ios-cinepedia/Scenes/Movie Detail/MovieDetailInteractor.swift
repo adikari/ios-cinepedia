@@ -14,22 +14,22 @@ protocol MovieDetailBusinessLogic {
 
 protocol MovieDetailDataStore {
     var movieId: Int? { get set }
-    var movie: MovieDetail? { get }
+    var movie: Movie? { get }
 }
 
 class MovieDetailInteractor: MovieDetailDataStore, MovieDetailBusinessLogic {
-    var movie: MovieDetail?
+    var movie: Movie?
     var movieId: Int?
     
     var moviesWorker = MoviesWorker(moviesStore: MoviesApiStore())
     var presenter: MovieDetailPresentationLogic?
 
     func fetchMovieDetail(request: MovieDetailModel.FetchMovieDetail.Request) {
-        moviesWorker.fetchMovieDetail(movieId: request.movieId) { movie in
+        moviesWorker.fetchMovie(movieId: request.movieId) { movie in
             self.movie = movie
-            // let response = LatestMovies.Response(movies: movies)
+            let response = MovieDetailModel.FetchMovieDetail.Response(movie: movie)
             
-            // self.presenter?.displayLatestMovies(response: response)
+            self.presenter?.displayMovie(response: response)
         }
     }
 }
