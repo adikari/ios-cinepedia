@@ -14,11 +14,11 @@ protocol MovieDetailBusinessLogic {
 
 protocol MovieDetailDataStore {
     var movieId: Int? { get set }
-    var movie: Movie? { get }
+    var movie: MovieDetail? { get }
 }
 
 class MovieDetailInteractor: MovieDetailDataStore, MovieDetailBusinessLogic {
-    var movie: Movie?
+    var movie: MovieDetail?
     var movieId: Int?
     
     var moviesWorker = MoviesWorker(moviesStore: MoviesApiStore())

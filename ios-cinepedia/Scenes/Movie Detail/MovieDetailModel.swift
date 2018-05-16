@@ -15,7 +15,7 @@ enum MovieDetailModel {
         }
         
         struct Response {
-            var movie: Movie?
+            var movie: MovieDetail?
         }
         
         struct ViewModel {
@@ -24,6 +24,12 @@ enum MovieDetailModel {
                 var id: Int
                 var title: String
                 var description: String
+                var posterUrl: String?
+                var backdropUrl: String?
+                var runtime: String
+                var genres: String
+                var rating: String
+                var totalVotes: String
             }
             
             var movie: Movie

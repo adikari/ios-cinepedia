@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 struct Movie: Codable {
     var id: Int
     var title: String
@@ -16,7 +15,7 @@ struct Movie: Codable {
     var rating: Double
     var imageUrl: String?
     var releaseDate: String
-    
+
     func image(width: Int = 500, height: Int = 282) -> String? {
         if imageUrl != nil {
             return "https://image.tmdb.org/t/p/w\(width)_and_h\(height)_face" + imageUrl!
@@ -37,4 +36,5 @@ extension Movie {
         case releaseDate = "release_date"
     }
 }
+
 

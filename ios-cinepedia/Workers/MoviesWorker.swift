@@ -12,7 +12,7 @@ protocol MoviesStoreProtocol {
     func fetchNowPlaying(completionHandler: @escaping ([Movie], MovieStoreError?) -> Void)
     func fetchPopular(completionHandler: @escaping ([Movie], MovieStoreError?) -> Void)
     func fetchUpcoming(completionHandler: @escaping ([Movie], MovieStoreError?) -> Void)
-    func fetchMovie(movieId: Int, completionHandler: @escaping (Movie?, MovieStoreError?) -> Void)
+    func fetchMovie(movieId: Int, completionHandler: @escaping (MovieDetail?, MovieStoreError?) -> Void)
     func fetchToprated(completionHandler: @escaping ([Movie], MovieStoreError?) -> Void)
 }
 
@@ -62,7 +62,7 @@ class MoviesWorker {
         }
     }
     
-    func fetchMovie(movieId: Int, completionHandler: @escaping(Movie?) -> Void) {
+    func fetchMovie(movieId: Int, completionHandler: @escaping(MovieDetail?) -> Void) {
         moviesStore.fetchMovie(movieId: movieId) { movie, error in
             DispatchQueue.main.async {
                 if let movie = movie {

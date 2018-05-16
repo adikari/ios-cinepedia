@@ -48,12 +48,12 @@ class MoviesApiStore: MoviesStoreProtocol {
         }
     }
     
-    func fetchMovie(movieId: Int, completionHandler: @escaping (Movie?, MovieStoreError?) -> Void) {
+    func fetchMovie(movieId: Int, completionHandler: @escaping (MovieDetail?, MovieStoreError?) -> Void) {
         provider.request(.fetchMovie(movieId: movieId)) { result in
             switch result {
             case let .success(response):
                 do {
-                    let movie: Movie = try response.map(Movie.self)
+                    let movie: MovieDetail = try response.map(MovieDetail.self)
                     completionHandler(movie, nil)
                 } catch {
                     completionHandler(nil, MovieStoreError.CannotEncode(error.localizedDescription))
