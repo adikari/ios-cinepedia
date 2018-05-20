@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		13267E3309CD4E6003802FEC /* Pods_ios_cinepediaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D7825941F19EDECF1DC7407 /* Pods_ios_cinepediaTests.framework */; };
+		BB1D32FC20B1ADF000680276 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1D32FB20B1ADF000680276 /* DateExtension.swift */; };
 		BB3EB7CC20A06325002614C5 /* LatestMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3EB7CB20A06325002614C5 /* LatestMoviesViewController.swift */; };
 		BB3EB7CE20A06547002614C5 /* LatestMoviesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3EB7CD20A06547002614C5 /* LatestMoviesModel.swift */; };
 		BB3EB7D020A066D7002614C5 /* LatestMoviesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3EB7CF20A066D7002614C5 /* LatestMoviesInteractor.swift */; };
@@ -56,6 +57,7 @@
 		49475C62A989D4DFA55DDB5D /* Pods-ios-cinepedia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-cinepedia.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-cinepedia/Pods-ios-cinepedia.release.xcconfig"; sourceTree = "<group>"; };
 		9D7825941F19EDECF1DC7407 /* Pods_ios_cinepediaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_cinepediaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B098DF6C9F390B4C02277B01 /* Pods_ios_cinepedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_cinepedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB1D32FB20B1ADF000680276 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		BB3EB7CB20A06325002614C5 /* LatestMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestMoviesViewController.swift; sourceTree = "<group>"; };
 		BB3EB7CD20A06547002614C5 /* LatestMoviesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestMoviesModel.swift; sourceTree = "<group>"; };
 		BB3EB7CF20A066D7002614C5 /* LatestMoviesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestMoviesInteractor.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				BBCFA54F20AC3EC20043BFDA /* StringExtension.swift */,
+				BB1D32FB20B1ADF000680276 /* DateExtension.swift */,
 			);
 			name = Extensions;
 			path = "New Group";
@@ -486,6 +489,7 @@
 				BBD57B00209E7C370016ED96 /* ios_cinepedia.xcdatamodeld in Sources */,
 				BBCFA55420AC40EC0043BFDA /* Constant.swift in Sources */,
 				BBCA998720A9AFDA007EB7A6 /* MovieDetailPresenter.swift in Sources */,
+				BB1D32FC20B1ADF000680276 /* DateExtension.swift in Sources */,
 				BBCB2BF920AAFF1500F50CD8 /* MovieDetailView.swift in Sources */,
 				BBCA998520A9AE8E007EB7A6 /* MovieDetailModel.swift in Sources */,
 				BBD57B38209EF9C10016ED96 /* PopularMoviesInteractor.swift in Sources */,

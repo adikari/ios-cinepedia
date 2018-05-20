@@ -13,7 +13,7 @@ struct Genre: Codable {
     var name: String
 }
 
-struct MovieDetail: Codable {
+struct MovieDetail {
     var id: Int
     var title: String
     var description: String
@@ -21,9 +21,10 @@ struct MovieDetail: Codable {
     var totalVotes: Int
     var imageUrl: String?
     var backdropUrl: String?
-    var releaseDate: String
+    var releaseDate: Date
     var genres: [Genre]
     var runtime: Int
+    var status: String
     
     func backdrop(width: Int = 500, height: Int = 282) -> String? {
         if let url = backdropUrl {
@@ -40,11 +41,8 @@ struct MovieDetail: Codable {
         
         return nil
     }
-}
-
-extension MovieDetail {
-    enum CodingKeys: String, CodingKey
-    {
+    
+    enum CodingKeys: String, CodingKey {
         case id
         case title
         case description = "overview"
@@ -55,5 +53,28 @@ extension MovieDetail {
         case totalVotes = "vote_count"
         case genres
         case runtime
+        case status
     }
+}
+
+extension MovieDetail: Decodable {
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        
+        id = try values.decode(Int.self, forKey: .id)
+        title = try values.decode(String.self, forKey: .title)
+        description = try values.decode(String.self, forKey: .description)
+        rating = try values.decode(Double.self, forKey: .rating)
+        imageUrl = try values.decode(String.self, forKey: .imageUrl)
+        backdropUrl = try values.decode(String.self, forKey: .backdropUrl)
+        totalVotes = try values.decode(Int.self, forKey: .totalVotes)
+        genres = try values.decode([Genre].self, forKey: .genres)
+        runtime = try values.decode(Int.self, forKey: .runtime)
+        status = try values.decode(String.self, forKey: .status)
+        
+        let date = try values.decode(String.self, forKey: .releaseDate)
+        releaseDate = date.toDate
+    }
+   
 }

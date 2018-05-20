@@ -28,8 +28,9 @@ enum MovieDetailModel {
                 var backdropUrl: String?
                 var runtime: String
                 var genres: String
+                var year: String
+                var status: String
                 var rating: String
-                var totalVotes: String
             }
             
             var movie: Movie

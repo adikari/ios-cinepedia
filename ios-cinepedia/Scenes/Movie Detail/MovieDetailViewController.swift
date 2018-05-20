@@ -64,6 +64,6 @@ class MovieDetailViewController: UIViewController, MovieDetailDisplayLogic {
     // MARK: Display logic
     
     func displayMovie(viewModel: MovieDetailModel.FetchMovieDetail.ViewModel) {
-        // movieId = viewModel.movie.id
+        movieDetailView.initialize(movie: viewModel.movie)
     }
 }

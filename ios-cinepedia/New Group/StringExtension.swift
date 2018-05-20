@@ -16,4 +16,10 @@ extension String {
     var utf8Encoded: Data {
         return data(using: .utf8)!
     }
+    
+    var toDate: Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY-MM-dd"
+        return dateFormatter.date(from: self)!
+    }
 }

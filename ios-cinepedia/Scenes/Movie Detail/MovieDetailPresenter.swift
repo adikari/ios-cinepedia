@@ -19,7 +19,7 @@ class MovieDetailPresenter: MovieDetailPresentationLogic {
         if let fetchedMovie = response.movie {
             
             let tuple = minutesToHoursMinutes(minutes: fetchedMovie.runtime)
-
+            
             let movie = MovieDetailModel.FetchMovieDetail.ViewModel.Movie(
                 id: fetchedMovie.id,
                 title: fetchedMovie.title,
@@ -27,9 +27,10 @@ class MovieDetailPresenter: MovieDetailPresentationLogic {
                 posterUrl: fetchedMovie.poster(),
                 backdropUrl: fetchedMovie.backdrop(),
                 runtime: "\(tuple.hours)H \(tuple.minutes)M",
-                genres: fetchedMovie.genres.map { $0.name }.description,
-                rating: fetchedMovie.rating.description,
-                totalVotes: fetchedMovie.totalVotes.description
+                genres: fetchedMovie.genres.map { $0.name }.joined(separator: ", "),
+                year: fetchedMovie.releaseDate.year,
+                status: fetchedMovie.status,
+                rating: fetchedMovie.rating.description
             )
             
             let viewModel = MovieDetailModel.FetchMovieDetail.ViewModel.init(movie: movie)
