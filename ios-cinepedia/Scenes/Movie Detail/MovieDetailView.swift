@@ -16,6 +16,7 @@ class MovieDetailView: UIView {
     @IBOutlet weak var rating: UILabel!
     @IBOutlet weak var runtime: UILabel!
     @IBOutlet weak var genre: UILabel!
+    @IBOutlet weak var desc: UILabel!
 
     func initialize(movie: MovieDetailModel.FetchMovieDetail.ViewModel.Movie) {
         movieTitle.text = movie.title
@@ -23,6 +24,7 @@ class MovieDetailView: UIView {
         runtime.text = movie.runtime
         genre.text = movie.genres
         rating.text = movie.rating
+        desc.text = movie.description
         
         if let imageUrl = movie.backdropUrl {
             movieImage.kf.indicatorType = .activity

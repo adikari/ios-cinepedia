@@ -63,71 +63,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="buU-bR-jif">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="buU-bR-jif">
                                 <rect key="frame" x="0.0" y="20" width="375" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="9QJ-zY-qDe"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                </userDefinedRuntimeAttributes>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vni-yU-0hu">
+                                <rect key="frame" x="16" y="245" width="343" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ydj-De-uJt">
-                                <rect key="frame" x="16" y="245" width="343" height="50"/>
+                                <rect key="frame" x="16" y="282" width="343" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAL-As-DoX">
-                                        <rect key="frame" x="0.0" y="0.0" width="183.5" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="179" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uMZ-Cq-hkH">
-                                        <rect key="frame" x="191.5" y="0.0" width="65" height="50"/>
+                                        <rect key="frame" x="187" y="0.0" width="64" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTm-UM-CQ1">
-                                        <rect key="frame" x="264.5" y="0.0" width="47.5" height="50"/>
+                                        <rect key="frame" x="259" y="0.0" width="50" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="biC-Fb-uvN">
-                                        <rect key="frame" x="320" y="0.0" width="23" height="50"/>
+                                        <rect key="frame" x="317" y="0.0" width="26" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vni-yU-0hu">
-                                <rect key="frame" x="16" y="236" width="343" height="0.0"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYY-2E-nuv">
+                                <rect key="frame" x="16" y="348" width="343" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="vni-yU-0hu" firstAttribute="top" secondItem="buU-bR-jif" secondAttribute="bottom" constant="16" id="Dah-sj-om9"/>
+                            <constraint firstItem="vni-yU-0hu" firstAttribute="top" secondItem="buU-bR-jif" secondAttribute="bottom" constant="25" id="Bgt-Ia-Cz6"/>
                             <constraint firstItem="ydj-De-uJt" firstAttribute="leading" secondItem="8Ae-hJ-iuh" secondAttribute="leading" constant="16" id="HDj-kS-TlO"/>
                             <constraint firstItem="8Ae-hJ-iuh" firstAttribute="trailing" secondItem="buU-bR-jif" secondAttribute="trailing" id="Kyf-jt-O6V"/>
+                            <constraint firstItem="SYY-2E-nuv" firstAttribute="trailing" secondItem="ydj-De-uJt" secondAttribute="trailing" id="VqL-W4-eef"/>
+                            <constraint firstItem="SYY-2E-nuv" firstAttribute="leading" secondItem="ydj-De-uJt" secondAttribute="leading" id="YWy-cX-wda"/>
                             <constraint firstItem="vni-yU-0hu" firstAttribute="leading" secondItem="8Ae-hJ-iuh" secondAttribute="leading" constant="16" id="Z3O-hx-yvw"/>
                             <constraint firstItem="8Ae-hJ-iuh" firstAttribute="trailing" secondItem="vni-yU-0hu" secondAttribute="trailing" constant="16" id="cE7-nA-cCQ"/>
-                            <constraint firstItem="ydj-De-uJt" firstAttribute="top" secondItem="vni-yU-0hu" secondAttribute="bottom" constant="9" id="nbY-Lx-L5r"/>
+                            <constraint firstItem="SYY-2E-nuv" firstAttribute="top" secondItem="ydj-De-uJt" secondAttribute="bottom" constant="16" id="ecg-4f-ceP"/>
+                            <constraint firstItem="ydj-De-uJt" firstAttribute="top" secondItem="vni-yU-0hu" secondAttribute="bottom" constant="8" id="nbY-Lx-L5r"/>
                             <constraint firstItem="8Ae-hJ-iuh" firstAttribute="trailing" secondItem="ydj-De-uJt" secondAttribute="trailing" constant="16" id="vBg-kJ-4ht"/>
                             <constraint firstItem="buU-bR-jif" firstAttribute="leading" secondItem="8Ae-hJ-iuh" secondAttribute="leading" id="x1R-eo-Ae3"/>
                             <constraint firstItem="buU-bR-jif" firstAttribute="top" secondItem="8Ae-hJ-iuh" secondAttribute="top" id="yj3-hu-MNi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8Ae-hJ-iuh"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                        </userDefinedRuntimeAttributes>
                         <connections>
+                            <outlet property="desc" destination="SYY-2E-nuv" id="0yi-1c-ZQu"/>
                             <outlet property="genre" destination="biC-Fb-uvN" id="WXr-Uz-0ih"/>
                             <outlet property="movieImage" destination="buU-bR-jif" id="koT-4F-JWn"/>
                             <outlet property="movieTitle" destination="vni-yU-0hu" id="Nsw-Cw-V7S"/>
