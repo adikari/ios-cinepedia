@@ -93,6 +93,7 @@ extension LatestMoviesViewController {
         
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
         
+        cell.imageView?.kf.indicatorType = .activity
         cell.imageView?.kf.setImage(with: URL(string: movie.imageUrl))
         cell.textLabel?.text = movie.title
 

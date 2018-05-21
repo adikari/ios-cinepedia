@@ -8,6 +8,9 @@ PODS:
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
   - Nimble (7.0.3)
+  - NVActivityIndicatorView (4.2.0):
+    - NVActivityIndicatorView/Presenter (= 4.2.0)
+  - NVActivityIndicatorView/Presenter (4.2.0)
   - OHHTTPStubs/Core (6.1.0)
   - OHHTTPStubs/Default (6.1.0):
     - OHHTTPStubs/Core
@@ -29,6 +32,7 @@ DEPENDENCIES:
   - Kingfisher (~> 4.0)
   - Moya (~> 11.0)
   - Nimble
+  - NVActivityIndicatorView
   - OHHTTPStubs/Swift
   - Quick
 
@@ -39,6 +43,7 @@ SPEC REPOS:
     - Kingfisher
     - Moya
     - Nimble
+    - NVActivityIndicatorView
     - OHHTTPStubs
     - Quick
     - Result
@@ -49,10 +54,11 @@ SPEC CHECKSUMS:
   Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
   Moya: a725035953bc1c0eb1be505ab903984501d82440
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
+  NVActivityIndicatorView: 75c9634073e03b31d7e2748cd2417feab1206195
   OHHTTPStubs: 1e21c7d2c084b8153fc53d48400d8919d2d432d0
   Quick: 03278013f71aa05fe9ecabc94fbcc6835f1ee76f
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
 
-PODFILE CHECKSUM: 80bb94138cb0f0671fbe30369fbeee317a5d4c83
+PODFILE CHECKSUM: 9286ad0164f31410702c628b52c3963e9d441371
 
 COCOAPODS: 1.5.0

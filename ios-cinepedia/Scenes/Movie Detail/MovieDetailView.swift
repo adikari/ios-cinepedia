@@ -25,6 +25,7 @@ class MovieDetailView: UIView {
         rating.text = movie.rating
         
         if let imageUrl = movie.backdropUrl {
+            movieImage.kf.indicatorType = .activity
             movieImage.kf.setImage(with: URL(string: imageUrl))
         }
     }

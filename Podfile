@@ -8,6 +8,7 @@ target 'ios-cinepedia' do
   pod 'Moya', '~> 11.0'
   pod 'Kingfisher', '~> 4.0'
   pod 'FSPagerView'
+  pod 'NVActivityIndicatorView'
 
   target 'ios-cinepediaTests' do
       inherit! :search_paths

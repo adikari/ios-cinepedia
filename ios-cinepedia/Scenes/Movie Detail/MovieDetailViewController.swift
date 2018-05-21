@@ -7,18 +7,21 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 protocol MovieDetailDisplayLogic {
     func displayMovie(viewModel: MovieDetailModel.FetchMovieDetail.ViewModel)
 }
 
-class MovieDetailViewController: UIViewController, MovieDetailDisplayLogic {
+class MovieDetailViewController: UIViewController, MovieDetailDisplayLogic, NVActivityIndicatorViewable {
    
     @IBOutlet weak var movieDetailView: MovieDetailView!
     
     var presenter: MovieDetailPresentationLogic?
     var router: (NSObjectProtocol & MovieDetailRouterLogic & MovieDetailDataPassing)?
     var interactor: MovieDetailBusinessLogic?
+    
+    private var indicator: NVActivityIndicatorView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +60,7 @@ class MovieDetailViewController: UIViewController, MovieDetailDisplayLogic {
         if let movieId = router?.dataStore?.movieId {
             let request = MovieDetailModel.FetchMovieDetail.Request(movieId: movieId)
             
+            startAnimating(type: .ballScaleMultiple)
             interactor?.fetchMovieDetail(request: request)
         }
     }
@@ -64,6 +68,7 @@ class MovieDetailViewController: UIViewController, MovieDetailDisplayLogic {
     // MARK: Display logic
     
     func displayMovie(viewModel: MovieDetailModel.FetchMovieDetail.ViewModel) {
+        stopAnimating()
         movieDetailView.initialize(movie: viewModel.movie)
     }
 }
