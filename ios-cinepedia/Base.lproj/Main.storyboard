@@ -110,9 +110,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="nCO-fj-5PJ">
+                                <rect key="frame" x="16" y="384.5" width="193" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0H-Tr-kZz">
+                                        <rect key="frame" x="0.0" y="0.0" width="69" height="30"/>
+                                        <state key="normal" title="View Cast"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Crf-HG-iHL">
+                                        <rect key="frame" x="99" y="0.0" width="94" height="30"/>
+                                        <state key="normal" title="View Reviews"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="nCO-fj-5PJ" firstAttribute="leading" secondItem="8Ae-hJ-iuh" secondAttribute="leading" constant="16" id="5Ma-2i-koS"/>
                             <constraint firstItem="vni-yU-0hu" firstAttribute="top" secondItem="buU-bR-jif" secondAttribute="bottom" constant="25" id="Bgt-Ia-Cz6"/>
                             <constraint firstItem="ydj-De-uJt" firstAttribute="leading" secondItem="8Ae-hJ-iuh" secondAttribute="leading" constant="16" id="HDj-kS-TlO"/>
                             <constraint firstItem="8Ae-hJ-iuh" firstAttribute="trailing" secondItem="buU-bR-jif" secondAttribute="trailing" id="Kyf-jt-O6V"/>
@@ -121,6 +135,7 @@
                             <constraint firstItem="vni-yU-0hu" firstAttribute="leading" secondItem="8Ae-hJ-iuh" secondAttribute="leading" constant="16" id="Z3O-hx-yvw"/>
                             <constraint firstItem="8Ae-hJ-iuh" firstAttribute="trailing" secondItem="vni-yU-0hu" secondAttribute="trailing" constant="16" id="cE7-nA-cCQ"/>
                             <constraint firstItem="SYY-2E-nuv" firstAttribute="top" secondItem="ydj-De-uJt" secondAttribute="bottom" constant="16" id="ecg-4f-ceP"/>
+                            <constraint firstItem="nCO-fj-5PJ" firstAttribute="top" secondItem="SYY-2E-nuv" secondAttribute="bottom" constant="16" id="kN6-qm-ff1"/>
                             <constraint firstItem="ydj-De-uJt" firstAttribute="top" secondItem="vni-yU-0hu" secondAttribute="bottom" constant="8" id="nbY-Lx-L5r"/>
                             <constraint firstItem="8Ae-hJ-iuh" firstAttribute="trailing" secondItem="ydj-De-uJt" secondAttribute="trailing" constant="16" id="vBg-kJ-4ht"/>
                             <constraint firstItem="buU-bR-jif" firstAttribute="leading" secondItem="8Ae-hJ-iuh" secondAttribute="leading" id="x1R-eo-Ae3"/>
