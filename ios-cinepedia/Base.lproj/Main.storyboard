@@ -55,6 +55,30 @@
             </objects>
             <point key="canvasLocation" x="972" y="33.733133433283363"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="G2a-rl-Jcg">
+            <objects>
+                <viewController id="DVi-JJ-u8t" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tDH-4L-Xxm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Viewing cast" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07t-eV-8nB">
+                                <rect key="frame" x="165" y="314" width="97" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="B4a-Jr-WXW"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XyK-bG-Gr9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="33" y="1545"/>
+        </scene>
         <!--Movie Detail View Controller-->
         <scene sceneID="zLG-4r-uhc">
             <objects>
@@ -154,11 +178,37 @@
                     </view>
                     <connections>
                         <outlet property="movieDetailView" destination="vHz-id-48a" id="Qb2-DE-Lqo"/>
+                        <segue destination="DVi-JJ-u8t" kind="show" identifier="ShowCastsViewController" id="Xie-5e-wNT"/>
+                        <segue destination="sVo-Sk-eJp" kind="show" identifier="ShowReviewsViewController" id="JFt-9Y-ynd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LKz-ps-7dA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="33" y="830"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="dbQ-DM-fcV">
+            <objects>
+                <viewController id="sVo-Sk-eJp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kqp-UD-7Mt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="View Revies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbL-xz-HIU">
+                                <rect key="frame" x="121" y="335" width="92" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="fmI-uc-hHu"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k7L-WP-J47" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="751" y="830"/>
         </scene>
         <!--Popular Movies View Controller-->
         <scene sceneID="y2k-5P-g5C">
