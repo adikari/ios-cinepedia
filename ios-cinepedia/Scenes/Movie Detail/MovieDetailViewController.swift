@@ -60,11 +60,11 @@ class MovieDetailViewController: UIViewController, MovieDetailDisplayLogic, NVAc
     // MARK: Actions
     
     @IBAction func displayReviews(_ sender: Any) {
-        performSegue(withIdentifier: "reviews", sender: sender)
+        performSegue(withIdentifier: "Reviews", sender: sender)
     }
     
     @IBAction func displayCasts(_ sender: Any) {
-        performSegue(withIdentifier: "casts", sender: sender)
+        performSegue(withIdentifier: "Casts", sender: sender)
     }
     
     private func fetchMovie() {

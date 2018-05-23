@@ -188,8 +188,8 @@
                     <navigationItem key="navigationItem" id="o7o-92-0Y1"/>
                     <connections>
                         <outlet property="movieDetailView" destination="vHz-id-48a" id="Qb2-DE-Lqo"/>
-                        <segue destination="sVo-Sk-eJp" kind="show" identifier="reviews" id="o5p-QB-a8B"/>
-                        <segue destination="DVi-JJ-u8t" kind="show" identifier="casts" id="ovp-da-z2R"/>
+                        <segue destination="sVo-Sk-eJp" kind="show" identifier="Reviews" id="o5p-QB-a8B"/>
+                        <segue destination="DVi-JJ-u8t" kind="show" identifier="Casts" id="ovp-da-z2R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LKz-ps-7dA" userLabel="First Responder" sceneMemberID="firstResponder"/>

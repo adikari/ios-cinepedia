@@ -9,8 +9,9 @@
 import Foundation
 import UIKit
 
-protocol MovieDetailRouterLogic {
+@objc protocol MovieDetailRouterLogic {
     func routeToReviews(segue: UIStoryboardSegue?)
+    func routeToCasts(segue: UIStoryboardSegue?)
 }
 
 protocol MovieDetailDataPassing {
