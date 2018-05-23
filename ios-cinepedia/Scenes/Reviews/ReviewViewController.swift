@@ -1,5 +1,5 @@
 //
-//  CastsViewController.swift
+//  ReviewViewController.swift
 //  ios-cinepedia
 //
 //  Created by subash adhikari on 22/5/18.
@@ -51,11 +51,14 @@ class ReviewViewController: UIViewController, ReviewDisplayLogic {
         router.dataStore = interactor
     }
     
-    func displayReview(viewModel: ReviewModel.FetchReview.ViewModel) {
-        
+    private func fetchReview() {
+        if let movieId = router?.dataStore?.movieId {
+            let request = ReviewModel.FetchReview.Request(movieId: movieId)
+            interactor?.fetchReview(request: request)
+        }
     }
     
-    private func fetchReview() {
+    func displayReview(viewModel: ReviewModel.FetchReview.ViewModel) {
         
     }
 }

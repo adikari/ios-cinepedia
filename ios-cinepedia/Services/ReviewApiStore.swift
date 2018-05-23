@@ -18,6 +18,19 @@ class ReviewApiStore: ReviewStoreProtocol {
     }
     
     func fetchReviews(movieId: Int, completionHandler: @escaping ([Review], ReviewStoreError?) -> Void) {
+        provider.request(.fetchReviews(movieId: movieId)) { result in
+            switch result {
+            case let .success(response):
+                do {
+                    let reviews: [Review] = try response.map([Review].self, atKeyPath: "results", using: JSONDecoder(), failsOnEmptyData: false)
+                    completionHandler(reviews, nil)
+                } catch {
+                    completionHandler([], ReviewStoreError.CannotEncode(error.localizedDescription))
+                }
+            case let .failure(error):
+                completionHandler([], ReviewStoreError.CannotFetch(error.localizedDescription))
+            }
+        }
     }
 
 }

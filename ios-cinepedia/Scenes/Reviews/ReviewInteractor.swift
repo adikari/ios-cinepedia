@@ -1,5 +1,5 @@
 //
-//  CastsInteractor.swift
+//  ReviewInteractor.swift
 //  ios-cinepedia
 //
 //  Created by subash adhikari on 22/5/18.
@@ -14,17 +14,23 @@ protocol ReviewBusinessLogic {
 
 protocol ReviewDataStore {
     var movieId: Int? { get set }
-    var review: [Cast]? { get }
+    var reviews: [Review]? { get }
 }
 
 class ReviewInteractor: ReviewDataStore, ReviewBusinessLogic {
-    var review: [Cast]?
+    var reviews: [Review]?
     var movieId: Int?
     
-    var reviewWorker = CastWorker(castStore: CastApiStore())
+    var reviewWorker = ReviewWorker(reviewStore: ReviewApiStore())
     var presenter: ReviewPresentationLogic?
     
     func fetchReview(request: ReviewModel.FetchReview.Request) {
+        reviewWorker.fetchReviews(movieId: request.movieId) { reviews in
+            self.reviews = reviews
+            
+            let response = ReviewModel.FetchReview.Response(reviews: reviews)
+            self.presenter?.displayReview(response: response)
+        }
     }
 }
 

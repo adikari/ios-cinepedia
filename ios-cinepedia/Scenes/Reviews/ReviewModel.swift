@@ -11,13 +11,17 @@ import Foundation
 enum ReviewModel {
     enum FetchReview {
         struct Request {
+            var movieId: Int
         }
         
         struct Response {
+            var reviews: [Review]
         }
         
         struct ViewModel {
             struct Review {
+                var author: String
+                var content: String
             }
             
             var reviews: [Review]

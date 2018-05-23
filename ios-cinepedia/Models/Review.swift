@@ -8,8 +8,11 @@
 
 import Foundation
 
-struct Review {
-    
+struct Review: Codable {
+    var id: String
+    var author: String
+    var content: String
+    var url: String
 }
 
 
