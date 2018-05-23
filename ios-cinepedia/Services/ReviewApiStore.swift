@@ -9,38 +9,38 @@
 import Foundation
 import Moya
 
-class CastApiStore: CastStoreProtocol {
+class ReviewApiStore: ReviewStoreProtocol {
     
-    let provider: MoyaProvider<CastService>
+    let provider: MoyaProvider<ReviewService>
     
     init() {
-        provider = MoyaProvider<CastService>()
+        provider = MoyaProvider<ReviewService>()
     }
     
-    func fetchCasts(movieId: Int, completionHandler: @escaping ([Cast], CastStoreError?) -> Void) {
+    func fetchReviews(movieId: Int, completionHandler: @escaping ([Review], ReviewStoreError?) -> Void) {
     }
 
 }
 
-enum CastService {
-    case fetchCasts(movieId: Int)
+enum ReviewService {
+    case fetchReviews(movieId: Int)
 }
 
-extension CastService: TargetType {
+extension ReviewService: TargetType {
     var baseURL: URL {
         return URL(string: "https://api.themoviedb.org/3/movie")!
     }
     
     var path: String {
         switch self {
-        case .fetchCasts(let movieId):
-            return "/\(movieId)/credits"
+        case .fetchReviews(let movieId):
+            return "/\(movieId)/reviews"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .fetchCasts:
+        case .fetchReviews:
             return .get
         }
     }
@@ -51,7 +51,7 @@ extension CastService: TargetType {
     
     var task: Task {
         switch self {
-        case let .fetchCasts(movieId):
+        case let .fetchReviews(movieId):
             return .requestParameters(parameters: ["movie_id": movieId, "api_key": Constants.API_KEY], encoding: URLEncoding.queryString)
         }
     }

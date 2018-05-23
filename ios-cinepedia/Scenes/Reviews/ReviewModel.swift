@@ -1,5 +1,5 @@
 //
-//  CastsModel.swift
+//  ReviewModel.swift
 //  ios-cinepedia
 //
 //  Created by subash adhikari on 22/5/18.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-enum CastsModel {
-    enum FetchCasts {
+enum ReviewModel {
+    enum FetchReview {
         struct Request {
         }
         
@@ -17,10 +17,10 @@ enum CastsModel {
         }
         
         struct ViewModel {
-            struct Cast {
+            struct Review {
             }
             
-            var casts: [Cast]
+            var reviews: [Review]
         }
     }
 }
