@@ -17,6 +17,7 @@ class MovieDetailViewController: UIViewController, MovieDetailDisplayLogic, NVAc
    
     @IBOutlet weak var movieDetailView: MovieDetailView!
     
+    var movie: MovieDetailModel.FetchMovieDetail.ViewModel.Movie?
     var presenter: MovieDetailPresentationLogic?
     var router: (NSObjectProtocol & MovieDetailRouterLogic & MovieDetailDataPassing)?
     var interactor: MovieDetailBusinessLogic?
@@ -56,6 +57,16 @@ class MovieDetailViewController: UIViewController, MovieDetailDisplayLogic, NVAc
         router.dataStore = interactor
     }
     
+    // MARK: Actions
+    
+    @IBAction func displayReviews(_ sender: Any) {
+        performSegue(withIdentifier: "reviews", sender: sender)
+    }
+    
+    @IBAction func displayCasts(_ sender: Any) {
+        performSegue(withIdentifier: "casts", sender: sender)
+    }
+    
     private func fetchMovie() {
         if let movieId = router?.dataStore?.movieId {
             let request = MovieDetailModel.FetchMovieDetail.Request(movieId: movieId)
@@ -65,10 +76,23 @@ class MovieDetailViewController: UIViewController, MovieDetailDisplayLogic, NVAc
         }
     }
     
+    // MARK: Router
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+    
     // MARK: Display logic
     
     func displayMovie(viewModel: MovieDetailModel.FetchMovieDetail.ViewModel) {
         stopAnimating()
+        
+        movie = viewModel.movie
         movieDetailView.initialize(movie: viewModel.movie)
     }
 }
