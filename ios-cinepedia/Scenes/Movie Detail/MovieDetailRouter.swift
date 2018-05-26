@@ -44,18 +44,32 @@ class MovieDetailRouter: NSObject, MovieDetailRouterLogic, MovieDetailDataPassin
     }
     
     func routeToCasts(segue: UIStoryboardSegue?) {
-        let destinationVC = viewController?.storyboard?.instantiateViewController(withIdentifier: "CastsViewController") as! CastsViewController
-        
-        // var destinationDS = destinationVC.router?.dataStore
-        // destinationDS?.movieId = movie.id
-        
-        // navigateToCasts(source: viewController!, destination: destinationVC)
+        if let segue = segue {
+            let destinationVC = segue.destination as! CastsViewController
+            
+            var destinationDS = destinationVC.router?.dataStore
+            
+            if let movieId = viewController?.movie?.id {
+                passDataToCasts(dataStore: &destinationDS!, movieId: movieId)
+            }
+        } else {
+            let destinationVC = viewController?.storyboard?.instantiateViewController(withIdentifier: "CastsViewController") as! CastsViewController
+            var destinationDS = destinationVC.router!.dataStore!
+            
+            if let movieId = viewController?.movie?.id {
+                passDataToCasts(dataStore: &destinationDS, movieId: movieId)
+                navigateToCasts(source: viewController!, destination: destinationVC)
+            }
+        }
     }
     
     func passDataToReview(dataStore: inout ReviewDataStore, movieId: Int) {
         dataStore.movieId = movieId
     }
     
+    func passDataToCasts(dataStore: inout CastsDataStore, movieId: Int) {
+        dataStore.movieId = movieId
+    }
     
     func navigateToReview(source: MovieDetailViewController, destination: ReviewViewController) {
         source.show(destination, sender: nil)

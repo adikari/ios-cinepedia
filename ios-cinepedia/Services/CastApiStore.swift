@@ -18,8 +18,21 @@ class CastApiStore: CastStoreProtocol {
     }
     
     func fetchCasts(movieId: Int, completionHandler: @escaping ([Cast], CastStoreError?) -> Void) {
+        provider.request(.fetchCasts(movieId: movieId)) { result in
+            switch result {
+            case let .success(response):
+                do {
+                    let casts: [Cast] = try response.map([Cast].self, atKeyPath: "cast", using: JSONDecoder(), failsOnEmptyData: false)
+                    
+                    completionHandler(casts, nil)
+                } catch {
+                    completionHandler([], CastStoreError.CannotEncode(error.localizedDescription))
+                }
+            case let .failure(error):
+                completionHandler([], CastStoreError.CannotFetch(error.localizedDescription))
+            }
+        }
     }
-
 }
 
 enum CastService {

@@ -11,13 +11,18 @@ import Foundation
 enum CastsModel {
     enum FetchCasts {
         struct Request {
+            var movieId: Int
         }
         
         struct Response {
+            var casts: [Cast]
         }
         
         struct ViewModel {
             struct Cast {
+                var name: String
+                var character: String
+                var imageUrl: String
             }
             
             var casts: [Cast]

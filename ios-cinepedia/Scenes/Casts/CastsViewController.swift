@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 protocol CastsDisplayLogic {
     func displayCasts(viewModel: CastsModel.FetchCasts.ViewModel)
 }
 
-class CastsViewController: UIViewController, CastsDisplayLogic {
+class CastsViewController: UIViewController, CastsDisplayLogic, NVActivityIndicatorViewable {
     
     var presenter: CastsPresentationLogic?
     var router: (NSObjectProtocol & CastsRouterLogic & CastsDataPassing)?
@@ -52,10 +53,14 @@ class CastsViewController: UIViewController, CastsDisplayLogic {
     }
     
     func displayCasts(viewModel: CastsModel.FetchCasts.ViewModel) {
-        
+        stopAnimating()
     }
     
     private func fetchCasts() {
-        
+        if let movieId = router?.dataStore?.movieId {
+            startAnimating(type: .ballScaleMultiple)
+            let request = CastsModel.FetchCasts.Request(movieId: movieId)
+            interactor?.fetchCasts(request: request)
+        }
     }
 }

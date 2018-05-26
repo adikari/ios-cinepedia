@@ -25,6 +25,12 @@ class CastsInteractor: CastsDataStore, CastsBusinessLogic {
     var presenter: CastsPresentationLogic?
     
     func fetchCasts(request: CastsModel.FetchCasts.Request) {
+        castsWorker.fetchCasts(movieId: request.movieId) { casts in
+            self.casts = casts
+            
+            let response = CastsModel.FetchCasts.Response(casts: casts)
+            self.presenter?.displayCasts(response: response)
+        }
     }
 }
 
