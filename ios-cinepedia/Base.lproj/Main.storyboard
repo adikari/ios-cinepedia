@@ -58,7 +58,7 @@
         <!--Casts-->
         <scene sceneID="G2a-rl-Jcg">
             <objects>
-                <viewController storyboardIdentifier="CastViewController" id="DVi-JJ-u8t" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CastsViewController" id="DVi-JJ-u8t" customClass="CastsViewController" customModule="ios_cinepedia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tDH-4L-Xxm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -188,8 +188,8 @@
                     <navigationItem key="navigationItem" id="o7o-92-0Y1"/>
                     <connections>
                         <outlet property="movieDetailView" destination="vHz-id-48a" id="Qb2-DE-Lqo"/>
-                        <segue destination="sVo-Sk-eJp" kind="show" identifier="Reviews" id="o5p-QB-a8B"/>
                         <segue destination="DVi-JJ-u8t" kind="show" identifier="Casts" id="ovp-da-z2R"/>
+                        <segue destination="5PA-3p-CqY" kind="show" identifier="Reviews" id="fNp-68-IwL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LKz-ps-7dA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -197,23 +197,29 @@
             <point key="canvasLocation" x="972" y="829.83508245877067"/>
         </scene>
         <!--Reviews-->
-        <scene sceneID="dbQ-DM-fcV">
+        <scene sceneID="Vbr-Xz-7JA">
             <objects>
-                <viewController storyboardIdentifier="ReviewViewController" id="sVo-Sk-eJp" sceneMemberID="viewController">
-                    <navigationBar key="view" contentMode="scaleToFill" id="dic-jz-CVA">
+                <viewController storyboardIdentifier="ReviewViewController" id="5PA-3p-CqY" customClass="ReviewViewController" customModule="ios_cinepedia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Hg-Vo-WfF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                        <items>
-                            <navigationItem title="Title" id="aoq-Ep-Q5W"/>
-                        </items>
-                    </navigationBar>
-                    <navigationItem key="navigationItem" title="Reviews" id="cFP-F5-4yX">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="UFJ-o8-6GG"/>
-                    </navigationItem>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqD-En-Wnk">
+                                <rect key="frame" x="193" y="381" width="58" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="pOw-UJ-cmi"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Reviews" id="1De-Ki-aYa"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="k7L-WP-J47" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Na-rj-xwZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1762" y="840"/>
+            <point key="canvasLocation" x="1735" y="830"/>
         </scene>
         <!--Popular Movies View Controller-->
         <scene sceneID="y2k-5P-g5C">

@@ -23,12 +23,24 @@ class MovieDetailRouter: NSObject, MovieDetailRouterLogic, MovieDetailDataPassin
     var dataStore: MovieDetailDataStore?
     
     func routeToReviews(segue: UIStoryboardSegue?) {
-        let destinationVC = viewController?.storyboard?.instantiateViewController(withIdentifier: "ReviewViewController") as! ReviewViewController
+        if let segue = segue {
+            let destinationVC = segue.destination as! ReviewViewController
+            
+            var destinationDS = destinationVC.router?.dataStore
+
+            if let movieId = viewController?.movie?.id {
+                passDataToReview(dataStore: &destinationDS!, movieId: movieId)
+            }
+        } else {
+            let destinationVC = viewController?.storyboard?.instantiateViewController(withIdentifier: "ReviewViewController") as! ReviewViewController
+            var destinationDS = destinationVC.router!.dataStore!
+            
+            if let movieId = viewController?.movie?.id {
+                passDataToReview(dataStore: &destinationDS, movieId: movieId)
+                navigateToReview(source: viewController!, destination: destinationVC)
+            }
+        }
         
-        // var destinationDS = destinationVC.router?.dataStore
-        // destinationDS?.movieId = movie.id
-        
-        navigateToReview(source: viewController!, destination: destinationVC)
     }
     
     func routeToCasts(segue: UIStoryboardSegue?) {
@@ -37,8 +49,13 @@ class MovieDetailRouter: NSObject, MovieDetailRouterLogic, MovieDetailDataPassin
         // var destinationDS = destinationVC.router?.dataStore
         // destinationDS?.movieId = movie.id
         
-        navigateToCasts(source: viewController!, destination: destinationVC)
+        // navigateToCasts(source: viewController!, destination: destinationVC)
     }
+    
+    func passDataToReview(dataStore: inout ReviewDataStore, movieId: Int) {
+        dataStore.movieId = movieId
+    }
+    
     
     func navigateToReview(source: MovieDetailViewController, destination: ReviewViewController) {
         source.show(destination, sender: nil)

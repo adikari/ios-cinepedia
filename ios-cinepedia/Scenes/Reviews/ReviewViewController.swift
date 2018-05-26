@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 protocol ReviewDisplayLogic {
     func displayReview(viewModel: ReviewModel.FetchReview.ViewModel)
 }
 
-class ReviewViewController: UIViewController, ReviewDisplayLogic {
+class ReviewViewController: UIViewController, ReviewDisplayLogic, NVActivityIndicatorViewable {
     
     var presenter: ReviewPresentationLogic?
     var router: (NSObjectProtocol & ReviewRouterLogic & ReviewDataPassing)?
@@ -53,12 +54,13 @@ class ReviewViewController: UIViewController, ReviewDisplayLogic {
     
     private func fetchReview() {
         if let movieId = router?.dataStore?.movieId {
+            startAnimating(type: .ballScaleMultiple)
             let request = ReviewModel.FetchReview.Request(movieId: movieId)
             interactor?.fetchReview(request: request)
         }
     }
     
     func displayReview(viewModel: ReviewModel.FetchReview.ViewModel) {
-        
+        stopAnimating()
     }
 }
