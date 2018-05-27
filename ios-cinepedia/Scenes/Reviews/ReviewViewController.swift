@@ -22,12 +22,15 @@ class ReviewViewController: UIViewController, ReviewDisplayLogic, NVActivityIndi
     
     @IBOutlet weak var reviewListTableView: UITableView!
     
+    // MARK: - View lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         reviewListTableView.delegate = self
         reviewListTableView.dataSource = self
-        
+        reviewListTableView.tableFooterView = UIView()
+
         fetchReview()
     }
     
@@ -58,6 +61,8 @@ class ReviewViewController: UIViewController, ReviewDisplayLogic, NVActivityIndi
         router.dataStore = interactor
     }
     
+    // MARK: Fetch reviews
+    
     private func fetchReview() {
         if let movieId = router?.dataStore?.movieId {
             startAnimating(type: .ballScaleMultiple)
@@ -86,8 +91,10 @@ extension ReviewViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewTableViewCell") {
-        // let review = reviews[indexPath.row]
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewTableViewCell") as? ReviewTableViewCell {
+            cell.initialize(review: reviews[indexPath.row])
+            
             return cell
         }
         
