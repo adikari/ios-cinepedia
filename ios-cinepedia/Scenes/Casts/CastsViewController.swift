@@ -15,12 +15,19 @@ protocol CastsDisplayLogic {
 
 class CastsViewController: UIViewController, CastsDisplayLogic, NVActivityIndicatorViewable {
     
-    var presenter: CastsPresentationLogic?
+    private var presenter: CastsPresentationLogic?
+    private var interactor: CastsBusinessLogic?
+    private var casts = [CastsModel.FetchCasts.ViewModel.Cast]()
+    
     var router: (NSObjectProtocol & CastsRouterLogic & CastsDataPassing)?
-    var interactor: CastsBusinessLogic?
+    
+    @IBOutlet weak var castsTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        castsTableView.dataSource = self
+        castsTableView.delegate = self
         
         fetchCasts()
     }
@@ -51,10 +58,8 @@ class CastsViewController: UIViewController, CastsDisplayLogic, NVActivityIndica
         router.viewController = self
         router.dataStore = interactor
     }
-    
-    func displayCasts(viewModel: CastsModel.FetchCasts.ViewModel) {
-        stopAnimating()
-    }
+   
+    // MARK: Fetch casts
     
     private func fetchCasts() {
         if let movieId = router?.dataStore?.movieId {
@@ -62,5 +67,33 @@ class CastsViewController: UIViewController, CastsDisplayLogic, NVActivityIndica
             let request = CastsModel.FetchCasts.Request(movieId: movieId)
             interactor?.fetchCasts(request: request)
         }
+    }
+    
+    func displayCasts(viewModel: CastsModel.FetchCasts.ViewModel) {
+        stopAnimating()
+        casts = viewModel.casts
+        
+        if casts.count > 0 {
+            castsTableView.reloadData()
+        } else {
+            castsTableView.emptyMessage(message: "No reviews found.")
+        }
+    }
+}
+
+extension CastsViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return casts.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "CastTableViewCell") as? CastTableViewCell {
+            cell.initialize(cast: casts[indexPath.row])
+            
+            return cell
+        }
+        
+        return UITableViewCell(style: .value1, reuseIdentifier: "CastTableViewCell")
     }
 }

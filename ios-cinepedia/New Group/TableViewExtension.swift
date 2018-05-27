@@ -10,7 +10,7 @@ import UIKit
 
 extension UITableView {
     
-    func EmptyMessage(message: String) {
+    func emptyMessage(message: String) {
         let rect = CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: bounds.size.width, height: bounds.size.height))
         let messageLabel = UILabel(frame: rect)
         

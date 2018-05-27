@@ -82,7 +82,7 @@ class ReviewViewController: UIViewController, ReviewDisplayLogic, NVActivityIndi
         if reviews.count > 0 {
             reviewListTableView.reloadData()
         } else {
-            reviewListTableView.EmptyMessage(message: "No reviews found.")
+            reviewListTableView.emptyMessage(message: "No reviews found.")
         }
     }
 }
