@@ -31,6 +31,9 @@ class ReviewViewController: UIViewController, ReviewDisplayLogic, NVActivityIndi
         reviewListTableView.dataSource = self
         reviewListTableView.tableFooterView = UIView()
 
+        reviewListTableView.estimatedRowHeight = 140
+        reviewListTableView.rowHeight = UITableViewAutomaticDimension
+
         fetchReview()
     }
     
