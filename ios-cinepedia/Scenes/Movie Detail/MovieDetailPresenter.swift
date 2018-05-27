@@ -23,9 +23,9 @@ class MovieDetailPresenter: MovieDetailPresentationLogic {
             let movie = MovieDetailModel.FetchMovieDetail.ViewModel.Movie(
                 id: fetchedMovie.id,
                 title: fetchedMovie.title,
-                description: fetchedMovie.description,
+                description: fetchedMovie.description ?? "",
                 posterUrl: fetchedMovie.poster(),
-                backdropUrl: fetchedMovie.backdrop(),
+                backdropUrl: fetchedMovie.backdrop() ?? fetchedMovie.poster(),
                 runtime: "\(tuple.hours)H \(tuple.minutes)M",
                 genres: fetchedMovie.genres.map { $0.name }.joined(separator: ", "),
                 year: fetchedMovie.releaseDate.year,

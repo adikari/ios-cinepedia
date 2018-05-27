@@ -16,7 +16,7 @@ struct Genre: Codable {
 struct MovieDetail {
     var id: Int
     var title: String
-    var description: String
+    var description: String?
     var rating: Double
     var totalVotes: Int
     var imageUrl: String?
@@ -64,10 +64,10 @@ extension MovieDetail: Decodable {
         
         id = try values.decode(Int.self, forKey: .id)
         title = try values.decode(String.self, forKey: .title)
-        description = try values.decode(String.self, forKey: .description)
+        description = try values.decode(String?.self, forKey: .description)
         rating = try values.decode(Double.self, forKey: .rating)
-        imageUrl = try values.decode(String.self, forKey: .imageUrl)
-        backdropUrl = try values.decode(String.self, forKey: .backdropUrl)
+        imageUrl = try values.decode(String?.self, forKey: .imageUrl)
+        backdropUrl = try values.decode(String?.self, forKey: .backdropUrl)
         totalVotes = try values.decode(Int.self, forKey: .totalVotes)
         genres = try values.decode([Genre].self, forKey: .genres)
         runtime = try values.decode(Int.self, forKey: .runtime)
