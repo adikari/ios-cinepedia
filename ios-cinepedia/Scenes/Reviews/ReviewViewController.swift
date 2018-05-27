@@ -14,13 +14,19 @@ protocol ReviewDisplayLogic {
 }
 
 class ReviewViewController: UIViewController, ReviewDisplayLogic, NVActivityIndicatorViewable {
+   var router: (NSObjectProtocol & ReviewRouterLogic & ReviewDataPassing)?
     
-    var presenter: ReviewPresentationLogic?
-    var router: (NSObjectProtocol & ReviewRouterLogic & ReviewDataPassing)?
-    var interactor: ReviewBusinessLogic?
+    private var presenter: ReviewPresentationLogic?
+    private var interactor: ReviewBusinessLogic?
+    private var reviews: [ReviewModel.FetchReview.ViewModel.Review] = []
+    
+    @IBOutlet weak var reviewListTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        reviewListTableView.delegate = self
+        reviewListTableView.dataSource = self
         
         fetchReview()
     }
@@ -62,5 +68,31 @@ class ReviewViewController: UIViewController, ReviewDisplayLogic, NVActivityIndi
     
     func displayReview(viewModel: ReviewModel.FetchReview.ViewModel) {
         stopAnimating()
+        
+        reviews = viewModel.reviews
+        
+        if reviews.count > 0 {
+            reviewListTableView.reloadData()
+        } else {
+            reviewListTableView.EmptyMessage(message: "No reviews found.")
+        }
     }
 }
+
+extension ReviewViewController: UITableViewDataSource, UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return reviews.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewTableViewCell") {
+        // let review = reviews[indexPath.row]
+            return cell
+        }
+        
+        return UITableViewCell(style: .value1, reuseIdentifier: "ReviewTableViewCell")
+    }
+}
+
+

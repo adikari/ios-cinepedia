@@ -21,6 +21,7 @@
 		BB57A98920B5786400A4544C /* ReviewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB57A98820B5786400A4544C /* ReviewInteractor.swift */; };
 		BB57A98B20B5787500A4544C /* ReviewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB57A98A20B5787500A4544C /* ReviewPresenter.swift */; };
 		BB57A98D20B5787D00A4544C /* ReviewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB57A98C20B5787D00A4544C /* ReviewRouter.swift */; };
+		BB99C4A420BA42C800394F20 /* TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB99C4A320BA42C800394F20 /* TableViewExtension.swift */; };
 		BBCA997C20A9A64E007EB7A6 /* LatestMoviesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA997B20A9A64E007EB7A6 /* LatestMoviesRouter.swift */; };
 		BBCA997F20A9A87C007EB7A6 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA997E20A9A87C007EB7A6 /* MovieDetailViewController.swift */; };
 		BBCA998120A9ADAD007EB7A6 /* MovieDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA998020A9ADAD007EB7A6 /* MovieDetailRouter.swift */; };
@@ -86,6 +87,7 @@
 		BB57A98820B5786400A4544C /* ReviewInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewInteractor.swift; sourceTree = "<group>"; };
 		BB57A98A20B5787500A4544C /* ReviewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewPresenter.swift; sourceTree = "<group>"; };
 		BB57A98C20B5787D00A4544C /* ReviewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewRouter.swift; sourceTree = "<group>"; };
+		BB99C4A320BA42C800394F20 /* TableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExtension.swift; sourceTree = "<group>"; };
 		BBCA997B20A9A64E007EB7A6 /* LatestMoviesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestMoviesRouter.swift; sourceTree = "<group>"; };
 		BBCA997E20A9A87C007EB7A6 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		BBCA998020A9ADAD007EB7A6 /* MovieDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailRouter.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 			children = (
 				BBCFA54F20AC3EC20043BFDA /* StringExtension.swift */,
 				BB1D32FB20B1ADF000680276 /* DateExtension.swift */,
+				BB99C4A320BA42C800394F20 /* TableViewExtension.swift */,
 			);
 			name = Extensions;
 			path = "New Group";
@@ -547,6 +550,7 @@
 				BBCA998120A9ADAD007EB7A6 /* MovieDetailRouter.swift in Sources */,
 				BB57A98520B5783F00A4544C /* ReviewViewController.swift in Sources */,
 				BBD9BF9A20B44432004C038C /* CastsInteractor.swift in Sources */,
+				BB99C4A420BA42C800394F20 /* TableViewExtension.swift in Sources */,
 				BB3EB7CC20A06325002614C5 /* LatestMoviesViewController.swift in Sources */,
 				BBD57B17209E81DE0016ED96 /* MainViewController.swift in Sources */,
 				BB57A98720B5785200A4544C /* ReviewModel.swift in Sources */,
