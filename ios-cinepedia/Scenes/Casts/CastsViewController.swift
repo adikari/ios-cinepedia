@@ -29,6 +29,10 @@ class CastsViewController: UIViewController, CastsDisplayLogic, NVActivityIndica
         castsTableView.dataSource = self
         castsTableView.delegate = self
         
+        // castsTableView.tableFooterView = UIView()
+        castsTableView.rowHeight = UITableViewAutomaticDimension
+        castsTableView.estimatedRowHeight = 175
+       
         fetchCasts()
     }
     
@@ -76,12 +80,13 @@ class CastsViewController: UIViewController, CastsDisplayLogic, NVActivityIndica
         if casts.count > 0 {
             castsTableView.reloadData()
         } else {
-            castsTableView.emptyMessage(message: "No reviews found.")
+            castsTableView.emptyMessage(message: "No casts found.")
         }
     }
 }
 
 extension CastsViewController: UITableViewDelegate, UITableViewDataSource {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return casts.count
     }

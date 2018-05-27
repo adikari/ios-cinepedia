@@ -21,15 +21,13 @@ class CastsPresenter: CastsPresentationLogic {
         let casts = Array(response.casts.prefix(15))
         
         for cast in casts {
-            if let profileImage = cast.profileImage() {
-                let castModel = CastsModel.FetchCasts.ViewModel.Cast(
-                    name: cast.name,
-                    character: cast.character,
-                    imageUrl: profileImage
-                )
-                
-                fetchedCasts.append(castModel)
-            }
+            let castModel = CastsModel.FetchCasts.ViewModel.Cast(
+                name: cast.name,
+                character: cast.character,
+                imageUrl: cast.profileImage(width: 138, height: 175) ?? ""
+            )
+
+            fetchedCasts.append(castModel)
         }
         
         let viewModel = CastsModel.FetchCasts.ViewModel(casts: fetchedCasts)

@@ -68,30 +68,48 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CastTableViewCell" id="7HN-NF-RfD" customClass="CastTableViewCell" customModule="ios_cinepedia" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CastTableViewCell" rowHeight="238" id="7HN-NF-RfD" customClass="CastTableViewCell" customModule="ios_cinepedia" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="238"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7HN-NF-RfD" id="0sI-K1-ONm">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="237.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ahr-ZB-2nL">
-                                                    <rect key="frame" x="118" y="12" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NXg-2a-Hoo">
+                                                    <rect key="frame" x="16" y="16" width="138" height="186"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ahr-ZB-2nL">
+                                                    <rect key="frame" x="176" y="16" width="183" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rD6-4Z-dnD">
-                                                    <rect key="frame" x="298" y="22" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Character" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rD6-4Z-dnD">
+                                                    <rect key="frame" x="176" y="51" width="183" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="183" id="Ja0-c0-usd"/>
+                                                        <constraint firstAttribute="height" constant="21" id="nq7-iG-qQf"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="rD6-4Z-dnD" firstAttribute="trailing" secondItem="Ahr-ZB-2nL" secondAttribute="trailing" id="0V1-PX-6RH"/>
+                                                <constraint firstItem="NXg-2a-Hoo" firstAttribute="leading" secondItem="0sI-K1-ONm" secondAttribute="leading" constant="16" id="2Lf-Qh-qYQ"/>
+                                                <constraint firstItem="NXg-2a-Hoo" firstAttribute="top" secondItem="0sI-K1-ONm" secondAttribute="top" constant="16" id="8hw-AU-iEO"/>
+                                                <constraint firstAttribute="bottom" secondItem="rD6-4Z-dnD" secondAttribute="bottom" constant="165.5" id="8t6-Wa-W8q"/>
+                                                <constraint firstItem="rD6-4Z-dnD" firstAttribute="top" secondItem="Ahr-ZB-2nL" secondAttribute="bottom" constant="14" id="BFD-YD-fp9"/>
+                                                <constraint firstAttribute="bottom" secondItem="NXg-2a-Hoo" secondAttribute="bottom" constant="35.5" id="LAM-ra-R3t"/>
+                                                <constraint firstItem="rD6-4Z-dnD" firstAttribute="leading" secondItem="NXg-2a-Hoo" secondAttribute="trailing" constant="22" id="LT5-2G-9kv"/>
+                                                <constraint firstItem="rD6-4Z-dnD" firstAttribute="leading" secondItem="Ahr-ZB-2nL" secondAttribute="leading" id="Nn1-4O-pxV"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ahr-ZB-2nL" secondAttribute="trailing" constant="16" id="Odi-dT-PPr"/>
+                                                <constraint firstItem="Ahr-ZB-2nL" firstAttribute="top" secondItem="0sI-K1-ONm" secondAttribute="top" constant="16" id="x4g-rb-pXu"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="castImage" destination="NXg-2a-Hoo" id="WJl-JG-KMe"/>
                                             <outlet property="character" destination="rD6-4Z-dnD" id="re1-Ps-VOb"/>
                                             <outlet property="name" destination="Ahr-ZB-2nL" id="mcF-RL-7VR"/>
                                         </connections>
