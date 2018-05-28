@@ -11,4 +11,17 @@ import UIKit
 class AddReviewView: UIView {
     @IBOutlet var author: UITextField!
     @IBOutlet var content: UITextView!
+    
+    func validate() -> ValidationResult {
+        if ((author.text?.isEmpty)! || (content.text?.isEmpty)!) {
+            return ValidationResult.success
+        }
+        
+        return ValidationResult.failure
+    }
+}
+
+enum ValidationResult {
+    case success
+    case failure
 }

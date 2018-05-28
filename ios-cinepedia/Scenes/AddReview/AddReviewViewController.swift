@@ -55,15 +55,24 @@ class AddReviewViewController: UIViewController {
     
     @IBAction func addReview(_ sender: UIButton!) {
         if let movieId = router?.dataStore?.movieId {
-            let reviewToCreate = AddReviewModel.AddReview.ViewModel.Review(
-                author: addReviewView.author.text!,
-                content: addReviewView.content.text!
-            )
-            
-            let request = AddReviewModel.AddReview.Request(review: reviewToCreate, movieId: movieId)
-            
-            interactor?.addReview(request: request)
+            switch(addReviewView.validate()) {
+            case .success:
+                addReview(forMovie: movieId)
+            case .failure:
+                Toast(text: "Author and review must be entered!!").show()
+            }
         }
+    }
+    
+    func addReview(forMovie movieId: Int) {
+        let reviewToCreate = AddReviewModel.AddReview.ViewModel.Review(
+            author: addReviewView.author.text!,
+            content: addReviewView.content.text!
+        )
+        
+        let request = AddReviewModel.AddReview.Request(review: reviewToCreate, movieId: movieId)
+        
+        interactor?.addReview(request: request)
     }
     
     func displayMessage(success: Bool) {
