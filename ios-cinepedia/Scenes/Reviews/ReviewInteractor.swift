@@ -14,22 +14,27 @@ protocol ReviewBusinessLogic {
 
 protocol ReviewDataStore {
     var movieId: Int? { get set }
-    var reviews: [Review]? { get }
+    var reviews: [Review] { get }
 }
 
 class ReviewInteractor: ReviewDataStore, ReviewBusinessLogic {
-    var reviews: [Review]?
+    var reviews = [Review]()
     var movieId: Int?
     
     var reviewWorker = ReviewWorker(reviewStore: ReviewApiStore())
+    var reviewCDWorker = ReviewWorker(reviewStore: ReviewCoreDataStore())
     var presenter: ReviewPresentationLogic?
     
     func fetchReview(request: ReviewModel.FetchReview.Request) {
-        reviewWorker.fetchReviews(movieId: request.movieId) { reviews in
-            self.reviews = reviews
-            
-            let response = ReviewModel.FetchReview.Response(reviews: reviews)
-            self.presenter?.displayReview(response: response)
+
+        // TODO: Improve this. Potentially promise
+        reviewCDWorker.fetchReviews(movieId: request.movieId) { cdReviews in
+            self.reviewWorker.fetchReviews(movieId: request.movieId) { reviews in
+                self.reviews = cdReviews + reviews
+                
+                let response = ReviewModel.FetchReview.Response(reviews: self.reviews)
+                self.presenter?.displayReview(response: response)
+            }
         }
     }
 }

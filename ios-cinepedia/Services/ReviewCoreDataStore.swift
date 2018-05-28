@@ -13,6 +13,7 @@ class ReviewCoreDataStore: ReviewStoreProtocol {
 
     func fetchReviews(movieId: Int, completionHandler: @escaping ([Review], ReviewStoreError?) -> Void) {
         let fetchRequest = NSFetchRequest<ManagedReview>(entityName: "ManagedReview")
+        fetchRequest.predicate = NSPredicate(format: "movieId == %@", movieId.description)
         
         do {
             let managedReviews = try AppDelegate.viewContext.fetch(fetchRequest)

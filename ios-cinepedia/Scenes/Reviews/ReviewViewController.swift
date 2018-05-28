@@ -33,10 +33,10 @@ class ReviewViewController: UIViewController, ReviewDisplayLogic, NVActivityIndi
 
         reviewListTableView.estimatedRowHeight = 140
         reviewListTableView.rowHeight = UITableViewAutomaticDimension
-
+        
         fetchReview()
     }
-    
+
     // MARK: Object lifecycle
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
