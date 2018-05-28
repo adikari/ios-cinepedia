@@ -32,7 +32,11 @@ class ReviewApiStore: ReviewStoreProtocol {
             }
         }
     }
-
+    
+    func addReview(movieId: Int, review: Review, completionHandler: @escaping (Bool, ReviewStoreError?) -> Void) {
+        print("Method not implemented!!")
+        abort()
+    }
 }
 
 enum ReviewService {

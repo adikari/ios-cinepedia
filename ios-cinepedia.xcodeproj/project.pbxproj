@@ -21,6 +21,13 @@
 		BB57A98920B5786400A4544C /* ReviewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB57A98820B5786400A4544C /* ReviewInteractor.swift */; };
 		BB57A98B20B5787500A4544C /* ReviewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB57A98A20B5787500A4544C /* ReviewPresenter.swift */; };
 		BB57A98D20B5787D00A4544C /* ReviewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB57A98C20B5787D00A4544C /* ReviewRouter.swift */; };
+		BB5ED02E20BC15E700126D4F /* AddReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5ED02D20BC15E700126D4F /* AddReviewView.swift */; };
+		BB84E85020BAAB9200868E89 /* AddReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB84E84F20BAAB9200868E89 /* AddReviewViewController.swift */; };
+		BB84E85420BAAE1E00868E89 /* AddReviewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB84E85320BAAE1E00868E89 /* AddReviewInteractor.swift */; };
+		BB84E85620BAAE3500868E89 /* AddReviewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB84E85520BAAE3500868E89 /* AddReviewPresenter.swift */; };
+		BB84E85820BAAE4200868E89 /* AddReviewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB84E85720BAAE4200868E89 /* AddReviewRouter.swift */; };
+		BB84E85A20BAAE5B00868E89 /* AddReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB84E85920BAAE5B00868E89 /* AddReviewModel.swift */; };
+		BB84E85E20BAB22100868E89 /* ReviewCoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB84E85D20BAB22100868E89 /* ReviewCoreDataStore.swift */; };
 		BB99C4A420BA42C800394F20 /* TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB99C4A320BA42C800394F20 /* TableViewExtension.swift */; };
 		BB99C4A620BA479600394F20 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB99C4A520BA479600394F20 /* ReviewTableViewCell.swift */; };
 		BB99C4A820BA8E7700394F20 /* CastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB99C4A720BA8E7700394F20 /* CastTableViewCell.swift */; };
@@ -89,6 +96,13 @@
 		BB57A98820B5786400A4544C /* ReviewInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewInteractor.swift; sourceTree = "<group>"; };
 		BB57A98A20B5787500A4544C /* ReviewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewPresenter.swift; sourceTree = "<group>"; };
 		BB57A98C20B5787D00A4544C /* ReviewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewRouter.swift; sourceTree = "<group>"; };
+		BB5ED02D20BC15E700126D4F /* AddReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewView.swift; sourceTree = "<group>"; };
+		BB84E84F20BAAB9200868E89 /* AddReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewViewController.swift; sourceTree = "<group>"; };
+		BB84E85320BAAE1E00868E89 /* AddReviewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewInteractor.swift; sourceTree = "<group>"; };
+		BB84E85520BAAE3500868E89 /* AddReviewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewPresenter.swift; sourceTree = "<group>"; };
+		BB84E85720BAAE4200868E89 /* AddReviewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewRouter.swift; sourceTree = "<group>"; };
+		BB84E85920BAAE5B00868E89 /* AddReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewModel.swift; sourceTree = "<group>"; };
+		BB84E85D20BAB22100868E89 /* ReviewCoreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCoreDataStore.swift; sourceTree = "<group>"; };
 		BB99C4A320BA42C800394F20 /* TableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExtension.swift; sourceTree = "<group>"; };
 		BB99C4A520BA479600394F20 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		BB99C4A720BA8E7700394F20 /* CastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastTableViewCell.swift; sourceTree = "<group>"; };
@@ -186,6 +200,19 @@
 			path = Reviews;
 			sourceTree = "<group>";
 		};
+		BB84E84E20BAAB7C00868E89 /* AddReview */ = {
+			isa = PBXGroup;
+			children = (
+				BB84E84F20BAAB9200868E89 /* AddReviewViewController.swift */,
+				BB84E85320BAAE1E00868E89 /* AddReviewInteractor.swift */,
+				BB84E85520BAAE3500868E89 /* AddReviewPresenter.swift */,
+				BB84E85720BAAE4200868E89 /* AddReviewRouter.swift */,
+				BB84E85920BAAE5B00868E89 /* AddReviewModel.swift */,
+				BB5ED02D20BC15E700126D4F /* AddReviewView.swift */,
+			);
+			path = AddReview;
+			sourceTree = "<group>";
+		};
 		BBCA997D20A9A859007EB7A6 /* Movie Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				BBD57B16209E81DE0016ED96 /* MainViewController.swift */,
+				BB84E84E20BAAB7C00868E89 /* AddReview */,
 				BB57A98320B5782300A4544C /* Reviews */,
 				BBD9BF9220B44202004C038C /* Casts */,
 				BBCA997D20A9A859007EB7A6 /* Movie Detail */,
@@ -322,6 +350,7 @@
 				BBD9BF9D20B44698004C038C /* CastApiStore.swift */,
 				BB57A97D20B5777D00A4544C /* ReviewApiStore.swift */,
 				BBD57B2F209E8C320016ED96 /* MoviesApiStore.swift */,
+				BB84E85D20BAB22100868E89 /* ReviewCoreDataStore.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -531,6 +560,8 @@
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftValidator/SwiftValidator.framework",
+				"${BUILT_PRODUCTS_DIR}/Toaster/Toaster.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -540,6 +571,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftValidator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toaster.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -556,15 +589,18 @@
 				BBCA998120A9ADAD007EB7A6 /* MovieDetailRouter.swift in Sources */,
 				BB57A98520B5783F00A4544C /* ReviewViewController.swift in Sources */,
 				BBD9BF9A20B44432004C038C /* CastsInteractor.swift in Sources */,
+				BB84E85020BAAB9200868E89 /* AddReviewViewController.swift in Sources */,
 				BB99C4A420BA42C800394F20 /* TableViewExtension.swift in Sources */,
 				BB99C4A620BA479600394F20 /* ReviewTableViewCell.swift in Sources */,
 				BB3EB7CC20A06325002614C5 /* LatestMoviesViewController.swift in Sources */,
 				BBD57B17209E81DE0016ED96 /* MainViewController.swift in Sources */,
 				BB57A98720B5785200A4544C /* ReviewModel.swift in Sources */,
 				BBD57B45209F2F110016ED96 /* PopularMoviesViewController.swift in Sources */,
+				BB84E85420BAAE1E00868E89 /* AddReviewInteractor.swift in Sources */,
 				BB57A98220B577D600A4544C /* ReviewWorker.swift in Sources */,
 				BBCA997C20A9A64E007EB7A6 /* LatestMoviesRouter.swift in Sources */,
 				BBD57B2D209E89620016ED96 /* Movie.swift in Sources */,
+				BB84E85E20BAB22100868E89 /* ReviewCoreDataStore.swift in Sources */,
 				BB57A98B20B5787500A4544C /* ReviewPresenter.swift in Sources */,
 				BBCA997F20A9A87C007EB7A6 /* MovieDetailViewController.swift in Sources */,
 				BBCFA55020AC3EC20043BFDA /* StringExtension.swift in Sources */,
@@ -573,6 +609,8 @@
 				BB57A98D20B5787D00A4544C /* ReviewRouter.swift in Sources */,
 				BBCFA55420AC40EC0043BFDA /* Constant.swift in Sources */,
 				BBCA998720A9AFDA007EB7A6 /* MovieDetailPresenter.swift in Sources */,
+				BB5ED02E20BC15E700126D4F /* AddReviewView.swift in Sources */,
+				BB84E85620BAAE3500868E89 /* AddReviewPresenter.swift in Sources */,
 				BB1D32FC20B1ADF000680276 /* DateExtension.swift in Sources */,
 				BBCB2BF920AAFF1500F50CD8 /* MovieDetailView.swift in Sources */,
 				BBD9BF9620B44280004C038C /* CastsModel.swift in Sources */,
@@ -594,7 +632,9 @@
 				BB3EB7CE20A06547002614C5 /* LatestMoviesModel.swift in Sources */,
 				BB57A98020B577AC00A4544C /* Review.swift in Sources */,
 				BB3EB7D220A066E3002614C5 /* LatestMoviesPresenter.swift in Sources */,
+				BB84E85820BAAE4200868E89 /* AddReviewRouter.swift in Sources */,
 				BBD57AF8209E7C370016ED96 /* AppDelegate.swift in Sources */,
+				BB84E85A20BAAE5B00868E89 /* AddReviewModel.swift in Sources */,
 				BBD57B3A209EFA1C0016ED96 /* PopularMoviesPresenter.swift in Sources */,
 				BBD9BFA220B447A6004C038C /* CastsRouter.swift in Sources */,
 			);
@@ -760,10 +800,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8796DFU5N7;
 				INFOPLIST_FILE = "$(SRCROOT)/ios-cinepedia/Supporting files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "au.com.subash.ios-cinepedia";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -779,10 +816,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8796DFU5N7;
 				INFOPLIST_FILE = "$(SRCROOT)/ios-cinepedia/Supporting files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "au.com.subash.ios-cinepedia";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -798,11 +832,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8796DFU5N7;
 				INFOPLIST_FILE = "ios-cinepediaTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "au.com.subash.ios-cinepediaTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -819,11 +849,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8796DFU5N7;
 				INFOPLIST_FILE = "ios-cinepediaTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "au.com.subash.ios-cinepediaTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

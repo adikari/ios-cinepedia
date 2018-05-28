@@ -9,6 +9,8 @@ target 'ios-cinepedia' do
   pod 'Kingfisher', '~> 4.0'
   pod 'FSPagerView'
   pod 'NVActivityIndicatorView'
+  pod 'Toaster'
+  pod 'SwiftValidator', :git => 'https://github.com/jpotts18/SwiftValidator.git', :branch => 'master'
 
   target 'ios-cinepediaTests' do
       inherit! :search_paths

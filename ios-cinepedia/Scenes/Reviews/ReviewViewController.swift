@@ -21,7 +21,7 @@ class ReviewViewController: UIViewController, ReviewDisplayLogic, NVActivityIndi
     private var reviews: [ReviewModel.FetchReview.ViewModel.Review] = []
     
     @IBOutlet weak var reviewListTableView: UITableView!
-    
+
     // MARK: - View lifecycle
     
     override func viewDidLoad() {
@@ -84,6 +84,23 @@ class ReviewViewController: UIViewController, ReviewDisplayLogic, NVActivityIndi
         } else {
             reviewListTableView.emptyMessage(message: "No reviews found.")
         }
+    }
+    
+    // MARK: Router
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+    
+    // MARK: Actions
+    
+    @IBAction func addReview(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "AddReview", sender: sender)
     }
 }
 

@@ -9,12 +9,14 @@
 import Foundation
 
 enum ReviewStoreError: Equatable, Error {
+    case CannotAdd(String)
     case CannotFetch(String)
     case CannotEncode(String)
 }
 
 protocol ReviewStoreProtocol {
     func fetchReviews(movieId: Int, completionHandler: @escaping ([Review], ReviewStoreError?) -> Void)
+    func addReview(movieId: Int, review: Review, completionHandler: @escaping (Bool, ReviewStoreError?) -> Void)
 }
 
 class ReviewWorker {
@@ -29,6 +31,14 @@ class ReviewWorker {
         reviewStore.fetchReviews(movieId: movieId) { reviews, error in
             DispatchQueue.main.async {
                 completionHandler(reviews)
+            }
+        }
+    }
+    
+    func addReview(movieId: Int, review: Review, completionHandler: @escaping(Bool) -> Void) {
+        reviewStore.addReview(movieId: movieId, review: review) { success, error in
+            DispatchQueue.main.async {
+                completionHandler(success)
             }
         }
     }

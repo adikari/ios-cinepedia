@@ -313,14 +313,100 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pOw-UJ-cmi"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Reviews" id="1De-Ki-aYa"/>
+                    <navigationItem key="navigationItem" title="Reviews" id="1De-Ki-aYa">
+                        <barButtonItem key="rightBarButtonItem" image="inscription" id="aRo-30-dHK">
+                            <connections>
+                                <action selector="addReview:" destination="5PA-3p-CqY" id="Wvu-TY-4Ef"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="reviewListTableView" destination="LyN-bk-BDb" id="Byq-wl-hht"/>
+                        <segue destination="Ua2-Dd-vEQ" kind="show" identifier="AddReview" id="Lsg-31-2ZN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Na-rj-xwZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1733.5999999999999" y="829.83508245877067"/>
+        </scene>
+        <!--Add Review-->
+        <scene sceneID="eVr-j1-ifE">
+            <objects>
+                <viewController storyboardIdentifier="AddReviewViewController" id="Ua2-Dd-vEQ" customClass="AddReviewViewController" customModule="ios_cinepedia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lsz-q9-ISL" customClass="AddReviewView" customModule="ios_cinepedia" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of Author" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kbs-KC-u6i">
+                                <rect key="frame" x="16" y="117" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RV9-Fx-faR">
+                                <rect key="frame" x="16" y="200" width="343" height="267"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIx-rB-gSk">
+                                <rect key="frame" x="16" y="80" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b94-yo-91F">
+                                <rect key="frame" x="16" y="163" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q96-q4-zdu">
+                                <rect key="frame" x="16" y="484" width="80" height="30"/>
+                                <state key="normal" title="Add Review"/>
+                                <connections>
+                                    <action selector="addReview:" destination="Ua2-Dd-vEQ" eventType="touchUpInside" id="Y2x-2G-0G7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PIx-rB-gSk" firstAttribute="top" secondItem="Qza-vg-r6V" secondAttribute="top" constant="16" id="AoM-6F-p4p"/>
+                            <constraint firstItem="Qza-vg-r6V" firstAttribute="trailing" secondItem="RV9-Fx-faR" secondAttribute="trailing" constant="16" id="HZP-7x-2Hy"/>
+                            <constraint firstItem="RV9-Fx-faR" firstAttribute="leading" secondItem="Q96-q4-zdu" secondAttribute="leading" id="MYb-jm-IxB"/>
+                            <constraint firstItem="Qza-vg-r6V" firstAttribute="trailing" secondItem="kbs-KC-u6i" secondAttribute="trailing" constant="16" id="NQi-eF-ipI"/>
+                            <constraint firstItem="Q96-q4-zdu" firstAttribute="top" secondItem="RV9-Fx-faR" secondAttribute="bottom" constant="17" id="Pc0-1R-WT0"/>
+                            <constraint firstItem="RV9-Fx-faR" firstAttribute="top" secondItem="b94-yo-91F" secondAttribute="bottom" constant="16" id="Tec-Vq-Xav"/>
+                            <constraint firstItem="kbs-KC-u6i" firstAttribute="top" secondItem="PIx-rB-gSk" secondAttribute="bottom" constant="16" id="Vj6-lb-Bvu"/>
+                            <constraint firstItem="b94-yo-91F" firstAttribute="leading" secondItem="Qza-vg-r6V" secondAttribute="leading" constant="16" id="W4x-nc-hnn"/>
+                            <constraint firstItem="b94-yo-91F" firstAttribute="top" secondItem="kbs-KC-u6i" secondAttribute="bottom" constant="16" id="aq2-98-vYm"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Q96-q4-zdu" secondAttribute="trailing" constant="20" symbolic="YES" id="c0L-CN-Fjv"/>
+                            <constraint firstItem="PIx-rB-gSk" firstAttribute="leading" secondItem="Qza-vg-r6V" secondAttribute="leading" constant="16" id="fmi-ID-Pmz"/>
+                            <constraint firstItem="kbs-KC-u6i" firstAttribute="leading" secondItem="Qza-vg-r6V" secondAttribute="leading" constant="16" id="hOM-5l-m4q"/>
+                            <constraint firstItem="Qza-vg-r6V" firstAttribute="bottom" secondItem="Q96-q4-zdu" secondAttribute="bottom" constant="153" id="kuT-Ps-Fnw"/>
+                            <constraint firstItem="RV9-Fx-faR" firstAttribute="leading" secondItem="Qza-vg-r6V" secondAttribute="leading" constant="16" id="lus-lT-Uft"/>
+                            <constraint firstItem="Qza-vg-r6V" firstAttribute="trailing" secondItem="PIx-rB-gSk" secondAttribute="trailing" constant="16" id="nvZ-OG-uUV"/>
+                            <constraint firstItem="Qza-vg-r6V" firstAttribute="trailing" secondItem="b94-yo-91F" secondAttribute="trailing" constant="16" id="soO-mo-M0E"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Qza-vg-r6V"/>
+                        <connections>
+                            <outlet property="author" destination="kbs-KC-u6i" id="efF-Vc-7FY"/>
+                            <outlet property="content" destination="RV9-Fx-faR" id="3Ra-Mr-TiC"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Review" id="UvF-EF-ZJh"/>
+                    <connections>
+                        <outlet property="addReviewView" destination="Lsz-q9-ISL" id="6nz-1y-MYb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZvN-iE-0od" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2445.5999999999999" y="829.83508245877067"/>
         </scene>
         <!--Popular Movies View Controller-->
         <scene sceneID="y2k-5P-g5C">
@@ -449,4 +535,7 @@
             <point key="canvasLocation" x="32.799999999999997" y="829.83508245877067"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="inscription" width="50" height="50"/>
+    </resources>
 </document>
