@@ -58,8 +58,8 @@ class AddReviewViewController: UIViewController {
             switch(addReviewView.validate()) {
             case .success:
                 addReview(forMovie: movieId)
-            case .failure:
-                Toast(text: "Author and review must be entered!!").show()
+            case .failure(let errors):
+                Toast(text: errors.joined(separator: "\n")).show()
             }
         }
     }

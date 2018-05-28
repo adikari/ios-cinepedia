@@ -13,15 +13,35 @@ class AddReviewView: UIView {
     @IBOutlet var content: UITextView!
     
     func validate() -> ValidationResult {
-        if ((author.text?.isEmpty)! || (content.text?.isEmpty)!) {
-            return ValidationResult.success
+        var errors = [String]()
+        
+        if let authorField = author.text, authorField.isEmpty {
+            errors.append("Author must be entered.")
+            author.layer.borderWidth = 1.0
+            author.layer.borderColor = UIColor.red.cgColor
+        } else {
+            author.layer.borderWidth = 0
+            author.layer.borderColor = UIColor.lightGray.cgColor
         }
         
-        return ValidationResult.failure
+        if let reviewField = content.text, reviewField.isEmpty {
+            content.layer.borderWidth = 1.0
+            content.layer.borderColor = UIColor.red.cgColor
+            errors.append("Review must be entered.")
+        } else {
+            author.layer.borderWidth = 0
+            content.layer.borderColor = UIColor.lightGray.cgColor
+        }
+        
+        if (errors.count > 0) {
+            return ValidationResult.failure(errors: errors)
+        }
+        
+        return ValidationResult.success
     }
 }
 
 enum ValidationResult {
     case success
-    case failure
+    case failure(errors: [String])
 }
