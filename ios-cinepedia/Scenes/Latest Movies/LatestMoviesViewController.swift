@@ -36,7 +36,11 @@ class LatestMoviesViewController: UIViewController, LatestMoviesViewDisplayLogic
         
         pagerView.delegate = self
         pagerView.dataSource = self
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         fetchLatestMovies()
     }
     

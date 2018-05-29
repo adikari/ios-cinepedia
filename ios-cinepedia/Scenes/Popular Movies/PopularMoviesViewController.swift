@@ -34,6 +34,10 @@ class PopularMoviesViewController: UIViewController, PopularMoviesViewDisplayLog
         
         pagerView.dataSource = self
         pagerView.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         fetchPopularMovies()
     }

@@ -18,12 +18,6 @@ class AddReviewViewController: UIViewController {
     
     @IBOutlet var addReviewView: AddReviewView!
 
-    // MARK: - View lifecycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     // MARK: Object lifecycle
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -49,6 +43,17 @@ class AddReviewViewController: UIViewController {
         presenter.viewController = self
         router.viewController = self
         router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
     }
     
     // MARK: Add review
@@ -77,7 +82,7 @@ class AddReviewViewController: UIViewController {
     
     func displayMessage(success: Bool) {
         if (success) {
-            navigationController?.popViewController(animated: true)
+            router?.routeToReviews(segue: nil)
             Toast(text: "Review Saved.").show()
         } else {
             Toast(text: "Error saving review!!").show()

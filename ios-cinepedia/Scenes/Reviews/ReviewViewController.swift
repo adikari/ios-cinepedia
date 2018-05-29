@@ -33,7 +33,10 @@ class ReviewViewController: UIViewController, ReviewDisplayLogic, NVActivityIndi
 
         reviewListTableView.estimatedRowHeight = 140
         reviewListTableView.rowHeight = UITableViewAutomaticDimension
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         fetchReview()
     }
 
