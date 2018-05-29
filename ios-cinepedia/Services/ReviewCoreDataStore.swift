@@ -25,7 +25,7 @@ class ReviewCoreDataStore: ReviewStoreProtocol {
                 )
             }
 
-            completionHandler(reviews, nil)
+            completionHandler(reviews.reversed(), nil)
         } catch {
             completionHandler([], ReviewStoreError.CannotFetch(error.localizedDescription))
         }
