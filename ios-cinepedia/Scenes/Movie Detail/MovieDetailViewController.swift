@@ -17,7 +17,6 @@ class MovieDetailViewController: UIViewController, MovieDetailDisplayLogic, NVAc
    
     @IBOutlet weak var movieDetailView: MovieDetailView!
     
-    var movie: MovieDetailModel.FetchMovieDetail.ViewModel.Movie?
     var presenter: MovieDetailPresentationLogic?
     var router: (NSObjectProtocol & MovieDetailRouterLogic & MovieDetailDataPassing)?
     var interactor: MovieDetailBusinessLogic?
@@ -92,7 +91,6 @@ class MovieDetailViewController: UIViewController, MovieDetailDisplayLogic, NVAc
     func displayMovie(viewModel: MovieDetailModel.FetchMovieDetail.ViewModel) {
         stopAnimating()
         
-        movie = viewModel.movie
         movieDetailView.initialize(movie: viewModel.movie)
     }
 }

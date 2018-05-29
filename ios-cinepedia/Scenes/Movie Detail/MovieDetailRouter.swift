@@ -28,14 +28,14 @@ class MovieDetailRouter: NSObject, MovieDetailRouterLogic, MovieDetailDataPassin
             
             var destinationDS = destinationVC.router?.dataStore
 
-            if let movieId = viewController?.movie?.id {
+            if let movieId = viewController?.router?.dataStore?.movieId {
                 passDataToReview(dataStore: &destinationDS!, movieId: movieId)
             }
         } else {
             let destinationVC = viewController?.storyboard?.instantiateViewController(withIdentifier: "ReviewViewController") as! ReviewViewController
             var destinationDS = destinationVC.router!.dataStore!
             
-            if let movieId = viewController?.movie?.id {
+            if let movieId = viewController?.router?.dataStore?.movieId {
                 passDataToReview(dataStore: &destinationDS, movieId: movieId)
                 navigateToReview(source: viewController!, destination: destinationVC)
             }
