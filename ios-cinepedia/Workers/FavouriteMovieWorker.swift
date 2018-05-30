@@ -46,7 +46,7 @@ class FavouriteMovieWorker {
     }
     
     func removeFavourite(movieId: Int, completionHandler: @escaping() -> Void) {
-        store.setFavourite(movieId: movieId) { error in
+        store.removeFavourite(movieId: movieId) { error in
             DispatchQueue.main.async {
                 completionHandler()
             }
