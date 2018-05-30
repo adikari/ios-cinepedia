@@ -17,6 +17,7 @@ class MovieDetailView: UIView {
     @IBOutlet weak var runtime: UILabel!
     @IBOutlet weak var genre: UILabel!
     @IBOutlet weak var desc: UILabel!
+    @IBOutlet weak var favouriteIcon: UIBarButtonItem!
 
     func initialize(movie: MovieDetailModel.FetchMovieDetail.ViewModel.Movie) {
         movieTitle.text = movie.title
@@ -29,6 +30,15 @@ class MovieDetailView: UIView {
         if let imageUrl = movie.backdropUrl {
             movieImage.kf.indicatorType = .activity
             movieImage.kf.setImage(with: URL(string: imageUrl))
+        }
+    }
+    
+    
+    func displayFavouriteIcon(isFavourite: Bool) {
+        if isFavourite {
+            favouriteIcon.image = UIImage(named: "star-filled")
+        } else {
+            favouriteIcon.image = UIImage(named: "star")
         }
     }
 }

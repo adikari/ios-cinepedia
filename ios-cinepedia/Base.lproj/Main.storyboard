@@ -232,6 +232,7 @@
                         <viewLayoutGuide key="safeArea" id="8Ae-hJ-iuh"/>
                         <connections>
                             <outlet property="desc" destination="SYY-2E-nuv" id="0yi-1c-ZQu"/>
+                            <outlet property="favouriteIcon" destination="hGh-p5-zn4" id="9mC-77-HVo"/>
                             <outlet property="genre" destination="biC-Fb-uvN" id="WXr-Uz-0ih"/>
                             <outlet property="movieImage" destination="buU-bR-jif" id="koT-4F-JWn"/>
                             <outlet property="movieTitle" destination="vni-yU-0hu" id="Nsw-Cw-V7S"/>
@@ -240,7 +241,13 @@
                             <outlet property="year" destination="VAL-As-DoX" id="YEf-gX-ZVx"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="o7o-92-0Y1"/>
+                    <navigationItem key="navigationItem" id="o7o-92-0Y1">
+                        <barButtonItem key="rightBarButtonItem" image="star" id="hGh-p5-zn4">
+                            <connections>
+                                <action selector="setFavourite:" destination="rcZ-lb-yJM" id="8yf-Va-adJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="movieDetailView" destination="vHz-id-48a" id="Qb2-DE-Lqo"/>
                         <segue destination="DVi-JJ-u8t" kind="show" identifier="Casts" id="ovp-da-z2R"/>
@@ -314,7 +321,7 @@
                         <viewLayoutGuide key="safeArea" id="pOw-UJ-cmi"/>
                     </view>
                     <navigationItem key="navigationItem" title="Reviews" id="1De-Ki-aYa">
-                        <barButtonItem key="rightBarButtonItem" image="inscription" id="aRo-30-dHK">
+                        <barButtonItem key="rightBarButtonItem" image="edit" id="aRo-30-dHK">
                             <connections>
                                 <action selector="addReview:" destination="5PA-3p-CqY" id="Wvu-TY-4Ef"/>
                             </connections>
@@ -531,6 +538,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="inscription" width="50" height="50"/>
+        <image name="edit" width="25" height="25"/>
+        <image name="star" width="25" height="25"/>
     </resources>
 </document>

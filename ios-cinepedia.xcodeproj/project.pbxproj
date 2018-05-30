@@ -31,6 +31,8 @@
 		BB99C4A420BA42C800394F20 /* TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB99C4A320BA42C800394F20 /* TableViewExtension.swift */; };
 		BB99C4A620BA479600394F20 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB99C4A520BA479600394F20 /* ReviewTableViewCell.swift */; };
 		BB99C4A820BA8E7700394F20 /* CastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB99C4A720BA8E7700394F20 /* CastTableViewCell.swift */; };
+		BB9EDDF020BEE59C00C00CDC /* FavouriteMovieWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9EDDEF20BEE59C00C00CDC /* FavouriteMovieWorker.swift */; };
+		BB9EDDF220BEE7AA00C00CDC /* FavouriteCoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9EDDF120BEE7AA00C00CDC /* FavouriteCoreDataStore.swift */; };
 		BBCA997C20A9A64E007EB7A6 /* LatestMoviesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA997B20A9A64E007EB7A6 /* LatestMoviesRouter.swift */; };
 		BBCA997F20A9A87C007EB7A6 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA997E20A9A87C007EB7A6 /* MovieDetailViewController.swift */; };
 		BBCA998120A9ADAD007EB7A6 /* MovieDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA998020A9ADAD007EB7A6 /* MovieDetailRouter.swift */; };
@@ -106,6 +108,8 @@
 		BB99C4A320BA42C800394F20 /* TableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExtension.swift; sourceTree = "<group>"; };
 		BB99C4A520BA479600394F20 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		BB99C4A720BA8E7700394F20 /* CastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastTableViewCell.swift; sourceTree = "<group>"; };
+		BB9EDDEF20BEE59C00C00CDC /* FavouriteMovieWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteMovieWorker.swift; sourceTree = "<group>"; };
+		BB9EDDF120BEE7AA00C00CDC /* FavouriteCoreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCoreDataStore.swift; sourceTree = "<group>"; };
 		BBCA997B20A9A64E007EB7A6 /* LatestMoviesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestMoviesRouter.swift; sourceTree = "<group>"; };
 		BBCA997E20A9A87C007EB7A6 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		BBCA998020A9ADAD007EB7A6 /* MovieDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailRouter.swift; sourceTree = "<group>"; };
@@ -329,6 +333,7 @@
 				BBD57B27209E86A70016ED96 /* MoviesWorker.swift */,
 				BBD9BF9B20B4451A004C038C /* CastWorker.swift */,
 				BB57A98120B577D600A4544C /* ReviewWorker.swift */,
+				BB9EDDEF20BEE59C00C00CDC /* FavouriteMovieWorker.swift */,
 			);
 			path = Workers;
 			sourceTree = "<group>";
@@ -351,6 +356,7 @@
 				BB57A97D20B5777D00A4544C /* ReviewApiStore.swift */,
 				BBD57B2F209E8C320016ED96 /* MoviesApiStore.swift */,
 				BB84E85D20BAB22100868E89 /* ReviewCoreDataStore.swift */,
+				BB9EDDF120BEE7AA00C00CDC /* FavouriteCoreDataStore.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -585,6 +591,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBCA998120A9ADAD007EB7A6 /* MovieDetailRouter.swift in Sources */,
+				BB9EDDF220BEE7AA00C00CDC /* FavouriteCoreDataStore.swift in Sources */,
 				BB57A98520B5783F00A4544C /* ReviewViewController.swift in Sources */,
 				BBD9BF9A20B44432004C038C /* CastsInteractor.swift in Sources */,
 				BB84E85020BAAB9200868E89 /* AddReviewViewController.swift in Sources */,
@@ -632,6 +639,7 @@
 				BB3EB7D220A066E3002614C5 /* LatestMoviesPresenter.swift in Sources */,
 				BB84E85820BAAE4200868E89 /* AddReviewRouter.swift in Sources */,
 				BBD57AF8209E7C370016ED96 /* AppDelegate.swift in Sources */,
+				BB9EDDF020BEE59C00C00CDC /* FavouriteMovieWorker.swift in Sources */,
 				BB84E85A20BAAE5B00868E89 /* AddReviewModel.swift in Sources */,
 				BBD57B3A209EFA1C0016ED96 /* PopularMoviesPresenter.swift in Sources */,
 				BBD9BFA220B447A6004C038C /* CastsRouter.swift in Sources */,
@@ -798,7 +806,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8796DFU5N7;
 				INFOPLIST_FILE = "$(SRCROOT)/ios-cinepedia/Supporting files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "au.com.subash.ios-cinepedia";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -814,7 +825,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8796DFU5N7;
 				INFOPLIST_FILE = "$(SRCROOT)/ios-cinepedia/Supporting files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "au.com.subash.ios-cinepedia";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -830,7 +844,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8796DFU5N7;
 				INFOPLIST_FILE = "ios-cinepediaTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "au.com.subash.ios-cinepediaTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -847,7 +865,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8796DFU5N7;
 				INFOPLIST_FILE = "ios-cinepediaTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "au.com.subash.ios-cinepediaTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

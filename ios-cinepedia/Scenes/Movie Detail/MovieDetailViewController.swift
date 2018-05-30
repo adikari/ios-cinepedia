@@ -8,9 +8,12 @@
 
 import UIKit
 import NVActivityIndicatorView
+import Toaster
 
 protocol MovieDetailDisplayLogic {
     func displayMovie(viewModel: MovieDetailModel.FetchMovieDetail.ViewModel)
+    func displayFavourite(viewModel: MovieDetailModel.FetchFavourite.ViewModel)
+    func setFavourite(viewModel: MovieDetailModel.SetFavourite.ViewModel)
 }
 
 class MovieDetailViewController: UIViewController, MovieDetailDisplayLogic, NVActivityIndicatorViewable {
@@ -21,12 +24,15 @@ class MovieDetailViewController: UIViewController, MovieDetailDisplayLogic, NVAc
     var router: (NSObjectProtocol & MovieDetailRouterLogic & MovieDetailDataPassing)?
     var interactor: MovieDetailBusinessLogic?
     
+    private var isFavourite: Bool?
+    private var movie: MovieDetailModel.FetchMovieDetail.ViewModel.Movie?
     private var indicator: NVActivityIndicatorView?
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         fetchMovie()
+        fetchFavourite()
     }
     
     // MARK: Object lifecycle
@@ -65,6 +71,15 @@ class MovieDetailViewController: UIViewController, MovieDetailDisplayLogic, NVAc
     @IBAction func displayCasts(_ sender: Any) {
         performSegue(withIdentifier: "Casts", sender: sender)
     }
+   
+    @IBAction func setFavourite(_ sender: UIBarButtonItem) {
+        if let movieId = movie?.id, let isFavourite = isFavourite {
+            let request = MovieDetailModel.SetFavourite.Request(movieId: movieId, isFavourite: !isFavourite)
+            interactor?.setFavourite(request: request)
+        }
+    }
+    
+    // Fetch Movie
     
     private func fetchMovie() {
         if let movieId = router?.dataStore?.movieId {
@@ -72,6 +87,15 @@ class MovieDetailViewController: UIViewController, MovieDetailDisplayLogic, NVAc
             
             startAnimating(type: .ballScaleMultiple)
             interactor?.fetchMovieDetail(request: request)
+        }
+    }
+    
+    // Fetch Favourite
+    
+    private func fetchFavourite() {
+        if let movieId = router?.dataStore?.movieId {
+            let request = MovieDetailModel.FetchFavourite.Request(movieId: movieId)
+            interactor?.isFavourite(request: request)
         }
     }
     
@@ -91,6 +115,20 @@ class MovieDetailViewController: UIViewController, MovieDetailDisplayLogic, NVAc
     func displayMovie(viewModel: MovieDetailModel.FetchMovieDetail.ViewModel) {
         stopAnimating()
         
+        movie = viewModel.movie
         movieDetailView.initialize(movie: viewModel.movie)
+    }
+    
+    func displayFavourite(viewModel: MovieDetailModel.FetchFavourite.ViewModel) {
+        isFavourite = viewModel.isFavourite
+        movieDetailView.displayFavouriteIcon(isFavourite: viewModel.isFavourite)
+    }
+    
+    func setFavourite(viewModel: MovieDetailModel.SetFavourite.ViewModel) {
+        isFavourite = viewModel.isFavourite
+        movieDetailView.displayFavouriteIcon(isFavourite: viewModel.isFavourite)
+        let message = viewModel.isFavourite ? "Movie added to favourites" : "Movie removed from favourites"
+
+        Toast(text: message).show()
     }
 }

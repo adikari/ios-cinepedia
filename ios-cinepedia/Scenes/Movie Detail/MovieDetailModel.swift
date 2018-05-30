@@ -9,6 +9,36 @@
 import Foundation
 
 enum MovieDetailModel {
+    
+    enum FetchFavourite {
+        struct Request {
+            var movieId: Int
+        }
+        
+        struct Response {
+            var isFavourite: Bool
+        }
+        
+        struct ViewModel {
+            var isFavourite: Bool
+        }
+    }
+    
+    enum SetFavourite {
+        struct Request {
+            var movieId: Int
+            var isFavourite: Bool
+        }
+        
+        struct Response {
+            var isFavourite: Bool
+        }
+        
+        struct ViewModel {
+            var isFavourite: Bool
+        }
+    }
+    
     enum FetchMovieDetail {
         struct Request {
             var movieId: Int

@@ -10,9 +10,12 @@ import Foundation
 
 protocol MovieDetailPresentationLogic {
     func displayMovie(response: MovieDetailModel.FetchMovieDetail.Response)
+    func displayFavourite(response: MovieDetailModel.FetchFavourite.Response)
+    func setFavourite(response: MovieDetailModel.SetFavourite.Response)
 }
 
 class MovieDetailPresenter: MovieDetailPresentationLogic {
+    
     var viewController: MovieDetailViewController?
     
     func displayMovie(response: MovieDetailModel.FetchMovieDetail.Response) {
@@ -37,6 +40,16 @@ class MovieDetailPresenter: MovieDetailPresentationLogic {
             
             viewController?.displayMovie(viewModel: viewModel)
         }
+    }
+    
+    func displayFavourite(response: MovieDetailModel.FetchFavourite.Response) {
+        let viewModel = MovieDetailModel.FetchFavourite.ViewModel(isFavourite: response.isFavourite)
+        viewController?.displayFavourite(viewModel: viewModel)
+    }
+    
+    func setFavourite(response: MovieDetailModel.SetFavourite.Response) {
+        let viewModel = MovieDetailModel.SetFavourite.ViewModel(isFavourite: response.isFavourite)
+        viewController?.setFavourite(viewModel: viewModel)
     }
     
     private func minutesToHoursMinutes (minutes : Int) -> (hours : Int , minutes : Int) {
