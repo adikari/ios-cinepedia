@@ -35,7 +35,7 @@ class ReviewViewController: UIViewController, ReviewDisplayLogic, NVActivityIndi
         reviewListTableView.estimatedRowHeight = 140
         reviewListTableView.rowHeight = UITableViewAutomaticDimension
         
-        mainManu.initialize(withViewController: self)
+        mainManu.initialize(withViewController: self, items: [.FavouriteMovies])
     }
     
     override func viewWillAppear(_ animated: Bool) {

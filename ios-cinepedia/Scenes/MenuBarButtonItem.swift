@@ -9,16 +9,20 @@
 import UIKit
 import DropDown
 
+enum MenuItem: String {
+    case FavouriteMovies = "Favourite Movies"
+}
+
 class MainMenuBarButtonItem: UIBarButtonItem {
-    var dropDown: DropDown?
+    private var dropDown: DropDown?
     weak var viewController: UIViewController!
     
-    func initialize(withViewController viewController: UIViewController) {
+    func initialize(withViewController viewController: UIViewController, items: [MenuItem]) {
         self.viewController = viewController
+        
         dropDown = DropDown()
         dropDown?.anchorView = self
-        
-        dropDown?.dataSource = ["Favourite Movies"]
+        dropDown?.dataSource = items.map { $0.rawValue }
         
         target = self
         action = #selector(show(_:))

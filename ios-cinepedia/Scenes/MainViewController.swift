@@ -50,7 +50,7 @@ class MainViewController: UIViewController {
         
         NVActivityIndicatorView.DEFAULT_BLOCKER_BACKGROUND_COLOR = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         
-        mainMenu.initialize(withViewController: self)
+        mainMenu.initialize(withViewController: self, items: [.FavouriteMovies])
     }
 }
 

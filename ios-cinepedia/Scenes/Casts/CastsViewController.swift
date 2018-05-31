@@ -34,7 +34,7 @@ class CastsViewController: UIViewController, CastsDisplayLogic, NVActivityIndica
         castsTableView.rowHeight = UITableViewAutomaticDimension
         castsTableView.estimatedRowHeight = 175
         
-        mainMenu.initialize(withViewController: self)
+        mainMenu.initialize(withViewController: self, items: [.FavouriteMovies])
        
         fetchCasts()
     }

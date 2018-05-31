@@ -33,7 +33,7 @@ class MovieDetailViewController: UIViewController, MovieDetailDisplayLogic, NVAc
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainMenu.initialize(withViewController: self)
+        mainMenu.initialize(withViewController: self, items: [.FavouriteMovies])
     }
 
     override func viewWillAppear(_ animated: Bool) {
