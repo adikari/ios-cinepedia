@@ -10,6 +10,7 @@ target 'ios-cinepedia' do
   pod 'FSPagerView'
   pod 'NVActivityIndicatorView'
   pod 'Toaster'
+  pod 'DropDown'
 
   target 'ios-cinepediaTests' do
       inherit! :search_paths

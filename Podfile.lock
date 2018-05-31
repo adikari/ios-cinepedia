@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.7.2)
+  - DropDown (2.3.2)
   - FSPagerView (0.7.1)
   - Kingfisher (4.7.0)
   - Moya (11.0.2):
@@ -29,6 +30,7 @@ PODS:
   - Toaster (2.1.1)
 
 DEPENDENCIES:
+  - DropDown
   - FSPagerView
   - Kingfisher (~> 4.0)
   - Moya (~> 11.0)
@@ -41,6 +43,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - DropDown
     - FSPagerView
     - Kingfisher
     - Moya
@@ -53,6 +56,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  DropDown: 7f87abecc28f9b4edad810fe1211c5c018c257e5
   FSPagerView: 958aba39684e1573755ddcfcc29f7eebb8413cee
   Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
   Moya: a725035953bc1c0eb1be505ab903984501d82440
@@ -63,6 +67,6 @@ SPEC CHECKSUMS:
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   Toaster: a6c9532de1ded8105e77376f7dffeb2e12b46dbb
 
-PODFILE CHECKSUM: 31abeefc929251ec75970cee801f3fe6c519a591
+PODFILE CHECKSUM: 5c42e1233a4068a1693ecbdddd17ba26d1bd1ec2
 
 COCOAPODS: 1.5.0
