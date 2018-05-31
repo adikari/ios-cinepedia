@@ -52,7 +52,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="zRo-f8-rqm">
                         <barButtonItem key="leftBarButtonItem" title="Logo" image="logo" id="srT-ct-XYg"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="menu" id="P35-JD-C24" customClass="MainMenuBarButtonItem" customModule="ios_cinepedia" customModuleProvider="target"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mainMenu" destination="P35-JD-C24" id="pne-bz-FR1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -511,12 +515,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="NO"/>
-                        <userDefinedRuntimeAttribute type="number" keyPath="menuWidth">
-                            <real key="value" value="1"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="WY0-Kj-cJV"/>
                         <segue destination="Azq-9X-3kD" kind="show" identifier="ShowMovieDetailViewController" id="85N-5U-SYe"/>
@@ -548,6 +546,7 @@
     <resources>
         <image name="edit" width="25" height="25"/>
         <image name="logo" width="32" height="32"/>
+        <image name="menu" width="25" height="25"/>
         <image name="star" width="25" height="25"/>
     </resources>
 </document>

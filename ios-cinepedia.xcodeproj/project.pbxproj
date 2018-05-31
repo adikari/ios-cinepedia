@@ -71,6 +71,7 @@
 		BBE324AD20BFFC67004F8CFC /* FavouriteMoviePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE324AC20BFFC67004F8CFC /* FavouriteMoviePresenter.swift */; };
 		BBE324AF20BFFC7C004F8CFC /* FavouriteMovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE324AE20BFFC7C004F8CFC /* FavouriteMovieTableViewCell.swift */; };
 		BBE324B120BFFC8B004F8CFC /* FavouriteMovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE324B020BFFC8B004F8CFC /* FavouriteMovieModel.swift */; };
+		BBE324B320C00672004F8CFC /* MenuBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE324B220C00672004F8CFC /* MenuBarButtonItem.swift */; };
 		E8C2135DF68ACE1E7A1819C4 /* Pods_ios_cinepedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B098DF6C9F390B4C02277B01 /* Pods_ios_cinepedia.framework */; };
 /* End PBXBuildFile section */
 
@@ -158,6 +159,7 @@
 		BBE324AC20BFFC67004F8CFC /* FavouriteMoviePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteMoviePresenter.swift; sourceTree = "<group>"; };
 		BBE324AE20BFFC7C004F8CFC /* FavouriteMovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteMovieTableViewCell.swift; sourceTree = "<group>"; };
 		BBE324B020BFFC8B004F8CFC /* FavouriteMovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteMovieModel.swift; sourceTree = "<group>"; };
+		BBE324B220C00672004F8CFC /* MenuBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarButtonItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -320,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				BBD57B16209E81DE0016ED96 /* MainViewController.swift */,
+				BBE324B220C00672004F8CFC /* MenuBarButtonItem.swift */,
 				BBE324A520BFFC06004F8CFC /* FavouriteMovie */,
 				BB84E84E20BAAB7C00868E89 /* AddReview */,
 				BB57A98320B5782300A4544C /* Reviews */,
@@ -665,6 +668,7 @@
 				BBCFA55620AC4BC20043BFDA /* MovieDetail.swift in Sources */,
 				BB3EB7D020A066D7002614C5 /* LatestMoviesInteractor.swift in Sources */,
 				BBD57B28209E86A70016ED96 /* MoviesWorker.swift in Sources */,
+				BBE324B320C00672004F8CFC /* MenuBarButtonItem.swift in Sources */,
 				BBCA998320A9ADDE007EB7A6 /* MovieDetailInteractor.swift in Sources */,
 				BBD57B30209E8C320016ED96 /* MoviesApiStore.swift in Sources */,
 				BBD9BF9E20B44698004C038C /* CastApiStore.swift in Sources */,
@@ -840,7 +844,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8796DFU5N7;
 				INFOPLIST_FILE = "$(SRCROOT)/ios-cinepedia/Supporting files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "au.com.subash.ios-cinepedia";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -856,7 +863,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8796DFU5N7;
 				INFOPLIST_FILE = "$(SRCROOT)/ios-cinepedia/Supporting files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "au.com.subash.ios-cinepedia";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -872,7 +882,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8796DFU5N7;
 				INFOPLIST_FILE = "ios-cinepediaTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "au.com.subash.ios-cinepediaTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -889,7 +903,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8796DFU5N7;
 				INFOPLIST_FILE = "ios-cinepediaTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "au.com.subash.ios-cinepediaTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

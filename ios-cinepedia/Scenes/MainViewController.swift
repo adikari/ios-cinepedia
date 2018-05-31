@@ -11,6 +11,8 @@ import NVActivityIndicatorView
 
 class MainViewController: UIViewController {
     
+    @IBOutlet weak var mainMenu: MainMenuBarButtonItem!
+    
     private lazy var popularMoviesViewController: PopularMoviesViewController = {
         var viewController = storyboard().instantiateViewController(withIdentifier: "PopularMoviesViewController") as! PopularMoviesViewController
         
