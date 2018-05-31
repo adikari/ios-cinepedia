@@ -12,7 +12,7 @@ import NVActivityIndicatorView
 class MainViewController: UIViewController {
     
     @IBOutlet weak var mainMenu: MainMenuBarButtonItem!
-    
+
     private lazy var popularMoviesViewController: PopularMoviesViewController = {
         var viewController = storyboard().instantiateViewController(withIdentifier: "PopularMoviesViewController") as! PopularMoviesViewController
         
@@ -49,6 +49,8 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         NVActivityIndicatorView.DEFAULT_BLOCKER_BACKGROUND_COLOR = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        
+        mainMenu.initialize(withViewController: self)
     }
 }
 

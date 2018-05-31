@@ -22,6 +22,7 @@ class CastsViewController: UIViewController, CastsDisplayLogic, NVActivityIndica
     var router: (NSObjectProtocol & CastsRouterLogic & CastsDataPassing)?
     
     @IBOutlet weak var castsTableView: UITableView!
+    @IBOutlet weak var mainMenu: MainMenuBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,8 @@ class CastsViewController: UIViewController, CastsDisplayLogic, NVActivityIndica
         // castsTableView.tableFooterView = UIView()
         castsTableView.rowHeight = UITableViewAutomaticDimension
         castsTableView.estimatedRowHeight = 175
+        
+        mainMenu.initialize(withViewController: self)
        
         fetchCasts()
     }

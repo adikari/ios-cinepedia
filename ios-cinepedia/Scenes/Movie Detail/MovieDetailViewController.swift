@@ -19,14 +19,22 @@ protocol MovieDetailDisplayLogic {
 class MovieDetailViewController: UIViewController, MovieDetailDisplayLogic, NVActivityIndicatorViewable {
    
     @IBOutlet weak var movieDetailView: MovieDetailView!
-    
+    @IBOutlet weak var mainMenu: MainMenuBarButtonItem!
+
     var presenter: MovieDetailPresentationLogic?
     var router: (NSObjectProtocol & MovieDetailRouterLogic & MovieDetailDataPassing)?
     var interactor: MovieDetailBusinessLogic?
-    
+
     private var isFavourite: Bool?
     private var movie: MovieDetailModel.FetchMovieDetail.ViewModel.Movie?
     private var indicator: NVActivityIndicatorView?
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        mainMenu.initialize(withViewController: self)
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

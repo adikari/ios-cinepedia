@@ -21,6 +21,7 @@ class ReviewViewController: UIViewController, ReviewDisplayLogic, NVActivityIndi
     private var reviews: [ReviewModel.FetchReview.ViewModel.Review] = []
     
     @IBOutlet weak var reviewListTableView: UITableView!
+    @IBOutlet weak var mainManu: MainMenuBarButtonItem!
 
     // MARK: - View lifecycle
     
@@ -33,6 +34,8 @@ class ReviewViewController: UIViewController, ReviewDisplayLogic, NVActivityIndi
 
         reviewListTableView.estimatedRowHeight = 140
         reviewListTableView.rowHeight = UITableViewAutomaticDimension
+        
+        mainManu.initialize(withViewController: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {

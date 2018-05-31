@@ -10,18 +10,31 @@ import UIKit
 import DropDown
 
 class MainMenuBarButtonItem: UIBarButtonItem {
-    let dropDown = DropDown()
+    var dropDown: DropDown?
+    weak var viewController: UIViewController!
     
-    override func awakeFromNib() {
-        dropDown.anchorView = self // UIView or UIBarButtonItem
+    func initialize(withViewController viewController: UIViewController) {
+        self.viewController = viewController
+        dropDown = DropDown()
+        dropDown?.anchorView = self
         
-        dropDown.dataSource = ["Favourite Movies"]
+        dropDown?.dataSource = ["Favourite Movies"]
         
         target = self
         action = #selector(show(_:))
+        
+        dropDown?.selectionAction = { [weak self] (index, item) in
+            self?.route(index: index, item: item)
+        }
     }
 
     @objc func show(_ sender: UIBarButtonItem) {
-        dropDown.show()
+        dropDown?.show()
+    }
+    
+    private func route(index: Int, item: String) {
+        let destVc = viewController.storyboard?.instantiateViewController(withIdentifier: "FavouriteMovieViewController") as! FavouriteMovieViewController
+
+        viewController.show(destVc, sender: nil)
     }
 }

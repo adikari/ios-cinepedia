@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -52,7 +53,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="zRo-f8-rqm">
                         <barButtonItem key="leftBarButtonItem" title="Logo" image="logo" id="srT-ct-XYg"/>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="menu" id="P35-JD-C24" customClass="MainMenuBarButtonItem" customModule="ios_cinepedia" customModuleProvider="target"/>
+                        <barButtonItem key="rightBarButtonItem" title="FavouriteMovies" image="menu" id="P35-JD-C24" customClass="MainMenuBarButtonItem" customModule="ios_cinepedia" customModuleProvider="target"/>
                     </navigationItem>
                     <connections>
                         <outlet property="mainMenu" destination="P35-JD-C24" id="pne-bz-FR1"/>
@@ -134,9 +135,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Casts" id="bLD-Yr-SrM">
                         <barButtonItem key="backBarButtonItem" title="Back" id="mis-Tf-MZo"/>
+                        <barButtonItem key="rightBarButtonItem" title="Favourite Movies" image="menu" id="beK-Hn-b1P" customClass="MainMenuBarButtonItem" customModule="ios_cinepedia" customModuleProvider="target"/>
                     </navigationItem>
                     <connections>
                         <outlet property="castsTableView" destination="vBT-zZ-Ypa" id="qgu-uS-URj"/>
+                        <outlet property="mainMenu" destination="beK-Hn-b1P" id="Yr0-Cg-a8z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XyK-bG-Gr9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -248,13 +251,17 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="o7o-92-0Y1">
-                        <barButtonItem key="rightBarButtonItem" image="star" id="hGh-p5-zn4">
-                            <connections>
-                                <action selector="setFavourite:" destination="rcZ-lb-yJM" id="8yf-Va-adJ"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Favourite Movies" image="menu" id="IO1-uV-VBd" customClass="MainMenuBarButtonItem" customModule="ios_cinepedia" customModuleProvider="target"/>
+                            <barButtonItem image="star" id="hGh-p5-zn4">
+                                <connections>
+                                    <action selector="setFavourite:" destination="rcZ-lb-yJM" id="8yf-Va-adJ"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="mainMenu" destination="IO1-uV-VBd" id="9Ik-ZP-OFz"/>
                         <outlet property="movieDetailView" destination="vHz-id-48a" id="Qb2-DE-Lqo"/>
                         <segue destination="DVi-JJ-u8t" kind="show" identifier="Casts" id="ovp-da-z2R"/>
                         <segue destination="5PA-3p-CqY" kind="show" identifier="Reviews" id="fNp-68-IwL"/>
@@ -327,13 +334,17 @@
                         <viewLayoutGuide key="safeArea" id="pOw-UJ-cmi"/>
                     </view>
                     <navigationItem key="navigationItem" title="Reviews" id="1De-Ki-aYa">
-                        <barButtonItem key="rightBarButtonItem" image="edit" id="aRo-30-dHK">
-                            <connections>
-                                <action selector="addReview:" destination="5PA-3p-CqY" id="Wvu-TY-4Ef"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Favourite Movies" image="menu" id="SDa-FY-ybr" customClass="MainMenuBarButtonItem" customModule="ios_cinepedia" customModuleProvider="target"/>
+                            <barButtonItem image="edit" id="aRo-30-dHK">
+                                <connections>
+                                    <action selector="addReview:" destination="5PA-3p-CqY" id="Wvu-TY-4Ef"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="mainManu" destination="SDa-FY-ybr" id="kbq-HC-rE6"/>
                         <outlet property="reviewListTableView" destination="LyN-bk-BDb" id="Byq-wl-hht"/>
                         <segue destination="Ua2-Dd-vEQ" kind="show" identifier="AddReview" id="Lsg-31-2ZN"/>
                     </connections>
@@ -466,6 +477,22 @@
             </objects>
             <point key="canvasLocation" x="1756" y="-154"/>
         </scene>
+        <!--Favourite Movies-->
+        <scene sceneID="e66-p3-UsL">
+            <objects>
+                <viewController storyboardIdentifier="FavouriteMovieViewController" id="UjA-dt-3OT" customClass="FavouriteMovieViewController" customModule="ios_cinepedia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="55E-Im-B0t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Yvz-Hw-3vW"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Favourite Movies" id="iKd-5n-9vC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IKp-So-C9P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3568.8000000000002" y="33.733133433283363"/>
+        </scene>
         <!--Latest Movies View Controller-->
         <scene sceneID="DbC-0n-H54">
             <objects>
@@ -541,6 +568,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jtk-Zb-br3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="829.83508245877067"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aSV-qa-Mfd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HCl-Ub-ux4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tBY-uG-cMq">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="UjA-dt-3OT" kind="relationship" relationship="rootViewController" id="KmX-G4-aqy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="66b-Sj-gNy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2629.5999999999999" y="33.733133433283363"/>
         </scene>
     </scenes>
     <resources>
