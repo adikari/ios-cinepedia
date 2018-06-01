@@ -10,6 +10,27 @@ import Foundation
 import CoreData
 
 class FavouriteCoreDataStore: FavouriteStoreProtocol {
+    func fetchFavouriteMovies(completionHandler: @escaping ([FavouriteMovie], FavouriteStoreError?) -> Void) {
+        let fetchRequest = NSFetchRequest<ManagedFavourite>(entityName: "ManagedFavourite")
+        
+        do {
+            let managedFavourites = try AppDelegate.viewContext.fetch(fetchRequest)
+            
+            let movies = managedFavourites.map { managedFavourite in
+                return FavouriteMovie(
+                    id: Int(managedFavourite.movieId ?? "0") ?? 0,
+                    title: managedFavourite.title ?? "",
+                    description: managedFavourite.desc ?? "",
+                    imageUrl: managedFavourite.imageUrl
+                )
+            }
+            
+            completionHandler(movies, nil)
+        } catch {
+            completionHandler([], FavouriteStoreError.CannotFetch(error.localizedDescription))
+        }
+    }
+    
     func isFavourite(movieId: Int, completionHandler: @escaping(Bool, FavouriteStoreError?) -> Void) {
         let fetchRequest = NSFetchRequest<ManagedFavourite>(entityName: "ManagedFavourite")
         fetchRequest.predicate = NSPredicate(format: "movieId == %@", movieId.description)

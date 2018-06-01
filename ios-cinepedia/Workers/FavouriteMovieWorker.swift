@@ -19,6 +19,7 @@ protocol FavouriteStoreProtocol {
     func setFavourite(movieId: Int, completionHandler: @escaping (FavouriteStoreError?) -> Void)
     func removeFavourite(movieId: Int, completionHandler: @escaping(FavouriteStoreError?) -> Void)
     func isFavourite(movieId: Int, completionHandler: @escaping(Bool, FavouriteStoreError?) -> Void)
+    func fetchFavouriteMovies(completionHandler: @escaping([FavouriteMovie], FavouriteStoreError?) -> Void)
 }
 
 class FavouriteMovieWorker {
@@ -27,6 +28,14 @@ class FavouriteMovieWorker {
     
     init(store: FavouriteStoreProtocol) {
         self.store = store
+    }
+    
+    func fetchFavouriteMovies(completionHandler: @escaping([FavouriteMovie]) -> Void) {
+        store.fetchFavouriteMovies() { movies, error in
+            DispatchQueue.main.async {
+                completionHandler(movies)
+            }
+        }
     }
     
     func isFavourite(movieId: Int, completionHandler: @escaping(Bool) -> Void) {

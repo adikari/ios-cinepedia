@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		13267E3309CD4E6003802FEC /* Pods_ios_cinepediaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D7825941F19EDECF1DC7407 /* Pods_ios_cinepediaTests.framework */; };
 		BB1D32FC20B1ADF000680276 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1D32FB20B1ADF000680276 /* DateExtension.swift */; };
+		BB1FA58520C14D0700E3220B /* FavouriteMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1FA58420C14D0700E3220B /* FavouriteMovie.swift */; };
+		BB1FA58720C1572C00E3220B /* FavouriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1FA58620C1572C00E3220B /* FavouriteTableViewCell.swift */; };
 		BB3EB7CC20A06325002614C5 /* LatestMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3EB7CB20A06325002614C5 /* LatestMoviesViewController.swift */; };
 		BB3EB7CE20A06547002614C5 /* LatestMoviesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3EB7CD20A06547002614C5 /* LatestMoviesModel.swift */; };
 		BB3EB7D020A066D7002614C5 /* LatestMoviesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3EB7CF20A066D7002614C5 /* LatestMoviesInteractor.swift */; };
@@ -93,6 +95,8 @@
 		9D7825941F19EDECF1DC7407 /* Pods_ios_cinepediaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_cinepediaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B098DF6C9F390B4C02277B01 /* Pods_ios_cinepedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_cinepedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB1D32FB20B1ADF000680276 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		BB1FA58420C14D0700E3220B /* FavouriteMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteMovie.swift; sourceTree = "<group>"; };
+		BB1FA58620C1572C00E3220B /* FavouriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTableViewCell.swift; sourceTree = "<group>"; };
 		BB3EB7CB20A06325002614C5 /* LatestMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestMoviesViewController.swift; sourceTree = "<group>"; };
 		BB3EB7CD20A06547002614C5 /* LatestMoviesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestMoviesModel.swift; sourceTree = "<group>"; };
 		BB3EB7CF20A066D7002614C5 /* LatestMoviesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestMoviesInteractor.swift; sourceTree = "<group>"; };
@@ -361,6 +365,7 @@
 				BB57A97F20B577AC00A4544C /* Review.swift */,
 				BBCFA55520AC4BC20043BFDA /* MovieDetail.swift */,
 				BBD9BF9720B44309004C038C /* Cast.swift */,
+				BB1FA58420C14D0700E3220B /* FavouriteMovie.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -410,6 +415,7 @@
 				BBE324AC20BFFC67004F8CFC /* FavouriteMoviePresenter.swift */,
 				BBE324AE20BFFC7C004F8CFC /* FavouriteMovieTableViewCell.swift */,
 				BBE324B020BFFC8B004F8CFC /* FavouriteMovieModel.swift */,
+				BB1FA58620C1572C00E3220B /* FavouriteTableViewCell.swift */,
 			);
 			path = FavouriteMovie;
 			sourceTree = "<group>";
@@ -676,10 +682,12 @@
 				BB57A98020B577AC00A4544C /* Review.swift in Sources */,
 				BB3EB7D220A066E3002614C5 /* LatestMoviesPresenter.swift in Sources */,
 				BB84E85820BAAE4200868E89 /* AddReviewRouter.swift in Sources */,
+				BB1FA58720C1572C00E3220B /* FavouriteTableViewCell.swift in Sources */,
 				BBD57AF8209E7C370016ED96 /* AppDelegate.swift in Sources */,
 				BB9EDDF020BEE59C00C00CDC /* FavouriteMovieWorker.swift in Sources */,
 				BB84E85A20BAAE5B00868E89 /* AddReviewModel.swift in Sources */,
 				BBD57B3A209EFA1C0016ED96 /* PopularMoviesPresenter.swift in Sources */,
+				BB1FA58520C14D0700E3220B /* FavouriteMovie.swift in Sources */,
 				BBD9BFA220B447A6004C038C /* CastsRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

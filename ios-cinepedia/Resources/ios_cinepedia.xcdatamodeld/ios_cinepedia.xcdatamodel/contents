@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17E202" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17E202" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="ManagedFavourite" representedClassName="ManagedFavourite" syncable="YES" codeGenerationType="class">
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="movieId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="ManagedReview" representedClassName="ManagedReview" syncable="YES" codeGenerationType="class">
         <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
@@ -10,7 +13,7 @@
         <attribute name="movieId" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
+        <element name="ManagedFavourite" positionX="-108" positionY="-223" width="128" height="103"/>
         <element name="ManagedReview" positionX="-63" positionY="-18" width="128" height="103"/>
-        <element name="ManagedFavourite" positionX="-108" positionY="-223" width="128" height="58"/>
     </elements>
 </model>

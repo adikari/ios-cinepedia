@@ -30,7 +30,7 @@ class CastsViewController: UIViewController, CastsDisplayLogic, NVActivityIndica
         castsTableView.dataSource = self
         castsTableView.delegate = self
         
-        // castsTableView.tableFooterView = UIView()
+        castsTableView.tableFooterView = UIView()
         castsTableView.rowHeight = UITableViewAutomaticDimension
         castsTableView.estimatedRowHeight = 175
         

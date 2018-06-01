@@ -7,3 +7,24 @@
 //
 
 import Foundation
+
+enum FavouriteMovieModel {
+    enum FetchFavouriteMovies {
+        struct Response {
+            var movies: [FavouriteMovie]
+        }
+        
+        struct Request { }
+        
+        struct ViewModel {
+            struct Movie {
+                var id: Int
+                var title: String
+                var imageUrl: String
+                var description: String
+            }
+            
+            var movies: [Movie]
+        }
+    }
+}
