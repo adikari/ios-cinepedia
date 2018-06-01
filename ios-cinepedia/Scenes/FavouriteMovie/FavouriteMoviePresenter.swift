@@ -21,16 +21,14 @@ class FavouriteMoviePresenter: FavouriteMoviePresentationLogic {
         var fetchedMovies: [FavouriteMovieModel.FetchFavouriteMovies.ViewModel.Movie] = []
         
         for movie in response.movies {
-            if let imageUrl = movie.image() {
-                let movieModel = FavouriteMovieModel.FetchFavouriteMovies.ViewModel.Movie(
-                    id: movie.id,
-                    title: movie.title,
-                    imageUrl: imageUrl,
-                    description: movie.description
-                )
-                
-                fetchedMovies.append(movieModel)
-            }
+            let movieModel = FavouriteMovieModel.FetchFavouriteMovies.ViewModel.Movie(
+                id: movie.id,
+                title: movie.title,
+                imageUrl: movie.imageUrl,
+                description: movie.description
+            )
+
+            fetchedMovies.append(movieModel)
         }
         
         let viewModel = FavouriteMovieModel.FetchFavouriteMovies.ViewModel(movies: fetchedMovies)

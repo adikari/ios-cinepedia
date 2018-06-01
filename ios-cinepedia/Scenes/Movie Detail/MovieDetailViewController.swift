@@ -81,8 +81,8 @@ class MovieDetailViewController: UIViewController, MovieDetailDisplayLogic, NVAc
     }
    
     @IBAction func setFavourite(_ sender: UIBarButtonItem) {
-        if let movieId = movie?.id, let isFavourite = isFavourite {
-            let request = MovieDetailModel.SetFavourite.Request(movieId: movieId, isFavourite: !isFavourite)
+        if let movie = movie, let isFavourite = isFavourite {
+            let request = MovieDetailModel.SetFavourite.Request(movie: movie, isFavourite: !isFavourite)
             interactor?.setFavourite(request: request)
         }
     }

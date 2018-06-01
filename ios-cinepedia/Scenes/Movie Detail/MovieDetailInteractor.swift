@@ -46,12 +46,19 @@ class MovieDetailInteractor: MovieDetailDataStore, MovieDetailBusinessLogic {
     func setFavourite(request: MovieDetailModel.SetFavourite.Request) {
         let response = MovieDetailModel.SetFavourite.Response(isFavourite: request.isFavourite)
         
+
         if (request.isFavourite) {
-            favouriteWorker.setFavourite(movieId: request.movieId) {
+            let movie = FavouriteMovie(
+                id: request.movie.id,
+                title: request.movie.title,
+                description: request.movie.description,
+                imageUrl: request.movie.posterUrl ?? ""
+            )
+            favouriteWorker.setFavourite(movie: movie) {
                 self.presenter?.setFavourite(response: response)
             }
         } else {
-            favouriteWorker.removeFavourite(movieId: request.movieId) {
+            favouriteWorker.removeFavourite(movieId: request.movie.id) {
                 self.presenter?.setFavourite(response: response)
             }
         }

@@ -26,7 +26,7 @@ enum MovieDetailModel {
     
     enum SetFavourite {
         struct Request {
-            var movieId: Int
+            var movie: FetchMovieDetail.ViewModel.Movie
             var isFavourite: Bool
         }
         

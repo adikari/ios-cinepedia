@@ -21,7 +21,7 @@ class FavouriteCoreDataStore: FavouriteStoreProtocol {
                     id: Int(managedFavourite.movieId ?? "0") ?? 0,
                     title: managedFavourite.title ?? "",
                     description: managedFavourite.desc ?? "",
-                    imageUrl: managedFavourite.imageUrl
+                    imageUrl: managedFavourite.imageUrl ?? ""
                 )
             }
             
@@ -49,11 +49,14 @@ class FavouriteCoreDataStore: FavouriteStoreProtocol {
         }
     }
     
-    func setFavourite(movieId: Int, completionHandler: @escaping (FavouriteStoreError?) -> Void) {
+    func setFavourite(movie: FavouriteMovie, completionHandler: @escaping (FavouriteStoreError?) -> Void) {
         let context = AppDelegate.viewContext
         let entryToCreate = ManagedFavourite(context: context)
         
-        entryToCreate.movieId = movieId.description
+        entryToCreate.movieId = movie.id.description
+        entryToCreate.desc = movie.description
+        entryToCreate.imageUrl = movie.imageUrl
+        entryToCreate.title = movie.title
         
         do {
             try context.save()

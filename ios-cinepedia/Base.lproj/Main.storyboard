@@ -497,7 +497,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="237.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rbe-xH-wWQ">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rbe-xH-wWQ">
                                                     <rect key="frame" x="16" y="16" width="138" height="186"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yl-E4-M1I">
@@ -506,7 +506,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Character" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXR-sy-KKi">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Character" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXR-sy-KKi">
                                                     <rect key="frame" x="176" y="51" width="183" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="183" id="EjD-tX-ath"/>
@@ -531,11 +531,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="castImage" destination="Rbe-xH-wWQ" id="Zfv-HD-Qj1"/>
-                                            <outlet property="character" destination="WXR-sy-KKi" id="2eK-fA-1Pb"/>
                                             <outlet property="desc" destination="WXR-sy-KKi" id="HG1-La-fFh"/>
                                             <outlet property="movieImage" destination="Rbe-xH-wWQ" id="vpg-8F-B4H"/>
-                                            <outlet property="name" destination="9yl-E4-M1I" id="KQK-bb-xOc"/>
                                             <outlet property="title" destination="9yl-E4-M1I" id="l39-fQ-w7Q"/>
                                         </connections>
                                     </tableViewCell>

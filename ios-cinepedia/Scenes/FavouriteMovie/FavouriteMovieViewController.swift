@@ -66,6 +66,17 @@ class FavouriteMovieViewController : UIViewController, FavouriteMoviesDisplayLog
         router.dataStore = interactor
     }
     
+    // MARK: Router
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+    
     // MARK: Fetch favourite movies
     
     func fetchFavourites() {

@@ -71,7 +71,6 @@
 		BBE324A920BFFC4B004F8CFC /* FavouriteMovieRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE324A820BFFC4B004F8CFC /* FavouriteMovieRouter.swift */; };
 		BBE324AB20BFFC59004F8CFC /* FavouriteMovieInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE324AA20BFFC59004F8CFC /* FavouriteMovieInteractor.swift */; };
 		BBE324AD20BFFC67004F8CFC /* FavouriteMoviePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE324AC20BFFC67004F8CFC /* FavouriteMoviePresenter.swift */; };
-		BBE324AF20BFFC7C004F8CFC /* FavouriteMovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE324AE20BFFC7C004F8CFC /* FavouriteMovieTableViewCell.swift */; };
 		BBE324B120BFFC8B004F8CFC /* FavouriteMovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE324B020BFFC8B004F8CFC /* FavouriteMovieModel.swift */; };
 		BBE324B320C00672004F8CFC /* MenuBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE324B220C00672004F8CFC /* MenuBarButtonItem.swift */; };
 		E8C2135DF68ACE1E7A1819C4 /* Pods_ios_cinepedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B098DF6C9F390B4C02277B01 /* Pods_ios_cinepedia.framework */; };
@@ -161,7 +160,6 @@
 		BBE324A820BFFC4B004F8CFC /* FavouriteMovieRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteMovieRouter.swift; sourceTree = "<group>"; };
 		BBE324AA20BFFC59004F8CFC /* FavouriteMovieInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteMovieInteractor.swift; sourceTree = "<group>"; };
 		BBE324AC20BFFC67004F8CFC /* FavouriteMoviePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteMoviePresenter.swift; sourceTree = "<group>"; };
-		BBE324AE20BFFC7C004F8CFC /* FavouriteMovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteMovieTableViewCell.swift; sourceTree = "<group>"; };
 		BBE324B020BFFC8B004F8CFC /* FavouriteMovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteMovieModel.swift; sourceTree = "<group>"; };
 		BBE324B220C00672004F8CFC /* MenuBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarButtonItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -413,7 +411,6 @@
 				BBE324A820BFFC4B004F8CFC /* FavouriteMovieRouter.swift */,
 				BBE324AA20BFFC59004F8CFC /* FavouriteMovieInteractor.swift */,
 				BBE324AC20BFFC67004F8CFC /* FavouriteMoviePresenter.swift */,
-				BBE324AE20BFFC7C004F8CFC /* FavouriteMovieTableViewCell.swift */,
 				BBE324B020BFFC8B004F8CFC /* FavouriteMovieModel.swift */,
 				BB1FA58620C1572C00E3220B /* FavouriteTableViewCell.swift */,
 			);
@@ -643,7 +640,6 @@
 				BB57A98220B577D600A4544C /* ReviewWorker.swift in Sources */,
 				BBCA997C20A9A64E007EB7A6 /* LatestMoviesRouter.swift in Sources */,
 				BBD57B2D209E89620016ED96 /* Movie.swift in Sources */,
-				BBE324AF20BFFC7C004F8CFC /* FavouriteMovieTableViewCell.swift in Sources */,
 				BB84E85E20BAB22100868E89 /* ReviewCoreDataStore.swift in Sources */,
 				BB57A98B20B5787500A4544C /* ReviewPresenter.swift in Sources */,
 				BBE324B120BFFC8B004F8CFC /* FavouriteMovieModel.swift in Sources */,

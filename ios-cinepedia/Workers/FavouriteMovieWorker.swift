@@ -16,7 +16,7 @@ enum FavouriteStoreError: Equatable, Error {
 }
 
 protocol FavouriteStoreProtocol {
-    func setFavourite(movieId: Int, completionHandler: @escaping (FavouriteStoreError?) -> Void)
+    func setFavourite(movie: FavouriteMovie, completionHandler: @escaping (FavouriteStoreError?) -> Void)
     func removeFavourite(movieId: Int, completionHandler: @escaping(FavouriteStoreError?) -> Void)
     func isFavourite(movieId: Int, completionHandler: @escaping(Bool, FavouriteStoreError?) -> Void)
     func fetchFavouriteMovies(completionHandler: @escaping([FavouriteMovie], FavouriteStoreError?) -> Void)
@@ -46,8 +46,8 @@ class FavouriteMovieWorker {
         }
     }
     
-    func setFavourite(movieId: Int, completionHandler: @escaping () -> Void) {
-        store.setFavourite(movieId: movieId) { error in
+    func setFavourite(movie: FavouriteMovie, completionHandler: @escaping () -> Void) {
+        store.setFavourite(movie: movie) { error in
             DispatchQueue.main.async {
                 completionHandler()
             }
