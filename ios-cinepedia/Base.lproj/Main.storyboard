@@ -545,6 +545,7 @@
                     <navigationItem key="navigationItem" title="Favourite Movies" id="iKd-5n-9vC"/>
                     <connections>
                         <outlet property="favouritesTableView" destination="Dc8-nb-bIv" id="Jmi-Rp-JeK"/>
+                        <segue destination="rcZ-lb-yJM" kind="show" identifier="MovieDetail" id="2OY-GO-Xfv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IKp-So-C9P" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -653,4 +654,7 @@
         <image name="menu" width="25" height="25"/>
         <image name="star" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="2OY-GO-Xfv"/>
+    </inferredMetricsTieBreakers>
 </document>

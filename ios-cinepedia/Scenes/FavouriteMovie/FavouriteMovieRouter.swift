@@ -12,7 +12,7 @@ import Foundation
 import Foundation
 import UIKit
 
-protocol FavouriteMovieRouterLogic {
+@objc protocol FavouriteMovieRouterLogic {
     func routeToMovieDetail(segue: UIStoryboardSegue?)
 }
 

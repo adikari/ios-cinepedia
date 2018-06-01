@@ -35,7 +35,10 @@ class FavouriteMovieViewController : UIViewController, FavouriteMoviesDisplayLog
         favouritesTableView.tableFooterView = UIView()
         favouritesTableView.rowHeight = UITableViewAutomaticDimension
         favouritesTableView.estimatedRowHeight = 175
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         fetchFavourites()
     }
     
@@ -91,9 +94,9 @@ class FavouriteMovieViewController : UIViewController, FavouriteMoviesDisplayLog
         stopAnimating()
         favourites = viewModel.movies
         
-        if favourites.count > 0 {
-            favouritesTableView.reloadData()
-        } else {
+        favouritesTableView.reloadData()
+        
+        if favourites.count <= 0 {
             favouritesTableView.emptyMessage(message: "You haven't favourited any movies :(")
         }
     }
@@ -104,6 +107,10 @@ extension FavouriteMovieViewController: UITableViewDelegate, UITableViewDataSour
         return favourites.count
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "MovieDetail", sender: nil )
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "FavouriteTableViewCell") as? FavouriteTableViewCell {
