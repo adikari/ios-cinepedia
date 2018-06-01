@@ -37,8 +37,17 @@ class MainMenuBarButtonItem: UIBarButtonItem {
     }
     
     private func route(index: Int, item: String) {
+        switch item {
+        case MenuItem.FavouriteMovies.rawValue:
+            routeToFavouriteMovies()
+        default:
+            print("No route found for \(item)")
+        }
+    }
+    
+    private func routeToFavouriteMovies() {
         let destVc = viewController.storyboard?.instantiateViewController(withIdentifier: "FavouriteMovieViewController") as! FavouriteMovieViewController
-
+        
         viewController.show(destVc, sender: nil)
     }
 }
