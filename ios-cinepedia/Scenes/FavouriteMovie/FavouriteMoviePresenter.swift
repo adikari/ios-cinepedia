@@ -24,7 +24,7 @@ class FavouriteMoviePresenter: FavouriteMoviePresentationLogic {
             let movieModel = FavouriteMovieModel.FetchFavouriteMovies.ViewModel.Movie(
                 id: movie.id,
                 title: movie.title,
-                imageUrl: movie.imageUrl,
+                imageUrl: getImageUrl(movie.imageUrl),
                 description: movie.description
             )
 
@@ -32,6 +32,14 @@ class FavouriteMoviePresenter: FavouriteMoviePresentationLogic {
         }
         
         let viewModel = FavouriteMovieModel.FetchFavouriteMovies.ViewModel(movies: fetchedMovies)
+        
         viewController?.displayFavouriteMovies(viewModel: viewModel)
+    }
+    
+    // TODO: perform this using regex later
+    private func getImageUrl(_ imageUrl: String) -> String {
+        let result = imageUrl.replacingOccurrences(of: "w500", with: "w370")
+        
+        return result.replacingOccurrences(of: "_h282", with: "_h556")
     }
 }
